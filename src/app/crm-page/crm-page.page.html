@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Leads</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+  
+    <ion-segment (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="N">
+        <ion-label>Nuovi</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="C">
+        <ion-label>Convertiti</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="W">
+        <ion-label>In Corso</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="E">
+        <ion-label>Scaduti</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+</ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+    <ion-item  *ngFor="let s of list1" button (click)="leadDet(s.id)" detail="true">
+       <ion-label>{{s.lead_name}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button (click)="addLead('new')">
+        <ion-icon name="person-add-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="importContact()">
+        <ion-icon name="download-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+  
+
+</ion-content>

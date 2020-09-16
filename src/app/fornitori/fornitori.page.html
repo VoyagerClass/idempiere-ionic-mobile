@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Contatti Clienti e Fornitori</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+  <ion-searchbar placeholder="" (ionChange)="onSearchChange($event)" [debounce]="250" showCancelButton="focus"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let s of list1" button (click)="showModal(s)">
+      <ion-card-header>
+        <ion-card-subtitle>{{s.Name}}</ion-card-subtitle>
+        <ion-card-title>{{s.bpartnername}}</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </ion-list>
+</ion-content>

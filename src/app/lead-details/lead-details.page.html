@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Dettagli lead</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scrollY="false">
+  <ion-list>
+    <ion-item>
+      <ion-label>Nome</ion-label>
+      <ion-text>
+        {{lead.lead_name}}
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Telefono</ion-label>
+      <ion-text>
+        {{lead.Phone}}
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-text>
+        {{lead.EMail}}
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Stato Lead</ion-label>
+      <ion-text>
+        {{lead.leadstatus_name}}
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Agente</ion-label>
+      <ion-text>
+        {{lead.SalesRep_Name}}
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Campagna</ion-label>
+      <ion-text>
+        {{lead.campaign_name}}
+      </ion-text>
+    </ion-item>
+  </ion-list>
+  <app-log [id]='ComponentId'></app-log>
+</ion-content>
+<ion-footer>
+  <ion-button expand="full" (click)="opzioniContatto()">
+    Opzioni
+  </ion-button>
+</ion-footer>
+
+
