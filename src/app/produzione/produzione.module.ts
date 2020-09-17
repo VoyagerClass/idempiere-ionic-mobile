@@ -1,4 +1,3 @@
-import { DistintaComponent } from './distinta/distinta.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -16,6 +15,6 @@ import { ProduzionePage } from './produzione.page';
     IonicModule,
     ProduzionePageRoutingModule
   ],
-  declarations: [ProduzionePage, DistintaComponent]
+  declarations: [ProduzionePage]
 })
 export class ProduzionePageModule {}

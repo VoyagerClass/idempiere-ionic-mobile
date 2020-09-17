@@ -1,4 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Distinta } from './../../models/Distinta';
+import { ApiServiceService } from './../api-service.service';
+import { Component, OnInit} from '@angular/core';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx'
 
 
@@ -9,12 +11,12 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx'
 })
 export class ProduzionePage implements OnInit {
   
-  @Output() getDistinta = new EventEmitter();
 
-  constructor(private barcode: BarcodeScanner) { }
+  constructor(private barcode: BarcodeScanner, private Api: ApiServiceService) { }
 
  
   prodCode = "";
+  item: Distinta;
   
   ngOnInit() {
   }
@@ -22,13 +24,18 @@ export class ProduzionePage implements OnInit {
   scanCode(){
     this.barcode.scan().then(barcodeData => {
       this.prodCode = barcodeData.text;
+      this.showDist();
     }).catch(err => {
          console.log('Error', err);
     });
   }
 
-  goToList(){
-    this.getDistinta.emit(this.prodCode);
+  showDist() {
+    this.Api.getDistinta(this.prodCode).subscribe((data) => {
+      console.log(data);
+      this.item = data[0];
+      console.log(this.item);
+    });
   }
   
 

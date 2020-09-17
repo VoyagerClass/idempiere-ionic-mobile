@@ -1,4 +1,3 @@
-import { Storage } from '@ionic/storage';
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 

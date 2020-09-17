@@ -1,3 +1,4 @@
+import { Distinta } from './../models/Distinta';
 import { MenuItem } from './../models/Menu';
 import { Storage } from '@ionic/storage';
 import { TResponse } from './../models/TokenResponse';
@@ -47,6 +48,10 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
 
   getOpp(){
     return this.http.get<Opportunity[]>(this.EndPoint+"getOpportunity");
+  }
+
+  getDistinta(id: string){
+    return this.http.get<Distinta[]>(this.EndPoint+"getDist_"+id);
   }
 
   postOpp(opp: Opportunity){
