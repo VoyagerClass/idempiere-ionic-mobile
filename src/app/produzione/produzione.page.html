@@ -16,7 +16,7 @@
         </ion-button>
       </ion-col>
       <ion-col size="8">
-        <ion-input type="text" placeholder="Codice Prodotto" [(ngModel)]="prodCode"></ion-input>
+        <ion-input type="text" placeholder="Codice Prodotto" [(ngModel)]="prodCode" (keydown.enter)="showDist()"></ion-input>
       </ion-col>
       <ion-col size="2">
         <ion-button (click)="showDist()" expand="full">
@@ -49,6 +49,17 @@
           {{item.PlannedQty}}
         </ion-text>
       </ion-item>
+      <ion-item>
+        <ion-label position="floating">Quantità</ion-label>
+        <ion-input type="number" #qty></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Data del Movimento</ion-label>
+        <ion-datetime required #data displayFormat="DD MM YYYY" placeholder="Inserisci data" min="2019" max="2040"></ion-datetime>
+      </ion-item>
+      <ion-button (click)="isComplete(item.id, data.value, qty.value)" expand="full">
+        Completa Ordine
+      </ion-button>
     </ion-list>
   </ion-grid>
 </ion-content>

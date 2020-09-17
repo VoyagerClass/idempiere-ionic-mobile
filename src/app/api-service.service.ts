@@ -1,3 +1,4 @@
+import { OrdCompl } from './../models/OrderComp';
 import { Distinta } from './../models/Distinta';
 import { MenuItem } from './../models/Menu';
 import { Storage } from '@ionic/storage';
@@ -111,6 +112,10 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
   logMeIn(cred: Credentials){
     console.log(cred);
     return this.http.post<TResponse>("http://"+this.IP+"/services/api/auth/login", cred);
+  }
+
+  postComplete(ordine: OrdCompl){
+    return this.http.post(this.EndPoint+"getProcProdottoFinito", ordine);
   }
 
   

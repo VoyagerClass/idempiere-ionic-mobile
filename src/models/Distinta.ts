@@ -4,4 +4,5 @@ export interface Distinta{
     MovementQty: number;
     PlannedQty: number;
     Help: string;
+    id: number;
 }
