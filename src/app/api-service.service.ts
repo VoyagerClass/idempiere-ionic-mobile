@@ -1,3 +1,4 @@
+import { DistDetails } from './../models/DistDetails';
 import { OrdCompl } from './../models/OrderComp';
 import { Distinta } from './../models/Distinta';
 import { MenuItem } from './../models/Menu';
@@ -53,6 +54,10 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
 
   getDistinta(id: string){
     return this.http.get<Distinta[]>(this.EndPoint+"getDist_"+id);
+  }
+
+  getDetailsDist(id: number){
+    return this.http.get<DistDetails[]>(this.EndPoint+"getDetailsDist_"+id);
   }
 
   postOpp(opp: Opportunity){
@@ -116,6 +121,17 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
 
   postComplete(ordine: OrdCompl){
     return this.http.post(this.EndPoint+"getProcProdottoFinito", ordine);
+  }
+
+  getAlexa(){
+    let chiamata = {
+      Action: "OPEN",
+      Obj:"WINDOW",
+      Alternative: "ORDINE",
+      UserToken: "amzn1.ask.account.AHGJYWAM3QKMLUEEQKJFMQ6JD4BAI3NYDPQZLIDAWFRRM7YM6SRD7G4LZV3ZE64KQCZFZZ6ITXSTNYRAVO4TD5FTWYXZH4RN7HQCWDTFJVMKBLAY2JYKMLTFXP6VLFVDEUO3OCNS73MTID72CECKZX7BOKL7YUKQSO524OKOWIK2RRY3QDRSGU2ROV6SNXQJKCU3BUSLXXHC7PI"
+    }
+    console.log(chiamata);
+    return this.http.post(this.EndPoint+"getAlexa", chiamata);
   }
 
   
