@@ -40,13 +40,13 @@
       <ion-item>
         <ion-label>Quant. Ordine</ion-label>
         <ion-text>
-          {{item.MovementQty}}
+          {{item.PlannedQty}}
         </ion-text>
       </ion-item>
       <ion-item>
         <ion-label>Quant. Residua</ion-label>
         <ion-text>
-          {{item.PlannedQty}}
+          {{item.MovementQty}}
         </ion-text>
       </ion-item>
       <ion-item>
@@ -60,16 +60,9 @@
       <ion-button (click)="isComplete(item.id, data.value, qty.value)" expand="full">
         Completa Ordine
       </ion-button>
+      <ion-button (click)="Direct(item.id, item)"  expand="block">
+        Vai a Prelievo
+      </ion-button>
     </ion-list>
   </ion-grid>
-  <ion-button (click)="ciao()" expand="block" fill="clear" shape="round">
-    Prova
-  </ion-button>
 </ion-content>
-<ion-footer>
-  <ion-toolbar>
-    <ion-button (click)="Direct('prelievo')"  expand="block">
-      Vai a Prelievo
-    </ion-button>
-  </ion-toolbar>
-</ion-footer>

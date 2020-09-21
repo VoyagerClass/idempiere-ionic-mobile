@@ -60,14 +60,8 @@ export class ProduzionePage implements OnInit {
     })
   }
   
-  Direct(route: string){
-    this.router.navigateByUrl(route);
-  }
-
-  ciao(){
-    this.Api.getAlexa().subscribe((data)=> {
-      console.log(data);
-    })
+  Direct(route: string, item: Distinta){
+    this.router.navigate([('/prelievo/'+route)], {state: {item: item}});
   }
   
 

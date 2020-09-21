@@ -2,7 +2,6 @@ import { DistDetails } from './../models/DistDetails';
 import { OrdCompl } from './../models/OrderComp';
 import { Distinta } from './../models/Distinta';
 import { MenuItem } from './../models/Menu';
-import { Storage } from '@ionic/storage';
 import { TResponse } from './../models/TokenResponse';
 import { Credentials } from './../models/Credentials';
 import { Opportunity } from './../models/OpportunityModel';
@@ -20,8 +19,7 @@ import { Injectable } from '@angular/core';
 })
 export class ApiServiceService {
 
-  constructor(private http: HttpClient,
-              private storage: Storage) { }
+  constructor(private http: HttpClient) { }
 
 IP = localStorage.getItem('TargetIP'); 
 EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
@@ -74,8 +72,6 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
 
   addLog(cliente: number, evento: string, act: string){
     const idA = parseInt(localStorage.getItem('ADuser'));
-    const adclient = parseInt(localStorage.getItem('ADclient'));
-    const orgid = parseInt(localStorage.getItem('OrgId'));
     let log = new LogAgente();
     log.LIT_AD_UserFrom_ID = idA;
     log.Comments = evento;

@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Dettagli</ion-title>
+    <ion-button slot="end" fill="clear" (click)="closeModal()">
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>{{item.product_name}}</ion-card-subtitle>
+      <ion-card-title>{{item.product_value}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Descrizione</ion-label>
+        <ion-text>{{item.product_description}}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label>Quantità Rimanente</ion-label>
+        <ion-text>{{item.qtyremain}}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label>Quantità da Utilizzare</ion-label>
+        <ion-text>{{item.qtyplanned}}</ion-text>
+      </ion-item> 
+    </ion-card-content>
+  </ion-card>
+</ion-content>

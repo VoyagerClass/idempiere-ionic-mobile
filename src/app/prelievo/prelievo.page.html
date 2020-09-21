@@ -9,22 +9,6 @@
 
 <ion-content>
   <ion-grid fixed>
-    <ion-row>
-      <ion-col size="2">
-        <ion-button (click)="scanCode()" expand="full">
-          <ion-icon name="camera-outline"></ion-icon>
-        </ion-button>
-      </ion-col>
-      <ion-col size="8">
-        <ion-input type="text" placeholder="Codice Prodotto" [(ngModel)]="prodCode" (keydown.enter)="showDist()">
-        </ion-input>
-      </ion-col>
-      <ion-col size="2">
-        <ion-button (click)="showDist()" expand="full">
-          <ion-icon name="arrow-forward-outline"></ion-icon>
-        </ion-button>
-      </ion-col>
-    </ion-row>
     <ion-list *ngIf="item != null ">
       <ion-item>
         <ion-label>No.Ordine</ion-label>
@@ -38,56 +22,30 @@
           {{item.Name}}
         </ion-text>
       </ion-item>
-      <ion-item>
-        <ion-label>Quant. Ordine</ion-label>
-        <ion-text>
-          {{item.MovementQty}}
-        </ion-text>
-      </ion-item>
-      <ion-item>
-        <ion-label>Quant. Residua</ion-label>
-        <ion-text>
-          {{item.PlannedQty}}
-        </ion-text>
-      </ion-item>
     </ion-list>
-    <ion-list *ngFor="let d of detail">
+    <ion-list *ngFor="let d of detail" style="margin-top: 15px;">
       <ion-item>
         <ion-text>
           {{d.product_name}}
         </ion-text>
       </ion-item>
-      <ion-item>
-        <ion-label>Descrizione Prodotto</ion-label>
-        <ion-text>
-          {{d.product_description}}
-        </ion-text>
-      </ion-item>
-      <ion-item>
-        <ion-label>Dettaglio Prodotto</ion-label>
-        <ion-text>
-          {{d.product_value}}
-        </ion-text>
-      </ion-item>
-      <ion-item>
-        <ion-label>Quantità Necessaria</ion-label>
-        <ion-text>
-          {{d.qtyplanned}}
-        </ion-text>
-      </ion-item>
-      <ion-item>
-        <ion-label>Quantità Rimanente</ion-label>
-        <ion-text>
-          {{d.qtyremain}}
-        </ion-text>
-      </ion-item>
-      <ion-item>
-        <ion-label>Quantità Utilizzata</ion-label>
-        <ion-text>
-          {{d.QtyUsed}}
-        </ion-text>
-      </ion-item>
+      <ion-row>
+        <ion-col size="7">
+          <ion-item>
+            <ion-label>Quantità Totale</ion-label>
+            <ion-text>
+              {{d.qtyplanned - d.QtyUsed}}({{d.qtyremain}})
+            </ion-text>
+          </ion-item>
+        </ion-col>
+        <ion-col size="5" style="margin-top: 3px;">
+          <ion-input type="number" placeholder="Qtt. prelevata" (ionChange)="qtyArray(d.id,quant.value)" debounce="1000" #quant></ion-input>
+        </ion-col>
+      </ion-row>      
     </ion-list>
+    <ion-button (click)="itemTaken()" expand="full">
+      Prelievo Avvenuto
+    </ion-button>   
   </ion-grid>
 
 </ion-content>
