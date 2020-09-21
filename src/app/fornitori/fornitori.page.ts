@@ -3,7 +3,6 @@ import { ModalController } from '@ionic/angular';
 import { FornitoriModel } from './../../models/FornitoriModel';
 import { Router } from '@angular/router';
 import { ApiServiceService } from './../api-service.service';
-import { QueryModel } from './../../models/querymodel';
 import { Component, OnInit } from '@angular/core';
 import * as _ from 'underscore'
 
@@ -28,9 +27,6 @@ export class FornitoriPage implements OnInit {
 
   queryBuild = () => {
     this.list = [];
-    /* query.column = "a.name, b.name as bpartnername, ad_user_id, email, phone, a.description, a.comments, a.lastcontact";
-    query.table = "ad_user a inner join c_bpartner b on a.c_bpartner_id = b.c_bpartner_id";
-    query.where = "a.c_bpartner_id > 0"; */
     this.Api.getSuppliers().subscribe((data) => { 
       this.list = data;
       this.list1 = data;
