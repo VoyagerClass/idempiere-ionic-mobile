@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Produzione</ion-title>
+    <ion-title>Prelievo materiale</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,7 +16,8 @@
         </ion-button>
       </ion-col>
       <ion-col size="8">
-        <ion-input type="text" placeholder="Codice Prodotto" [(ngModel)]="prodCode" (keydown.enter)="showDist()"></ion-input>
+        <ion-input type="text" placeholder="Codice Prodotto" [(ngModel)]="prodCode" (keydown.enter)="showDist()">
+        </ion-input>
       </ion-col>
       <ion-col size="2">
         <ion-button (click)="showDist()" expand="full">
@@ -49,27 +50,44 @@
           {{item.PlannedQty}}
         </ion-text>
       </ion-item>
+    </ion-list>
+    <ion-list *ngFor="let d of detail">
       <ion-item>
-        <ion-label position="floating">Quantità</ion-label>
-        <ion-input type="number" #qty></ion-input>
+        <ion-text>
+          {{d.product_name}}
+        </ion-text>
       </ion-item>
       <ion-item>
-        <ion-label>Data del Movimento</ion-label>
-        <ion-datetime required #data displayFormat="DD MM YYYY" placeholder="Inserisci data" min="2019" max="2040"></ion-datetime>
+        <ion-label>Descrizione Prodotto</ion-label>
+        <ion-text>
+          {{d.product_description}}
+        </ion-text>
       </ion-item>
-      <ion-button (click)="isComplete(item.id, data.value, qty.value)" expand="full">
-        Completa Ordine
-      </ion-button>
+      <ion-item>
+        <ion-label>Dettaglio Prodotto</ion-label>
+        <ion-text>
+          {{d.product_value}}
+        </ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label>Quantità Necessaria</ion-label>
+        <ion-text>
+          {{d.qtyplanned}}
+        </ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label>Quantità Rimanente</ion-label>
+        <ion-text>
+          {{d.qtyremain}}
+        </ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label>Quantità Utilizzata</ion-label>
+        <ion-text>
+          {{d.QtyUsed}}
+        </ion-text>
+      </ion-item>
     </ion-list>
   </ion-grid>
-  <ion-button (click)="ciao()" expand="block" fill="clear" shape="round">
-    Prova
-  </ion-button>
+
 </ion-content>
-<ion-footer>
-  <ion-toolbar>
-    <ion-button (click)="Direct('prelievo')"  expand="block">
-      Vai a Prelievo
-    </ion-button>
-  </ion-toolbar>
-</ion-footer>

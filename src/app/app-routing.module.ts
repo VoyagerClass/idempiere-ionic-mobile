@@ -46,7 +46,12 @@ const routes: Routes = [
   {
     path: 'landing-page',
     loadChildren: () => import('./landing-page/landing-page.module').then( m => m.LandingPagePageModule)
+  },
+  {
+    path: 'prelievo',
+    loadChildren: () => import('./prelievo/prelievo.module').then( m => m.PrelievoPageModule)
   }
+
 
 
 ];

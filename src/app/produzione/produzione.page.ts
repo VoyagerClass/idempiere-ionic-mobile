@@ -1,8 +1,11 @@
+import { Router } from '@angular/router';
 import { OrdCompl } from './../../models/OrderComp';
 import { Distinta } from './../../models/Distinta';
 import { ApiServiceService } from './../api-service.service';
 import { Component, OnInit} from '@angular/core';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx'
+
+import * as moment from 'moment'
 
 
 @Component({
@@ -13,7 +16,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx'
 export class ProduzionePage implements OnInit {
   
 
-  constructor(private barcode: BarcodeScanner, private Api: ApiServiceService) { }
+  constructor(private barcode: BarcodeScanner, private Api: ApiServiceService, private router: Router) { }
 
  
   prodCode = "";
@@ -32,12 +35,14 @@ export class ProduzionePage implements OnInit {
   }
 
   showDist() {
-    let ricerca = this.prodCode.split("/").join("%2F");
-    this.Api.getDistinta(ricerca).subscribe((data) => {
-      console.log(data);
-      this.item = data[0];
-      console.log(this.item);
-    });
+    if(this.prodCode!=""){
+      let ricerca = this.prodCode.split("/").join("%2F");
+      this.Api.getDistinta(ricerca).subscribe((data) => {
+        console.log(data);
+        this.item = data[0];
+        console.log(this.item);
+      });
+    }
   }
 
   isComplete(id: number, time: string, qty: number){
@@ -51,10 +56,19 @@ export class ProduzionePage implements OnInit {
     console.log(ordine);
     this.Api.postComplete(ordine).subscribe((data)=>{
       console.log(data);
+      this.showDist();
     })
   }
   
+  Direct(route: string){
+    this.router.navigateByUrl(route);
+  }
 
+  ciao(){
+    this.Api.getAlexa().subscribe((data)=> {
+      console.log(data);
+    })
+  }
   
 
 }
