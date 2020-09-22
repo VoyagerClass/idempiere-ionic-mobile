@@ -6,4 +6,5 @@ export interface DistDetails{
     qtyremain: number;
     QtyUsed: number;
     product_value: string;
+    CurrentQty:number;
 }

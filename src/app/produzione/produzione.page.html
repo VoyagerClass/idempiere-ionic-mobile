@@ -60,8 +60,11 @@
       <ion-button (click)="isComplete(item.id, data.value, qty.value)" expand="full">
         Completa Ordine
       </ion-button>
-      <ion-button (click)="Direct(item.id, item)"  expand="block">
+      <ion-button (click)="Prelievo(item.id, item)"  expand="block">
         Vai a Prelievo
+      </ion-button>
+      <ion-button (click)="PrelCompl(item.id, data.value, qty.value)" expand="block">
+        Prelievo e Completa Ordine
       </ion-button>
     </ion-list>
   </ion-grid>

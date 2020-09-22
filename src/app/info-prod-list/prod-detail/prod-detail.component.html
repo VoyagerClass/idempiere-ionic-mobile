@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Dettagli</ion-title>
+    <ion-button slot="end" fill="clear" (click)="closeModal()">
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>{{Prod.Value}}</ion-card-subtitle>
+      <ion-card-title>{{Prod.Name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{Prod.Description}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

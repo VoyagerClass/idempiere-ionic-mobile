@@ -34,7 +34,7 @@
           <ion-item>
             <ion-label>Quantità Totale</ion-label>
             <ion-text>
-              {{d.qtyplanned - d.QtyUsed}}({{d.qtyremain}})
+              {{d.CurrentQty}}({{d.qtyplanned - d.QtyUsed}})
             </ion-text>
           </ion-item>
         </ion-col>
@@ -43,7 +43,7 @@
         </ion-col>
       </ion-row>      
     </ion-list>
-    <ion-button (click)="itemTaken()" expand="full">
+    <ion-button [disabled]="submitEnable" (click)="itemTaken()" expand="full">
       Prelievo Avvenuto
     </ion-button>   
   </ion-grid>

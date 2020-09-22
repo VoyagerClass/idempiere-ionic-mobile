@@ -5,8 +5,6 @@ import { ApiServiceService } from './../api-service.service';
 import { Component, OnInit} from '@angular/core';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx'
 
-import * as moment from 'moment'
-
 
 @Component({
   selector: 'app-produzione',
@@ -36,6 +34,7 @@ export class ProduzionePage implements OnInit {
 
   showDist() {
     if(this.prodCode!=""){
+      sessionStorage.setItem(this.prodCode, this.prodCode)
       let ricerca = this.prodCode.split("/").join("%2F");
       this.Api.getDistinta(ricerca).subscribe((data) => {
         console.log(data);
@@ -60,9 +59,29 @@ export class ProduzionePage implements OnInit {
     })
   }
   
-  Direct(route: string, item: Distinta){
+  Prelievo(route: string, item: Distinta){
     this.router.navigate([('/prelievo/'+route)], {state: {item: item}});
   }
+
+  PrelCompl(id: number, time: string, qty: number){
+    let ordine: OrdCompl =  new OrdCompl;
+    let ids: number[] = [];
+    ids.push(id);
+    ordine.ids = ids;
+    ordine.C_DocTypeInv_ID = 1000164;
+    ordine.C_DocTypeMov_ID = 1000163;
+    ordine.MovementDate = time.slice(0, 19).replace('T', ' ');
+    ordine.Qty= qty+".0";
+    ordine.TableName = "M_Production";
+    ordine.LIT_IsPickingEndDeclaration = "Y";
+    console.log(ordine);
+    this.Api.postAllComplete(ordine).subscribe((data)=>{
+      console.log(data);
+      this.showDist();
+    })
+  }
+
+
   
 
 }

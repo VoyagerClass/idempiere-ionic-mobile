@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Lista Prodotti</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar inputmode="text" type="text" (ionChange)="onSearchChange($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let l of list index as i; odd as isOdd; even as isEven" detail (click)="showModal(l)" [color]="isEven? 'medium': ''">
+      <ion-label class="ion-text-wrap" >{{l.Value}}</ion-label>
+      <ion-text>{{l.totqtyonhand}}</ion-text>
+    </ion-item>
+  </ion-list>
+</ion-content>
