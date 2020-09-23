@@ -34,8 +34,8 @@ export class ProduzionePage implements OnInit {
 
   showDist() {
     if(this.prodCode!=""){
-      sessionStorage.setItem(this.prodCode, this.prodCode)
-      let ricerca = this.prodCode.split("/").join("%2F");
+      let change = this.prodCode.split("-").join("%2D");
+      let ricerca = change.split("/").join("%2F");
       this.Api.getDistinta(ricerca).subscribe((data) => {
         console.log(data);
         this.item = data[0];

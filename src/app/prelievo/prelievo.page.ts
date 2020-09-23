@@ -43,6 +43,8 @@ export class PrelievoPage implements OnInit {
       this.qttCollector[pos]= null;
       this.itemId[pos]= null;
     }
+
+    this.submitEnable = this.isEmpty(this.qttCollector);
     console.log(this.submitEnable);
     console.log(this.qttCollector);
     console.log(this.itemId);
@@ -77,11 +79,13 @@ export class PrelievoPage implements OnInit {
   }
 
   isEmpty(array: any){
+    let bool : boolean = true;
     array.forEach(value => {
       if(value!=null){
-        return true;
+        bool = false;
       }
     });
+    return bool;
   }
 
 
