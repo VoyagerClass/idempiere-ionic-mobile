@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Task Scheduling</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let l of list1" (click)="getDetails(l)">
+      <ion-card-header>
+        <ion-card-subtitle>{{l.taskdetail_name}}</ion-card-subtitle>
+        <ion-card-title>{{l.task_name}}</ion-card-title>
+        <ion-card-content>
+          <ion-item>
+            <ion-label>{{l.DateWorkStart | date : 'short'}}</ion-label>
+            <ion-text>Durata: {{l.Qty}}h</ion-text>
+          </ion-item>
+        </ion-card-content>
+      </ion-card-header>
+    </ion-card>
+  </ion-list>
+</ion-content>

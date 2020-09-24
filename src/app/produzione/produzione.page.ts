@@ -5,6 +5,8 @@ import { ApiServiceService } from './../api-service.service';
 import { Component, OnInit} from '@angular/core';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx'
 
+import * as moment from 'moment'
+
 
 @Component({
   selector: 'app-produzione',
@@ -44,19 +46,20 @@ export class ProduzionePage implements OnInit {
     }
   }
 
-  isComplete(id: number, time: string, qty: number){
+  isComplete(id: number, qty: number){
     let ordine: OrdCompl =  new OrdCompl;
     let ids: number[] = [];
+    let time = moment().format('DD/MM/YYYY HH:mm:ss').toString();
     ids.push(id);
     ordine.ids = ids;
     ordine.C_DocTypeInv_ID = 1000164;
-    ordine.MovementDate = time.slice(0, 19).replace('T', ' ');
+    ordine.MovementDate = time;
     ordine.Qty= qty+".0";
     console.log(ordine);
     this.Api.postComplete(ordine).subscribe((data)=>{
       console.log(data);
       this.showDist();
-    })
+    });
   }
   
   Prelievo(route: string, item: Distinta){
@@ -80,6 +83,8 @@ export class ProduzionePage implements OnInit {
       this.showDist();
     })
   }
+
+  
 
 
   

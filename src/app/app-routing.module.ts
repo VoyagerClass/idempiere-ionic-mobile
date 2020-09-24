@@ -66,7 +66,17 @@ const routes: Routes = [
   {
     path: 'bp-details/:id',
     loadChildren: () => import('./bp-details/bp-details.module').then( m => m.BpDetailsPageModule)
+  },
+  {
+    path: 'conteggio-ore',
+    loadChildren: () => import('./conteggio-ore/conteggio-ore.module').then( m => m.ConteggioOrePageModule)
+  },
+  {
+    path: 'dettaglio-ore',
+    loadChildren: () => import('./dettaglio-ore/dettaglio-ore.module').then( m => m.DettaglioOrePageModule)
   }
+
+
 
 
 

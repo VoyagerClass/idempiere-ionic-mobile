@@ -1,3 +1,4 @@
+import { COre } from './../models/ConteggioOre';
 import { m_product } from './../models/Magazzino';
 import { DistDetails } from './../models/DistDetails';
 import { OrdCompl, PrelievoCompl } from './../models/OrderComp';
@@ -49,6 +50,11 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
 
   getOpp(){
     return this.http.get<Opportunity[]>(this.EndPoint+"getOpportunity");
+  }
+
+  getConteggioOre(){
+    let id = localStorage.getItem('ADuser');
+    return this.http.get<COre[]>(this.EndPoint+"getConteggioOre_"+id);
   }
 
   getDistinta(id: string){
@@ -130,6 +136,14 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
 
   postAllComplete(ordine: OrdCompl){
     return this.http.post(this.EndPoint+"getProcPrelievoEFinito", ordine);
+  }
+
+  isCOreComplete(task: COre){
+    console.log(task);
+  }
+
+  putCOre(task: COre){
+    console.log(task);
   }
 
   

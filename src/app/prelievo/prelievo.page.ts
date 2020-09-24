@@ -5,7 +5,9 @@ import { ApiServiceService } from './../api-service.service';
 import { Distinta } from './../../models/Distinta';
 import { Component, OnInit } from '@angular/core';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx'
-import { Observable } from 'rxjs';
+
+
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-prelievo',
@@ -54,12 +56,13 @@ export class PrelievoPage implements OnInit {
     let ordine: PrelievoCompl =  new PrelievoCompl;
     let qtt = this.qttCollector.filter(Boolean);
     let ids = this.itemId.filter(Boolean);
+    let time = moment().format('DD/MM/YYYY HH:mm:ss').toString();
     console.log(qtt);
     console.log(ids);
     ordine.TableName = "M_ProductionLine"
     ordine.ids = ids;
     ordine.C_DocTypeMov_ID = 1000163;
-    ordine.MovementDate = "2022-09-03 23:19:26";
+    ordine.MovementDate = time;
     ordine.Qty= qtt;
     console.log(ordine);
     this.Api.postPrelevato(ordine).subscribe((data)=>{
