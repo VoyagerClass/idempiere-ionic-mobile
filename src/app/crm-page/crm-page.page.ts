@@ -38,7 +38,7 @@ export class CrmPagePage implements OnInit{
     this.list1 = [];
     this.Api.getData('').subscribe((data) => { 
       this.list = data;
-      this.list1 = data;
+      this.list1 = _.where(data, {leadstatus_value: 'N'});
       console.log(this.list);
     });
   }

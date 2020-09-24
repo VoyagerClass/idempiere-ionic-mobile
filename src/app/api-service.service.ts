@@ -1,7 +1,7 @@
 import { COre } from './../models/ConteggioOre';
 import { m_product } from './../models/Magazzino';
 import { DistDetails } from './../models/DistDetails';
-import { OrdCompl, PrelievoCompl } from './../models/OrderComp';
+import { OrdCompl, PrelievoCompl, ResResponse } from './../models/OrderComp';
 import { Distinta } from './../models/Distinta';
 import { MenuItem } from './../models/Menu';
 import { TResponse } from './../models/TokenResponse';
@@ -69,6 +69,14 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
     return this.http.get<m_product>(this.EndPoint+"getInfoProduct_%25"+id+"%25");
   }
 
+  getInvoice(){
+    return this.http.get(this.EndPoint+"getMobileInvoice");
+  }
+
+  getCOrder(){
+    return this.http.get(this.EndPoint+"getCOrder");
+  }
+
   postOpp(opp: Opportunity){
     return this.http.post(this.EndPoint+"postOpp", opp);
   }
@@ -127,23 +135,23 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
   }
 
   postComplete(ordine: OrdCompl){
-    return this.http.post(this.EndPoint+"getProcProdottoFinito", ordine);
+    return this.http.post<ResResponse>(this.EndPoint+"getProcProdottoFinito", ordine);
   }
 
   postPrelevato(prelievo: PrelievoCompl){
-    return this.http.post(this.EndPoint+"getProcEseguiPrelievo", prelievo);
+    return this.http.post<ResResponse>(this.EndPoint+"getProcEseguiPrelievo", prelievo);
   }
 
   postAllComplete(ordine: OrdCompl){
-    return this.http.post(this.EndPoint+"getProcPrelievoEFinito", ordine);
+    return this.http.post<ResResponse>(this.EndPoint+"getProcPrelievoEFinito", ordine);
   }
 
   isCOreComplete(task: COre){
-    console.log(task);
+    return this.http.put(this.EndPoint+"putConteggioOreComplete_"+task.id, task);
   }
 
   putCOre(task: COre){
-    console.log(task);
+    return this.http.put(this.EndPoint+"putModificaConteggioOre"+task.id, task);
   }
 
   

@@ -9,7 +9,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-card *ngFor="let l of list1" (click)="getDetails(l)">
+    <ion-card *ngFor="let l of list" (click)="getDetails(l)">
       <ion-card-header>
         <ion-card-subtitle>{{l.taskdetail_name}}</ion-card-subtitle>
         <ion-card-title>{{l.task_name}}</ion-card-title>

@@ -1,5 +1,6 @@
+import { AlertController } from '@ionic/angular';
 import { OrdCompl, PrelievoCompl } from './../../models/OrderComp';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DistDetails } from './../../models/DistDetails';
 import { ApiServiceService } from './../api-service.service';
 import { Distinta } from './../../models/Distinta';
@@ -25,7 +26,8 @@ export class PrelievoPage implements OnInit {
   qttCollector: string [] = [];
   submitEnable: boolean = true;
 
-  constructor(private Api: ApiServiceService, private barcode: BarcodeScanner, private route: ActivatedRoute) { }
+  constructor(private Api: ApiServiceService, private route: ActivatedRoute,
+              private router: Router, private alertController: AlertController) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(param => {
@@ -56,7 +58,7 @@ export class PrelievoPage implements OnInit {
     let ordine: PrelievoCompl =  new PrelievoCompl;
     let qtt = this.qttCollector.filter(Boolean);
     let ids = this.itemId.filter(Boolean);
-    let time = moment().format('DD/MM/YYYY HH:mm:ss').toString();
+    let time = moment().format('YYYY-MM-DD HH:mm:ss').toString()
     console.log(qtt);
     console.log(ids);
     ordine.TableName = "M_ProductionLine"
@@ -67,6 +69,9 @@ export class PrelievoPage implements OnInit {
     console.log(ordine);
     this.Api.postPrelevato(ordine).subscribe((data)=>{
       console.log(data);
+      this.presentAlert(data.cod, data.message[0].msg).then(_ =>{
+        this.router.navigateByUrl('/produzione');
+      }) 
     })
   }  
 
@@ -89,6 +94,24 @@ export class PrelievoPage implements OnInit {
       }
     });
     return bool;
+  }
+
+  async presentAlert(cod: string, message: string) {
+    let colorcode ="";
+    if(cod==="OK"){
+      colorcode = "GreenAlert"
+    }else{
+      colorcode = "RedAlert"
+    }
+    const alert = await this.alertController.create({
+      cssClass: colorcode,
+      header: cod,
+      subHeader: message,
+      message: '',
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 
 

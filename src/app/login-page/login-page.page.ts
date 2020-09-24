@@ -56,8 +56,10 @@ export class LoginPagePage implements OnInit {
   }
 
   keepLogged(){
-    if(!helper.isTokenExpired(localStorage.getItem('token'))){
+    if(this.isLoggedin()){
       this.router.navigateByUrl('/landing-page');
+    }else{
+      localStorage.removeItem('token');
     }
   }
 
@@ -65,6 +67,12 @@ export class LoginPagePage implements OnInit {
     console.log(this.ip);
     localStorage.setItem('TargetIP', this.ip);
     this.Api.setIP();
+  }
+
+  isLoggedin() {
+    const token: string = localStorage.getItem('token');
+    console.log(token != null && !helper.isTokenExpired(token));
+    return token != null && !helper.isTokenExpired(token);
   }
 
 }

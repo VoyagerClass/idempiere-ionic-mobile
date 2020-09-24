@@ -35,13 +35,13 @@
       <ion-textarea #description auto-grow='true' value={{Task.task_description}}></ion-textarea>
     </ion-item>
   </ion-list>
-  <ion-button (click)="taskCompleted(data.value, description.value, duration.value)" expand="block" fill="clear">
+  <ion-button (click)="taskCompleted(Task.id, duration.value)" expand="block" fill="clear">
     Completa task
   </ion-button>
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-    <ion-button expand="full" (click)="modifyTask(data.value, description.value, duration.value)"> Applica Modifica Conteggio Ore</ion-button>
+    <ion-button expand="full" (click)="modifyTask(Task.id, data.value, description.value, duration.value)"> Applica Modifica Conteggio Ore</ion-button>
   </ion-toolbar>
 </ion-footer>

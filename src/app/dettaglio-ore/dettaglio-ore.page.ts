@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ApiServiceService } from './../api-service.service';
 import { COre } from './../../models/ConteggioOre';
 import { Component, OnInit } from '@angular/core';
@@ -14,26 +15,33 @@ export class DettaglioOrePage implements OnInit {
   Task: COre = history.state.task;
   date: string;
 
-  constructor(private Api: ApiServiceService) { }
+  constructor(private Api: ApiServiceService, private router: Router) { }
 
   ngOnInit() {
     this.date = moment(this.Task.DateWorkStart).toISOString(true);
   }
 
-  taskCompleted(time: string, desc: string, duration: number){
-    this.Task.DateWorkStart = time.slice(0, 19).replace('T', ' ');
-    this.Task.task_description = desc;
-    this.Task.isConfirmed = 'Y';
-    this.Task.Qty = duration;
-    this.Api.isCOreComplete(this.Task);
+  taskCompleted(id: number, duration: number) {
+    let task = new COre;
+    task.isConfirmed = 'Y';
+    task.id = id;
+    task.Qty = duration;
+    console.log(task);
+    /* this.Api.isCOreComplete(task).subscribe((data)=>{
+      console.log(data);
+      this.router.navigateByUrl('/conteggio-ore');
+    }); */
   }
 
-  modifyTask(time: string, desc: string, duration: number){
-    this.Task.DateWorkStart = time.slice(0, 19).replace('T', ' ');
-    this.Task.task_description = desc;
-    this.Task.isConfirmed = 'N';
-    this.Task.Qty = duration;
-    this.Api.putCOre(this.Task);
+  modifyTask( id: number, time: string, desc: string, duration: number) {
+    let task = new COre;
+    task.DateWorkStart = time.slice(0, 19).replace('T', ' ');
+    task.Description = desc;
+    task.Qty = duration;
+    task.id = id;
+    this.Api.putCOre(task).subscribe((data)=>{
+      console.log(data);
+    });
   }
 
 

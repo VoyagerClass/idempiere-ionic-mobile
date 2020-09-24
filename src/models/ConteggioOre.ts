@@ -8,4 +8,5 @@ export class COre{
     task_name: string;
     taskdetail_description: string;
     isConfirmed: string;
+    Description: string;
 }

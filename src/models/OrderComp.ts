@@ -16,3 +16,13 @@ export class PrelievoCompl{
     C_DocTypeMov_ID: number;
     Qty: string[];
 }
+
+export interface ResResponse{
+    cod: string;
+    message: Response[];
+}
+
+export interface Response{
+    msg: string;
+    link: string;
+}
