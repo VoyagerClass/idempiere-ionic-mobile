@@ -1,3 +1,4 @@
+import { AuthService } from './services/auth.service';
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 
@@ -18,7 +19,8 @@ export class AppComponent {
     private statusBar: StatusBar,
     private router: Router,
     private calendar: Calendar,
-    private menu: MenuController
+    private menu: MenuController,
+    private auth : AuthService
   ) {
     this.initializeApp();
   }
@@ -42,9 +44,10 @@ export class AppComponent {
   }
 
   LogOut(){
-    localStorage.removeItem('token');
+    /* localStorage.removeItem('token');
     localStorage.removeItem('ADuser');
-    this.router.navigate(['']);
+    this.router.navigate(['']); */
+    this.auth.logout();
     this.menu.close();
   }
 }

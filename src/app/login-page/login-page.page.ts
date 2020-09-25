@@ -1,3 +1,6 @@
+import { AlertController } from '@ionic/angular';
+import { async } from '@angular/core/testing';
+import { AuthService } from './../services/auth.service';
 import { Router } from '@angular/router';
 import { Credentials } from './../../models/Credentials';
 import { ApiServiceService } from './../api-service.service';
@@ -29,10 +32,11 @@ export class LoginPagePage implements OnInit {
 
   constructor(private Api: ApiServiceService,
               private router: Router,
-              private storage: Storage) { }
+              private storage: Storage,
+              private auth: AuthService,
+              private alertCtrl: AlertController) { }
 
   ngOnInit() {
-    this.keepLogged();
   }
 
   cred =  new Credentials;
@@ -44,24 +48,23 @@ export class LoginPagePage implements OnInit {
     this.ipConfig();
     this.cred.username = this.uName;
     this.cred.password = password;
-    this.Api.logMeIn(this.cred).subscribe((data) => {
-      if(rme){
-        localStorage.setItem('username', this.uName);
+    this.auth.logMeIn(this.cred).subscribe(async res => {
+      if (res){
+        if(rme){
+          localStorage.setItem('username', this.uName);
+        }
+        this.router.navigate(['']);
+      }else{
+        const alert = await this.alertCtrl.create({
+          header: 'Login Fallito',
+          message: 'Credenziali Sbagliate',
+          buttons: ['OK']
+        });
+        await alert.present();
       }
-      let decoded = jwt_decode(data.token);
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('ADuser', decoded.idUser);
-      this.router.navigate(['/landing-page']);
-    });
+    })
   }
 
-  keepLogged(){
-    if(this.isLoggedin()){
-      this.router.navigateByUrl('/landing-page');
-    }else{
-      localStorage.removeItem('token');
-    }
-  }
 
   ipConfig(){
     console.log(this.ip);

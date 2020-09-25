@@ -1,3 +1,4 @@
+import { AuthGuard } from './guards/auth.guard';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
@@ -36,7 +37,7 @@ const routes: Routes = [
     loadChildren: () => import('./opportunita/opportunita.module').then( m => m.OpportunitaPageModule)
   },
   {
-    path: '',
+    path: 'login',
     loadChildren: () => import('./login-page/login-page.module').then( m => m.LoginPagePageModule)
   },
   {
@@ -44,8 +45,9 @@ const routes: Routes = [
     loadChildren: () => import('./produzione/produzione.module').then( m => m.ProduzionePageModule)
   },
   {
-    path: 'landing-page',
-    loadChildren: () => import('./landing-page/landing-page.module').then( m => m.LandingPagePageModule)
+    path: '',
+    loadChildren: () => import('./landing-page/landing-page.module').then( m => m.LandingPagePageModule),
+    canActivate:[AuthGuard]
   },
   {
     path: 'prelievo/:id',

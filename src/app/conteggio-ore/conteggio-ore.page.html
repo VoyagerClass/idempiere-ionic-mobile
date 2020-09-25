@@ -11,11 +11,11 @@
   <ion-list>
     <ion-card *ngFor="let l of list" (click)="getDetails(l)">
       <ion-card-header>
-        <ion-card-subtitle>{{l.taskdetail_name}}</ion-card-subtitle>
-        <ion-card-title>{{l.task_name}}</ion-card-title>
+        <ion-card-subtitle class="ion-text-center">{{l.taskdetail_name}}</ion-card-subtitle>
+        <ion-card-title class="ion-text-center">{{l.task_name}}</ion-card-title>
         <ion-card-content>
           <ion-item>
-            <ion-label>{{l.DateWorkStart | date : 'short'}}</ion-label>
+            <ion-label>{{l.DateWorkStart | date : 'dd/MM/yyyy hh:mm'}}</ion-label>
             <ion-text>Durata: {{l.Qty}}h</ion-text>
           </ion-item>
         </ion-card-content>

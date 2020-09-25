@@ -2,7 +2,7 @@ import { ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { COre } from './../../models/ConteggioOre';
 import { ApiServiceService } from './../api-service.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import * as _ from 'underscore';
 
@@ -17,9 +17,6 @@ export class ConteggioOrePage {
 
   constructor(private Api: ApiServiceService, private router: Router, private ModalCtrl: ModalController) { }
 
-  ngOnInit() {
-    this.getTasks();
-  }
 
   ionViewDidEnter(){
     this.getTasks();
