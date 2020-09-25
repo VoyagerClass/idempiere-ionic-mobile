@@ -39,9 +39,6 @@ export class InfoProdListPage implements OnInit {
   onSearchChange(ev: any){
     this.Api.getProdList(ev.detail.value).subscribe((data)=>{
       this.list = data;
-      console.log(ev.detail.value);
-      console.log(data);
-      console.log(this.list);
     })
   }
 

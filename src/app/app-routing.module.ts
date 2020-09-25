@@ -74,7 +74,12 @@ const routes: Routes = [
   {
     path: 'dettaglio-ore',
     loadChildren: () => import('./dettaglio-ore/dettaglio-ore.module').then( m => m.DettaglioOrePageModule)
+  },
+  {
+    path: 'vendite',
+    loadChildren: () => import('./vendite/vendite.module').then( m => m.VenditePageModule)
   }
+
 
 
 

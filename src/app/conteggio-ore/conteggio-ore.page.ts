@@ -17,9 +17,9 @@ export class ConteggioOrePage {
 
   constructor(private Api: ApiServiceService, private router: Router, private ModalCtrl: ModalController) { }
 
-  /* ngOnInit() {
+  ngOnInit() {
     this.getTasks();
-  } */
+  }
 
   ionViewDidEnter(){
     this.getTasks();
