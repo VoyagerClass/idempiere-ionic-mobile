@@ -1,3 +1,4 @@
+import { ordini } from './../models/OrdinieFatture';
 import { COre } from './../models/ConteggioOre';
 import { m_product } from './../models/Magazzino';
 import { DistDetails } from './../models/DistDetails';
@@ -74,7 +75,7 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
   }
 
   getCOrder(){
-    return this.http.get(this.EndPoint+"getCOrder");
+    return this.http.get<ordini[]>(this.EndPoint+"getCOrder");
   }
 
   postOpp(opp: Opportunity){
@@ -146,8 +147,8 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
     return this.http.post<ResResponse>(this.EndPoint+"getProcPrelievoEFinito", ordine);
   }
 
-  isCOreComplete(task: COre){
-    return this.http.put(this.EndPoint+"putConteggioOreComplete_"+task.id, task);
+  isCOreComplete(task: COre, id: number){
+    return this.http.put(this.EndPoint+"putConteggioOreComplete_"+id, task);
   }
 
   putCOre(task: COre){

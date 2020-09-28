@@ -11,16 +11,19 @@
       </ion-header>
       <ion-content>
         <ion-list>
-          <ion-item (click)="Direct('/crm')">Leads</ion-item>
-          <ion-item (click)="Direct('/opportunita')">Opportunità</ion-item>
-          <ion-item (click)="Direct('task')">Task</ion-item>
-          <ion-item (click)="openCalendar()">Appuntamenti</ion-item>
-          <ion-item (click)="Direct('/fornitori')">Contatti Clienti e Fornitori</ion-item>
-          <ion-item (click)="Direct('/dettaglio-bp')">Clienti</ion-item>
+          <ion-item (click)="Direct('/crm')" detail>Leads</ion-item>
+          <ion-item (click)="Direct('/opportunita')" detail>Opportunità</ion-item>
+          <ion-item (click)="Direct('task')" detail>Task</ion-item>
+          <ion-item (click)="openCalendar()" detail>Appuntamenti</ion-item>
+          <ion-item (click)="Direct('/fornitori')" detail>Contatti Clienti e Fornitori</ion-item>
+          <ion-item (click)="Direct('/dettaglio-bp')" detail>Clienti</ion-item>
         </ion-list>
       </ion-content>
       <ion-footer>
         <ion-toolbar>
+          <ion-button (click)="Direct('')" expand="full">
+            Menù Principale
+          </ion-button>
           <ion-button expand="full" color="danger" text="white" (click)="LogOut()">
             LogOut
           </ion-button>

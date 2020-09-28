@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ordini</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="true">
+        <ion-label>
+          Ordini Attivi
+        </ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="false">
+        <ion-label>
+          Ordini Passivi
+        </ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let l of list1">
+      <ion-card-header>
+        <ion-card-subtitle>{{l.bp_name}}</ion-card-subtitle>
+        <ion-card-title>{{l.DocumentNo}}</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </ion-list>
+
+</ion-content>
