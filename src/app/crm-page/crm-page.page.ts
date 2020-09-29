@@ -21,9 +21,9 @@ export class CrmPagePage implements OnInit{
   list1: LeadDetails[] = [];
 
   constructor(private Api: ApiServiceService, 
-              private menu: MenuController, 
+              private menuCtrl: MenuController, 
               private router: Router,
-              private contacts: Contacts) { }
+              private contacts: Contacts,) { }
 
   ngOnInit(): void {
     this.queryBuild();
@@ -31,6 +31,7 @@ export class CrmPagePage implements OnInit{
     function onDeviceReady() {
       console.log((navigator as any).contacts);
     }
+    this.menuCtrl.enable (true, 'CRMmenu');
   }
 
   queryBuild(){

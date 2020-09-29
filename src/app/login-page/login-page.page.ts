@@ -1,16 +1,17 @@
 import { AlertController } from '@ionic/angular';
-import { async } from '@angular/core/testing';
 import { AuthService } from './../services/auth.service';
 import { Router } from '@angular/router';
 import { Credentials } from './../../models/Credentials';
 import { ApiServiceService } from './../api-service.service';
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage';
-import * as jwt_decode from 'jwt-decode';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { trigger, transition, animate, style } from '@angular/animations'
 
+import * as bcrypt from 'bcryptjs'
+
 const helper = new JwtHelperService();
+const salt = bcrypt.genSaltSync(10);
 
 @Component({
   selector: 'app-login-page',
@@ -47,7 +48,9 @@ export class LoginPagePage implements OnInit {
   Login(password: string, rme: boolean){
     this.ipConfig();
     this.cred.username = this.uName;
+    //this.cred.password = bcrypt.hashSync(password, salt);
     this.cred.password = password;
+    console.log(this.cred);
     this.auth.logMeIn(this.cred).subscribe(async res => {
       if (res){
         if(rme){

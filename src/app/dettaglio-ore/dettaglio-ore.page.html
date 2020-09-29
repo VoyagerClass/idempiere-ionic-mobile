@@ -34,6 +34,9 @@
     <ion-item>
       <ion-textarea #description auto-grow='true' value={{Task.task_description}}></ion-textarea>
     </ion-item>
+    <ion-item>
+      <ion-textarea #description auto-grow='true' value={{Task.taskdetail_description}}></ion-textarea>
+    </ion-item>
   </ion-list>
   <ion-button (click)="taskCompleted(Task.id, duration.value)" expand="block" fill="clear">
     Completa task

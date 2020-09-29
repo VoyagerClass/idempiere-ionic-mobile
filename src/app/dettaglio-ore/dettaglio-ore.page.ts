@@ -23,7 +23,8 @@ export class DettaglioOrePage implements OnInit {
 
   taskCompleted(id: number, duration: number) {
     let task = new COre;
-    task.isConfirmed = 'Y';
+    task.id = id;
+    task.IsConfirmed = 'Y';
     task.Qty = duration;
     console.log(task);
     this.Api.isCOreComplete(task, id).subscribe((data)=>{
@@ -34,11 +35,12 @@ export class DettaglioOrePage implements OnInit {
 
   modifyTask( id: number, time: string, desc: string, duration: number) {
     let task = new COre;
+    task.id = id;
     task.DateWorkStart = time.slice(0, 19).replace('T', ' ');
     task.Description = desc;
     task.Qty = duration;
-    task.id = id;
-    this.Api.putCOre(task).subscribe((data)=>{
+    console.log(task);
+    this.Api.putCOre(task, id).subscribe((data)=>{
       console.log(data);
     });
   }

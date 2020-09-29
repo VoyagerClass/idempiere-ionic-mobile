@@ -1,3 +1,4 @@
+import { MenuController } from '@ionic/angular';
 import { MenuItem } from './../../models/Menu';
 import { ApiServiceService } from './../api-service.service';
 import { Router } from '@angular/router';
@@ -8,16 +9,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './landing-page.page.html',
   styleUrls: ['./landing-page.page.scss'],
 })
-export class LandingPagePage implements OnInit {
+export class LandingPagePage {
 
-  constructor(private router: Router, private Api: ApiServiceService) { }
+  constructor(private router: Router, private Api: ApiServiceService, private menuCtrl: MenuController) { }
 
   menu: MenuItem;
 
-  ngOnInit() {
-    /* this.Api.getMenu().subscribe((data)=> {
-      this.menu = data;
-    }); */
+  ionViewWillEnter() {
+    this.menuCtrl.enable (false, 'CRMmenu');
   }
 
   goTo(link: string){

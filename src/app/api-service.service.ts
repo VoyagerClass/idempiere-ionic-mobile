@@ -148,11 +148,11 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
   }
 
   isCOreComplete(task: COre, id: number){
-    return this.http.put(this.EndPoint+"putConteggioOreComplete_"+id, task);
+    return this.http.put(this.EndPoint+"putConteggioOreComplete", task);
   }
 
-  putCOre(task: COre){
-    return this.http.put(this.EndPoint+"putModificaConteggioOre"+task.id, task);
+  putCOre(task: COre, id: number){
+    return this.http.put(this.EndPoint+"putModificaConteggioOre", task);
   }
 
   
