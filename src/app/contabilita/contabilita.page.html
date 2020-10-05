@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>contabilita</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button expand="full" class="tasto" (click)="Direct('acquisti')">
+    Fatture di Acquisto
+  </ion-button>
+  <ion-button expand="block" class="tasto" (click)="Direct('vendita')">
+    Fatture di vendita
+  </ion-button>
+  <ion-button expand="block" class="tasto" (click)="Direct('pagamentiincassi')">
+    Pagamenti e Incassi
+  </ion-button>
+</ion-content>

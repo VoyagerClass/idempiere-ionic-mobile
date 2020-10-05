@@ -53,15 +53,16 @@
         <ion-label position="floating">Quantità</ion-label>
         <ion-input type="number" #qty></ion-input>
       </ion-item>
-      <ion-button (click)="isComplete(item.id, qty.value)" expand="full">
+      <ion-button *ngIf="item" [disabled]="!qty.value" (click)="isComplete(item.id, qty.value)" expand="full">
         Completa Ordine
       </ion-button>
-      <ion-button (click)="Prelievo(item.id, item)"  expand="block">
+      <ion-button [disabled]="!item" (click)="Prelievo(item.id, item)"  expand="full">
         Vai a Prelievo
       </ion-button>
-      <ion-button (click)="PrelCompl(item.id, qty.value)" expand="block">
+      <ion-button [disabled]="!item" (click)="PrelCompl(item.id, qty.value)" expand="full">
         Prelievo e Completa Ordine
       </ion-button>
     </ion-list>
   </ion-grid>
 </ion-content>
+

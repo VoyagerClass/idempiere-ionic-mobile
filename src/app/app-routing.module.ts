@@ -80,7 +80,12 @@ const routes: Routes = [
   {
     path: 'ordini',
     loadChildren: () => import('./ordini/ordini.module').then( m => m.OrdiniPageModule)
+  },
+  {
+    path: 'contabilita',
+    loadChildren: () => import('./contabilita/contabilita.module').then( m => m.ContabilitaPageModule)
   }
+
 
 
 
