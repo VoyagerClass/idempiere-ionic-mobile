@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiServiceService } from 'src/app/api-service.service';
+import { ordini } from 'src/models/OrdinieFatture';
 
 @Component({
   selector: 'app-vendita',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VenditaPage implements OnInit {
 
-  constructor() { }
+  list: ordini[] = [];
+
+  constructor(private Api: ApiServiceService) { }
 
   ngOnInit() {
+    this.getData();
+  }
+
+  getData(){
+    this.Api.getInvoice('N').subscribe((data)=>{
+      this.list = data;
+      console.log(this.list);
+    })
   }
 
 }

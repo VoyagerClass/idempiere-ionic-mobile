@@ -19,7 +19,12 @@ const routes: Routes = [
   {
     path: 'pagamentieacquisti',
     loadChildren: () => import('./pagamentieacquisti/pagamentieacquisti.module').then( m => m.PagamentieacquistiPageModule)
+  },
+  {
+    path: 'dettaglio-fattura',
+    loadChildren: () => import('./dettaglio-fattura/dettaglio-fattura.module').then( m => m.DettaglioFatturaPageModule)
   }
+
 ];
 
 @NgModule({

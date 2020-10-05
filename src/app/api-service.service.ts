@@ -70,8 +70,8 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
     return this.http.get<m_product>(this.EndPoint+"getInfoProduct_%25"+id+"%25");
   }
 
-  getInvoice(){
-    return this.http.get(this.EndPoint+"getMobileInvoice");
+  getInvoice(id: string){
+    return this.http.get<ordini[]>(this.EndPoint+"getMobileInvoice_"+id);
   }
 
   getCOrder(){

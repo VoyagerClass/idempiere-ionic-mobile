@@ -4,4 +4,5 @@ export interface ordini{
     bp_name: string;
     bp_value: string;
     id: number;
+    C_Invoice_ID: number;
 }
