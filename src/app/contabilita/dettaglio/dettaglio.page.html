@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>dettaglio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let f of fattura">
+      <ion-card-header>
+        <ion-card-subtitle>{{f.Name}}</ion-card-subtitle>
+        <ion-card-title>{{f.bp_name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label>Prezzo inserito</ion-label>
+            <ion-text>{{f.PriceEntered}}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-label>Prezzo di Listino</ion-label>
+            <ion-text>{{f.PriceList}}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-label>Ammontare totale</ion-label>
+            <ion-text>{{f.GrandTotal}}</ion-text>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

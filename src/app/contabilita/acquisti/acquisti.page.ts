@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiServiceService } from 'src/app/api-service.service';
 import { ordini } from 'src/models/OrdinieFatture';
 
@@ -11,7 +12,7 @@ export class AcquistiPage implements OnInit {
 
   list: ordini[] = [];
 
-  constructor(private Api: ApiServiceService) { }
+  constructor(private Api: ApiServiceService, private router: Router) { }
 
   ngOnInit() {
     this.getData();
@@ -22,6 +23,10 @@ export class AcquistiPage implements OnInit {
       this.list = data;
       console.log(this.list);
     })
+  }
+
+  getDettaglio(id: number){
+    this.router.navigate(['/contabilita/dettaglio/'+id])
   }
 
 }

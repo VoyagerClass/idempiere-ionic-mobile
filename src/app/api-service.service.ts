@@ -1,4 +1,4 @@
-import { ordini } from './../models/OrdinieFatture';
+import { DettaglioFatture, ordini } from './../models/OrdinieFatture';
 import { COre } from './../models/ConteggioOre';
 import { m_product } from './../models/Magazzino';
 import { DistDetails } from './../models/DistDetails';
@@ -73,6 +73,10 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
 
   getInvoice(id: string){
     return this.http.get<ordini[]>(this.EndPoint+"getMobileInvoice_"+id);
+  }
+
+  getDettaglioFattura(id: string){
+    return this.http.get<DettaglioFatture[]>(this.EndPoint+"getFatturaAQ_"+id);
   }
 
   getCOrder(){

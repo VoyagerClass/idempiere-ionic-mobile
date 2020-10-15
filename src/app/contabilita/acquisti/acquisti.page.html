@@ -9,9 +9,9 @@
 
 <ion-content>
   <ion-list>
-    <ion-card *ngFor="let l of list">
+    <ion-card *ngFor="let l of list" (click)="getDettaglio(l.id)">
       <ion-card-header>
-        <ion-card-subtitle>{{l.bp_value}}</ion-card-subtitle>
+        <ion-card-subtitle>{{l.DocumentNo}}</ion-card-subtitle>
         <ion-card-title>{{l.bp_name}}</ion-card-title>
       </ion-card-header>
     </ion-card>

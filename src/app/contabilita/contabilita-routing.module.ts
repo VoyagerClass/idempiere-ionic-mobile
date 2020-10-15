@@ -23,7 +23,12 @@ const routes: Routes = [
   {
     path: 'dettaglio-fattura',
     loadChildren: () => import('./dettaglio-fattura/dettaglio-fattura.module').then( m => m.DettaglioFatturaPageModule)
+  },
+  {
+    path: 'dettaglio/:id',
+    loadChildren: () => import('./dettaglio/dettaglio.module').then( m => m.DettaglioPageModule)
   }
+
 
 ];
 
