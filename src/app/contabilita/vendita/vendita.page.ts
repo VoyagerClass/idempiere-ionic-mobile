@@ -18,7 +18,7 @@ export class VenditaPage implements OnInit {
   }
 
   getData(){
-    this.Api.getInvoice('N').subscribe((data)=>{
+    this.Api.getInvoice('Y').subscribe((data)=>{
       this.list = data;
       console.log(this.list);
     })

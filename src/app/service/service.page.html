@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>service</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let l of list">
+      <ion-card-header>
+        <ion-card-subtitle>{{l.Description}}</ion-card-subtitle>
+        <ion-card-title>{{l.bp_name}}</ion-card-title>
+      </ion-card-header>
+    </ion-card>  
+  </ion-list>
+</ion-content>

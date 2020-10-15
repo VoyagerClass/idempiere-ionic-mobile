@@ -57,7 +57,7 @@
     "@types/node": "^12.12.62",
     "call-number": "^1.0.1",
     "codelyzer": "^5.1.2",
-    "cordova-android": "git+https://github.com/apache/cordova-android.git",
+    "cordova-android": "9.0.0",
     "cordova-plugin-calendar": "^5.1.5",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-email": "^1.2.7",
@@ -73,6 +73,7 @@
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~3.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
+    "mx.ferreyra.callnumber": "0.0.2",
     "phonegap-plugin-barcodescanner": "^8.1.0",
     "protractor": "~5.4.3",
     "ts-node": "~8.3.0",
@@ -94,7 +95,8 @@
       "cordova-plugin-contacts": {},
       "mx.ferreyra.callnumber": {},
       "cordova-plugin-calendar": {},
-      "phonegap-plugin-barcodescanner": {}
+      "phonegap-plugin-barcodescanner": {},
+      "call-number": {}
     },
     "platforms": [
       "android",

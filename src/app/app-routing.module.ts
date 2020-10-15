@@ -84,7 +84,17 @@ const routes: Routes = [
   {
     path: 'contabilita',
     loadChildren: () => import('./contabilita/contabilita.module').then( m => m.ContabilitaPageModule)
+  },
+  {
+    path: 'test',
+    loadChildren: () => import('./test/test.module').then( m => m.TestPageModule)
+  },
+  {
+    path: 'service',
+    loadChildren: () => import('./service/service.module').then( m => m.ServicePageModule)
   }
+
+
 
 
 

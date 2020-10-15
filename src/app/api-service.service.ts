@@ -14,6 +14,7 @@ import { LogAgente } from './../models/LogModel';
 import { LeadDetails } from './../models/LeadDetails';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { WorkOrder } from 'src/models/WorkOrder';
 
 
 
@@ -76,6 +77,10 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
 
   getCOrder(){
     return this.http.get<ordini[]>(this.EndPoint+"getCOrder");
+  }
+
+  getWorkOrder(){
+    return this.http.get<WorkOrder[]>(this.EndPoint+"getWorkOrder");
   }
 
   postOpp(opp: Opportunity){

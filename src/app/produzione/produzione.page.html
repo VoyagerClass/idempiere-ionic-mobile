@@ -16,7 +16,7 @@
         </ion-button>
       </ion-col>
       <ion-col size="8">
-        <ion-input type="text" placeholder="Codice Prodotto" [(ngModel)]="prodCode" (keydown.enter)="showDist()"></ion-input>
+        <ion-input [autofocus]="true" type="text" placeholder="Ordine di Produzione" [(ngModel)]="prodCode" (keydown.enter)="showDist()" [clearInput]="true"></ion-input>
       </ion-col>
       <ion-col size="2">
         <ion-button (click)="showDist()" expand="full">
