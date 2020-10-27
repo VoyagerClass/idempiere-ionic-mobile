@@ -75,6 +75,10 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
     return this.http.get<ordini[]>(this.EndPoint+"getMobileInvoice_"+id);
   }
 
+  getMaterialReceipt(){
+    return this.http.get(this.EndPoint+"getMaterialReceipt");
+  }
+
   getDettaglioFattura(id: string){
     return this.http.get<DettaglioFatture[]>(this.EndPoint+"getFatturaAQ_"+id);
   }

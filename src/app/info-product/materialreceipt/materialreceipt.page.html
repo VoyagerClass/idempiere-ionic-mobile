@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>materialreceipt</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar placeholder="" (ionChange)="onSearchChange($event)" [debounce]="250" showCancelButton="focus"></ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let l of list">
+      <ion-card-header>
+        <ion-card-subtitle>{{l.DocumentNo}}</ion-card-subtitle>
+        <ion-card-title>{{l.C_BPartner_ID}}</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </ion-list>
+</ion-content>

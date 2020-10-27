@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: InfoProductPage
+  },
+  {
+    path: 'materialreceipt',
+    loadChildren: () => import('./materialreceipt/materialreceipt.module').then( m => m.MaterialreceiptPageModule)
   }
 ];
 
