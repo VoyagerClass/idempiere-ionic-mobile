@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>materialreceipt</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Entrata Merci</ion-title>
   </ion-toolbar>
   <ion-toolbar>
     <ion-searchbar placeholder="" (ionChange)="onSearchChange($event)" [debounce]="250" showCancelButton="focus"></ion-searchbar>

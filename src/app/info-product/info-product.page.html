@@ -8,16 +8,16 @@
 </ion-header>
 
 <ion-content>
-  <ion-button expand="full" class="tasto" (click)="Direct('/info-prod-list')">
+  <ion-button expand="block" class="tasto" (click)="Direct('/info-prod-list')">
     Info Product
   </ion-button>
-  <ion-button expand="block" class="tasto">
+  <ion-button expand="block" class="tasto" (click)="Direct('/info-product/inventario')">
     Inventario
   </ion-button>
-  <ion-button expand="block" class="tasto">
+  <ion-button expand="block" class="tasto" (click)="Direct('/info-product/consumo')">
     Consumo
   </ion-button>
-  <ion-button expand="block" class="tasto">
+  <ion-button expand="block" class="tasto" (click)="Direct('/info-product/trasferimento')">
     Trasferimento
   </ion-button>
   <ion-button expand="block" class="tasto" (click)="Direct('/info-product/materialreceipt')">

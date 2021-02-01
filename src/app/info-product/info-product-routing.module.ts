@@ -11,7 +11,20 @@ const routes: Routes = [
   {
     path: 'materialreceipt',
     loadChildren: () => import('./materialreceipt/materialreceipt.module').then( m => m.MaterialreceiptPageModule)
+  },
+  {
+    path: 'inventario',
+    loadChildren: () => import('./inventario/inventario.module').then( m => m.InventarioPageModule)
+  },
+  {
+    path: 'consumo',
+    loadChildren: () => import('./consumo/consumo.module').then( m => m.ConsumoPageModule)
+  },
+  {
+    path: 'trasferimento',
+    loadChildren: () => import('./trasferimento/trasferimento.module').then( m => m.TrasferimentoPageModule)
   }
+
 ];
 
 @NgModule({
