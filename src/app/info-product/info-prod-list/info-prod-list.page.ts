@@ -1,7 +1,7 @@
+import { m_product } from './../../../models/Magazzino';
+import { ApiServiceService } from './../../api-service.service';
 import { ProdDetailComponent } from './prod-detail/prod-detail.component';
 import { ModalController } from '@ionic/angular';
-import { m_product } from './../../models/Magazzino';
-import { ApiServiceService } from './../api-service.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

@@ -1,4 +1,4 @@
-import { m_product } from './../../../models/Magazzino';
+import { m_product } from './../../../../models/Magazzino';
 import { ModalController } from '@ionic/angular';
 import { Component, Input, OnInit } from '@angular/core';
 

@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path: 'trasferimento',
     loadChildren: () => import('./trasferimento/trasferimento.module').then( m => m.TrasferimentoPageModule)
+  },
+  {
+    path: 'info-prod-list',
+    loadChildren: () => import('./info-prod-list/info-prod-list.module').then( m => m.InfoProdListPageModule)
   }
 
 ];

@@ -58,10 +58,6 @@ const routes: Routes = [
     loadChildren: () => import('./info-product/info-product.module').then( m => m.InfoProductPageModule)
   },
   {
-    path: 'info-prod-list',
-    loadChildren: () => import('./info-prod-list/info-prod-list.module').then( m => m.InfoProdListPageModule)
-  },
-  {
     path: 'dettaglio-bp',
     loadChildren: () => import('./dettaglio-bp/dettaglio-bp.module').then( m => m.DettaglioBPPageModule)
   },
