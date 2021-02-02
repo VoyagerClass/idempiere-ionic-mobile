@@ -1,8 +1,11 @@
+import { PopoverComponent } from './../src/app/landing-page/popover/popover.component';
 import { MenuController } from '@ionic/angular';
 import { MenuItem } from './../../models/Menu';
 import { ApiServiceService } from './../api-service.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { PopoverController } from '@ionic/angular'
+
 
 @Component({
   selector: 'app-landing-page',
@@ -11,7 +14,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPagePage {
 
-  constructor(private router: Router, private Api: ApiServiceService, private menuCtrl: MenuController) { }
+  constructor(private router: Router, private Api: ApiServiceService, private menuCtrl: MenuController, private popoverController: PopoverController) { }
 
   menu: MenuItem;
 
@@ -23,4 +26,13 @@ export class LandingPagePage {
     this.router.navigateByUrl(link);
   }
 
+  async presentPopover(ev: any) {
+    const popover = await this.popoverController.create({
+      component: PopoverComponent,
+      cssClass: 'my-custom-class',
+      event: ev,
+      translucent: true
+    });
+    return await popover.present();
+  }
 }
