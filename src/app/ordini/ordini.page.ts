@@ -24,6 +24,7 @@ export class OrdiniPage implements OnInit {
     this.Api.getCOrder().subscribe((data)=> {
       this.list = data;
       this.list1 = _.where(data, {IsSOTrx: true});
+      console.log(data);
     })
   }
   segmentChanged(ev: any){
