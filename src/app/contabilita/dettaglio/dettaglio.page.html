@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>dettaglio</ion-title>
+    <ion-title>Dettaglio</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,8 +11,8 @@
   <ion-list>
     <ion-card *ngFor="let f of fattura">
       <ion-card-header>
-        <ion-card-subtitle>{{f.Name}}</ion-card-subtitle>
-        <ion-card-title>{{f.bp_name}}</ion-card-title>
+        <ion-card-subtitle>{{f.bp_name}}</ion-card-subtitle>
+        <ion-card-title>{{f.Name}}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <ion-list>

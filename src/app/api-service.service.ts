@@ -87,8 +87,8 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
     return this.http.get<ordini[]>(this.EndPoint+"getCOrder");
   }
 
-  getWorkOrder(){
-    return this.http.get<WorkOrder[]>(this.EndPoint+"getWorkOrder");
+  getWorkOrder(id: string){
+    return this.http.get<WorkOrder[]>(this.EndPoint+"getWorkOrder_%25"+id+"%25");
   }
 
   postOpp(opp: Opportunity){

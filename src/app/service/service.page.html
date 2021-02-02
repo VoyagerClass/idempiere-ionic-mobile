@@ -5,6 +5,9 @@
     </ion-buttons>
     <ion-title>Service</ion-title>
   </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar inputmode="text" type="text" (ionChange)="onSearchChange($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>

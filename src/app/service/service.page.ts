@@ -18,8 +18,14 @@ export class ServicePage implements OnInit {
   }
 
   getData(){
-    this.Api.getWorkOrder().subscribe((data)=>{
+    this.Api.getWorkOrder("").subscribe((data)=>{
       console.log(data);
+      this.list = data;
+    })
+  }
+
+  onSearchChange(ev: any){
+    this.Api.getWorkOrder(ev.detail.value).subscribe((data)=>{
       this.list = data;
     })
   }
