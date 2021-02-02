@@ -1,5 +1,5 @@
 {
-  "name": "mobileapp",
+  "name": "MobilAapp",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -33,7 +33,7 @@
     "@ionic/angular": "^5.0.0",
     "@ionic/storage": "^2.3.0",
     "@types/underscore": "^1.10.22",
-    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
     "chart.js": "^2.9.3",
     "cordova-browser": "6.0.0",
     "cordova-plugin-contacts": "^3.0.1",
