@@ -1,4 +1,4 @@
-import { PopoverComponent } from './../src/app/landing-page/popover/popover.component';
+import { PopoverComponent } from './popover/popover.component';
 import { MenuController } from '@ionic/angular';
 import { MenuItem } from './../../models/Menu';
 import { ApiServiceService } from './../api-service.service';
@@ -26,10 +26,10 @@ export class LandingPagePage {
     this.router.navigateByUrl(link);
   }
 
-  async presentPopover(ev: any) {
-    const popover = await this.popoverController.create({
+  async popoverMenu(ev: any) {
+    let popover = await this.popoverController.create({
       component: PopoverComponent,
-      cssClass: 'my-custom-class',
+      cssClass: 'popover',
       event: ev,
       translucent: true
     });
