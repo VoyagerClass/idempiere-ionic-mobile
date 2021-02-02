@@ -88,7 +88,11 @@ const routes: Routes = [
   {
     path: 'service',
     loadChildren: () => import('./service/service.module').then( m => m.ServicePageModule)
+  },  {
+    path: 'area-utente',
+    loadChildren: () => import('./area-utente/area-utente.module').then( m => m.AreaUtentePageModule)
   }
+
 
 
 

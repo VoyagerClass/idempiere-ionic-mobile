@@ -1,0 +1,17 @@
+.flex-right {
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.flex-left {
+    display: flex;
+    justify-content: flex-start;
+    align-self: flex-start;
+}
