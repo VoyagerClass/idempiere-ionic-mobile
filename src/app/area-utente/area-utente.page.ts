@@ -10,6 +10,8 @@ export class AreaUtentePage implements OnInit {
 
   constructor(private auth: AuthService) { }
 
+  email = localStorage.getItem('username')
+
   ngOnInit() {
   }
 
