@@ -18,4 +18,6 @@ export class AreaUtentePage implements OnInit {
   LogOut(){
     this.auth.logout();
   }
+
+  
 }
