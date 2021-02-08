@@ -7,5 +7,5 @@ export class Utente{
     Name: string;
     Phone: number;
     EMail: string;
-    Supervisor: string;
+    Supervisor_ID: string;
 }

@@ -28,8 +28,8 @@ export class AreaUtentePage implements OnInit {
   }
 
   getSupervisor(){
-    if(this.user.Supervisor){
-      this.api.getInfoUtente(this.user.Supervisor).subscribe((data)=>{
+    if(this.user.Supervisor_ID){
+      this.api.getInfoUtente(this.user.Supervisor_ID).subscribe((data)=>{
         this.supervisor=data[0];
         console.log(data);
       })

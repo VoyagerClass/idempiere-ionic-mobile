@@ -17,23 +17,32 @@
       <div style="margin-left: 8px;">
         <p>{{user.EMail}}</p>
         <p>{{user.Phone}}</p>
-        <div *ngIf="user.Supervisor">
+        <div *ngIf="user.Supervisor_ID">
           <h3>Responsabile</h3>
-          <p>email responsabile</p>
-          <p>numero responsabile</p>
+          <p>{{supervisor.Name}}</p>
+          <p>{{supervisor.EMail}}</p>
+          <p>{{supervisor.Phone}}</p>
         </div>
       </div>
     </div>
-    <ion-button expand="block" shape="round">
-      Modifica Tema
-    </ion-button>
   </ion-grid>
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-    <ion-button (click)="LogOut()" expand="block" color="danger" shape="round">
-      Logout
-    </ion-button>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="10">
+          <ion-button expand="full">
+            Modifica Tema
+          </ion-button>
+        </ion-col>
+        <ion-col size="2">
+          <ion-button (click)="LogOut()" expand="full" color="danger" >
+            <ion-icon name="log-out-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-toolbar>
 </ion-footer>
