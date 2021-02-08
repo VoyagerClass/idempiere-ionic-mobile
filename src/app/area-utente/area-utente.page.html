@@ -12,13 +12,17 @@
     <ion-row class="flex-center">
       <img style="height: 96px; width: 96px; border-radius: 50%;" src="http://www.lafenicesportebenessere.it/images/tpl_jdseattle/sagoma-uomo.jpg" alt="">
     </ion-row>
-    <div style="margin-left: 8px;">
-      <h3><p>Nome Utente</p></h3>
-      <p>{{email}}</p>
-      <p>numero telefono</p>
-      <h3>Responsabile</h3>
-      <p>email responsabile</p>
-      <p>numero responsabile</p>
+    <div>
+      <h3 style="text-align: center;"><p>{{user.Name}}</p></h3>
+      <div style="margin-left: 8px;">
+        <p>{{user.EMail}}</p>
+        <p>{{user.Phone}}</p>
+        <div *ngIf="user.Supervisor">
+          <h3>Responsabile</h3>
+          <p>email responsabile</p>
+          <p>numero responsabile</p>
+        </div>
+      </div>
     </div>
     <ion-button expand="block" shape="round">
       Modifica Tema

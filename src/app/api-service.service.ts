@@ -6,7 +6,7 @@ import { OrdCompl, PrelievoCompl, ResResponse } from './../models/OrderComp';
 import { Distinta } from './../models/Distinta';
 import { MenuItem } from './../models/Menu';
 import { TResponse } from './../models/TokenResponse';
-import { Credentials } from './../models/Credentials';
+import { Credentials, Utente } from './../models/Credentials';
 import { Opportunity } from './../models/OpportunityModel';
 import { FornitoriModel } from './../models/FornitoriModel';
 import { Task } from './../models/TaskLog';
@@ -166,6 +166,10 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
 
   putCOre(task: COre, id: number){
     return this.http.put(this.EndPoint+"putModificaConteggioOre", task);
+  }
+
+  getInfoUtente(id: string){
+    return this.http.get<Utente>(this.EndPoint+"getDatiUtente_"+id);
   }
 
   

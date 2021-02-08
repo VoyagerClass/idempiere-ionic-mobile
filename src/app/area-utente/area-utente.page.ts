@@ -1,3 +1,5 @@
+import { Utente } from './../../models/Credentials';
+import { ApiServiceService } from 'src/app/api-service.service';
 import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,11 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AreaUtentePage implements OnInit {
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private api: ApiServiceService) { }
 
-  email = localStorage.getItem('username')
+  user= new Utente;
+  supervisor = new Utente;
 
   ngOnInit() {
+    this.getUtente();
+  }
+
+  getUtente(){
+    let id = localStorage.getItem('ADuser')
+    this.api.getInfoUtente(id).subscribe((data)=>{
+      this.user = data[0];
+      console.log(data);
+    })
+  }
+
+  getSupervisor(){
+    if(this.user.Supervisor){
+      this.api.getInfoUtente(this.user.Supervisor).subscribe((data)=>{
+        this.supervisor=data[0];
+        console.log(data);
+      })
+    }
   }
 
   LogOut(){
