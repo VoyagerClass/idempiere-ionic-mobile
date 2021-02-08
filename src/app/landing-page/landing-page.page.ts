@@ -19,6 +19,7 @@ export class LandingPagePage {
   ionViewWillEnter() {
     this.menuCtrl.enable (false, 'CRMmenu');
     this.menuCtrl.enable (false, 'InfoProduct');
+    this.menuCtrl.enable (false, 'Contabilita');
   }
 
   goTo(link: string){

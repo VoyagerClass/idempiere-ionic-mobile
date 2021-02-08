@@ -1,3 +1,4 @@
+import { MenuController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiServiceService } from 'src/app/api-service.service';
@@ -12,9 +13,10 @@ export class AcquistiPage implements OnInit {
 
   list: ordini[] = [];
 
-  constructor(private Api: ApiServiceService, private router: Router) { }
+  constructor(private Api: ApiServiceService, private router: Router, private menuCtrl: MenuController) { }
 
   ngOnInit() {
+    this.menuCtrl.enable (true, 'Contabilita');
     this.getData();
   }
 

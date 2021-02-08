@@ -171,7 +171,6 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
   getInfoUtente(id: string){
     return this.http.get<Utente>(this.EndPoint+"getDatiUtente_"+id);
   }
-
-  
+    
   
 }

@@ -14,6 +14,7 @@ export class AreaUtentePage implements OnInit {
 
   user= new Utente;
   supervisor = new Utente;
+  url = ""
 
   ngOnInit() {
     this.getUtente();
@@ -24,6 +25,7 @@ export class AreaUtentePage implements OnInit {
     this.api.getInfoUtente(id).subscribe((data)=>{
       this.user = data[0];
       console.log(data);
+      this.url = this.getQrCode(this.user);
     })
   }
 
@@ -36,9 +38,16 @@ export class AreaUtentePage implements OnInit {
     }
   }
 
+  getQrCode(item: Utente){
+    let url= "https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=BEGIN:VCARD%0AN: "+item.Name+"%20%20 %0ATEL;CELL: "+item.Phone+" %0AEMAIL: "+item.EMail+" %0AEND:VCARD"
+    return (url);
+  }
+
   LogOut(){
     this.auth.logout();
   }
 
+  //QR CODE DA FAR SCANNERIZZARE SE SI VUOLE AGGIUNGERE IL CONTATTO, SOSTITUIRE NOME, COGNOME, TELEFONO E EMAIL.
+  // https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=BEGIN:VCARD%0AN: NOME %20%20 COGNOME %0ATEL;CELL: TELEFONO %0AEMAIL: EMAIL %0AEND:VCARD
   
 }
