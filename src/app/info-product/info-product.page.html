@@ -3,24 +3,20 @@
     <ion-buttons slot="start">
       <ion-menu-button menu="InfoProduct"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Magazzino</ion-title>
+    <ion-title>Lista Prodotti</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar inputmode="text" type="text" (ionChange)="onSearchChange($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button expand="block" class="tasto" (click)="Direct('/info-product/info-prod-list')">
-    Info Product
-  </ion-button>
-  <ion-button expand="block" class="tasto" (click)="Direct('/info-product/inventario')">
-    Inventario
-  </ion-button>
-  <ion-button expand="block" class="tasto" (click)="Direct('/info-product/consumo')">
-    Consumo
-  </ion-button>
-  <ion-button expand="block" class="tasto" (click)="Direct('/info-product/trasferimento')">
-    Trasferimento
-  </ion-button>
-  <ion-button expand="block" class="tasto" (click)="Direct('/info-product/materialreceipt')">
-    Entrata Merci
-  </ion-button>
+  <ion-list>
+    <ion-card *ngFor="let l of list" (click)="showModal(l)">
+      <ion-card-header>
+        <ion-card-subtitle>{{l.Value}}</ion-card-subtitle>
+        <ion-card-title>{{l.Name}}</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </ion-list>
 </ion-content>
