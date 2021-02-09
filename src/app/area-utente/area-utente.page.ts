@@ -2,6 +2,8 @@ import { Utente } from './../../models/Credentials';
 import { ApiServiceService } from 'src/app/api-service.service';
 import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { PopoverController } from '@ionic/angular';
+import { QrcodeComponent } from './qrcode/qrcode.component';
 
 @Component({
   selector: 'app-area-utente',
@@ -10,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AreaUtentePage implements OnInit {
 
-  constructor(private auth: AuthService, private api: ApiServiceService) { }
+  constructor(private auth: AuthService, private api: ApiServiceService, private popoverController: PopoverController) { }
 
   user= new Utente;
   supervisor = new Utente;
@@ -45,6 +47,19 @@ export class AreaUtentePage implements OnInit {
 
   LogOut(){
     this.auth.logout();
+  }
+
+  async shareContact(ev: any) {
+    const popover = await this.popoverController.create({
+      component: QrcodeComponent,
+      componentProps: {
+        user: ev
+      },
+      cssClass: 'my-custom-class',
+      event: ev,
+      translucent: true
+    });
+    return await popover.present();
   }
 
   //QR CODE DA FAR SCANNERIZZARE SE SI VUOLE AGGIUNGERE IL CONTATTO, SOSTITUIRE NOME, COGNOME, TELEFONO E EMAIL.
