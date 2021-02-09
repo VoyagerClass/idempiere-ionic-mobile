@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PopoverController } from '@ionic/angular';
 import { Utente } from 'src/models/Credentials';
 
 @Component({
@@ -10,7 +11,7 @@ export class QrcodeComponent implements OnInit {
 
   @Input() user: Utente; 
 
-  constructor() { }
+  constructor(private popoverController: PopoverController) { }
   
   url = ""
 
@@ -21,6 +22,10 @@ export class QrcodeComponent implements OnInit {
   getQrCode(item: Utente){
     let url= "https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=BEGIN:VCARD%0AN: "+item.Name+"%20%20 %0ATEL;CELL: "+item.Phone+" %0AEMAIL: "+item.EMail+" %0AEND:VCARD"
     return (url);
+  }
+
+  popoverDismiss(){
+    this.popoverController.dismiss();
   }
 
 }
