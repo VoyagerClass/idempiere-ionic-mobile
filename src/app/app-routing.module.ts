@@ -88,13 +88,10 @@ const routes: Routes = [
   {
     path: 'service',
     loadChildren: () => import('./service/service.module').then( m => m.ServicePageModule)
-  },  {
-    path: 'area-utente',
-    loadChildren: () => import('./area-utente/area-utente.module').then( m => m.AreaUtentePageModule)
   },
   {
-    path: 'barcode-scanner',
-    loadChildren: () => import('./services/plugins/barcode-scanner/barcode-scanner.module').then( m => m.BarcodeScannerPageModule)
+    path: 'area-utente',
+    loadChildren: () => import('./area-utente/area-utente.module').then( m => m.AreaUtentePageModule)
   }
 
 

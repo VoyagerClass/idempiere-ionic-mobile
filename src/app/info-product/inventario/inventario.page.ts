@@ -1,3 +1,6 @@
+import { Router } from '@angular/router';
+import { InventoryItem } from './../../../models/InfoProduct';
+import { ApiServiceService } from 'src/app/api-service.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InventarioPage implements OnInit {
 
-  constructor() { }
+  constructor(private api: ApiServiceService, private router:Router) { }
+
+  list:InventoryItem[];
 
   ngOnInit() {
+    this.getInventoryList();
   }
+
+  getInventoryList(){
+    this.api.getInventory().subscribe((data)=>{
+      this.list = data;
+      console.log(this.list);
+    })
+  }
+
+  itemDetail(id: number){
+    this.router.navigate(['/info-product/inventario/item-details/'+id]);
+  }
+
 
 }
