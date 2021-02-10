@@ -173,8 +173,8 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
     return this.http.get<Utente>(this.EndPoint+"getDatiUtente_"+id);
   }
 
-  getInventory(){
-    return this.http.get<InventoryItem[]>(this.EndPoint+"getInventory");
+  getInventory(search: string){
+    return this.http.get<InventoryItem[]>(this.EndPoint+"getInventory_%25"+search+"%25");
   }
 
   getInventoryList(id: string){

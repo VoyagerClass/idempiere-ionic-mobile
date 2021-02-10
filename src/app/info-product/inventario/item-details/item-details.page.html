@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>itemDetails</ion-title>
+    <ion-title>Dettaglio Inventario</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,9 +11,23 @@
   <ion-list>
     <ion-card *ngFor="let i of items">
       <ion-card-header>
-        <ion-card-subtitle>{{i.id}}</ion-card-subtitle>
-        <ion-card-title>{{i.Description}}</ion-card-title>
+        <ion-card-subtitle>{{i.Value}}</ion-card-subtitle>
+        <ion-card-title>{{i.Name}}</ion-card-title>
       </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>Quantità contata</ion-label>
+          <ion-text color="primary">
+            <p>{{i.QtyCount}}</p>
+          </ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Quantità registrata</ion-label>
+          <ion-text color="primary">
+            <p>{{i.QtyBook}}</p>
+          </ion-text>
+        </ion-item>
+      </ion-card-content>
     </ion-card>
   </ion-list>
 </ion-content>

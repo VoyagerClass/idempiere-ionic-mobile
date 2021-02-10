@@ -19,7 +19,7 @@ export class InventarioPage implements OnInit {
   }
 
   getInventoryList(){
-    this.api.getInventory().subscribe((data)=>{
+    this.api.getInventory("").subscribe((data)=>{
       this.list = data;
       console.log(this.list);
     })
@@ -27,6 +27,12 @@ export class InventarioPage implements OnInit {
 
   itemDetail(id: number){
     this.router.navigate(['/info-product/inventario/item-details/'+id]);
+  }
+
+  onSearchChange(ev: any){
+    this.api.getInventory(ev.detail.value).subscribe((data)=>{
+      this.list = data;
+    })
   }
 
 

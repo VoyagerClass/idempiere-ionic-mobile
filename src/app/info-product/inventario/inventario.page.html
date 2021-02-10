@@ -6,7 +6,7 @@
     <ion-title>Inventario</ion-title>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-searchbar inputmode="text" type="text" [debounce]="250" showCancelButton="always"></ion-searchbar>
+    <ion-searchbar inputmode="text" type="text" (ionChange)="onSearchChange($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
@@ -14,7 +14,7 @@
   <ion-list>
     <ion-card *ngFor="let l of list" (click)="itemDetail(l.id)">
       <ion-card-header>
-        <ion-card-subtitle>{{l.DocumentNo}}</ion-card-subtitle>
+        <ion-card-subtitle>{{l.Name}}</ion-card-subtitle>
         <ion-card-title>{{l.Description}}</ion-card-title>
       </ion-card-header>
     </ion-card>
