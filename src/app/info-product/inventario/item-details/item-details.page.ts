@@ -1,6 +1,6 @@
 import { InventoryItem, InventoryDetails } from './../../../../models/InfoProduct';
 import { ApiServiceService } from 'src/app/api-service.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemDetailsPage implements OnInit {
 
-  constructor(private route:ActivatedRoute, private api:ApiServiceService) { }
+  constructor(private route:ActivatedRoute, private api:ApiServiceService, private router: Router) { }
 
   itemId: string;
   items: InventoryDetails[];
@@ -32,6 +32,10 @@ export class ItemDetailsPage implements OnInit {
       this.items = data;
       console.log(this.items);
     })
+  }
+
+  newItem(){
+    this.router.navigateByUrl('/inserimento-prodotto');
   }
 
 }

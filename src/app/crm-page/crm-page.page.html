@@ -4,9 +4,16 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Leads</ion-title>
+    <ion-buttons slot="end">
+      <ion-button shape="round" (click)="visible = !visible">
+        <ion-icon name="search-outline"></ion-icon> 
+      </ion-button>  
+    </ion-buttons>
   </ion-toolbar>
-  <ion-toolbar>
-  
+  <ion-toolbar *ngIf="visible" [@slideInOut] >
+    <ion-searchbar inputmode="text" type="text" (ionChange)="SearchLead($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="!visible" [@slideInOut] >
     <ion-segment value='N' (ionChange)="segmentChanged($event)">
       <ion-segment-button value="N">
         <ion-label>Nuovi</ion-label>
@@ -21,7 +28,7 @@
         <ion-label>Scaduti</ion-label>
       </ion-segment-button>
     </ion-segment>
-</ion-toolbar>
+  </ion-toolbar>
 </ion-header>
 
 

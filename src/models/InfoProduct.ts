@@ -14,3 +14,9 @@ export interface InventoryDetails{
     Value: string;
     ​​id: number;
 }
+
+export interface ProductList{
+    Description: string;
+    Name: string;
+    Value: string;
+}

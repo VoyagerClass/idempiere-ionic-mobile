@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import {MenuController} from '@ionic/angular'
 import {Router} from '@angular/router'
 import * as _ from 'underscore';
+import { trigger, transition, animate, style } from '@angular/animations'
 
 
 
@@ -12,13 +13,25 @@ import * as _ from 'underscore';
 @Component({
   selector: 'crm-page',
   templateUrl: 'crm-page.page.html',
-  styleUrls: ['crm-page.page.scss']
+  styleUrls: ['crm-page.page.scss'],
+  animations: [
+    trigger('slideInOut', [
+      transition(':enter', [
+        style({transform: 'translateX(-100%)'}),
+        animate('200ms ease-in', style({transform: 'translateX(0%)'}))
+      ]),
+      transition(':leave', [
+        animate('200ms ease-in', style({transform: 'translateX(-100%)'}))
+      ])
+    ])
+  ]
 })
 export class CrmPagePage implements OnInit{
 
 
   list: LeadDetails[] = [];
   list1: LeadDetails[] = [];
+  visible = false;
 
   constructor(private Api: ApiServiceService, 
               private menuCtrl: MenuController, 
@@ -73,6 +86,10 @@ export class CrmPagePage implements OnInit{
       console.log('Async operation has ended');
       event.target.complete();
     }, 2000);
+  }
+
+  SearchLead(){
+    
   }
 
   

@@ -1,4 +1,4 @@
-import { InventoryItem, InventoryDetails } from './../models/InfoProduct';
+import { InventoryItem, InventoryDetails, ProductList } from './../models/InfoProduct';
 import { DettaglioFatture, ordini } from './../models/OrdinieFatture';
 import { COre } from './../models/ConteggioOre';
 import { m_product } from './../models/Magazzino';
@@ -179,6 +179,14 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
 
   getInventoryList(id: string){
     return this.http.get<InventoryDetails[]>(this.EndPoint+"getInventoryLine_"+id);
+  }
+
+  getInventoryListProducts(search: string){
+    return this.http.get<ProductList[]>(this.EndPoint+"getProdInventario_%25"+search+"%25");
+  }
+
+  postInventoryListProduct(){
+    
   }
     
   

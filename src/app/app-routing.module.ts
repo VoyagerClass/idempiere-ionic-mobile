@@ -92,7 +92,11 @@ const routes: Routes = [
   {
     path: 'area-utente',
     loadChildren: () => import('./area-utente/area-utente.module').then( m => m.AreaUtentePageModule)
+  },  {
+    path: 'inserimento-prodotto',
+    loadChildren: () => import('./info-product/inventario/item-details/inserimento-prodotto/inserimento-prodotto.module').then( m => m.InserimentoProdottoPageModule)
   }
+
 
 
 

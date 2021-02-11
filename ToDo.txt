@@ -1,0 +1,26 @@
+inventario if00 m_inventory value name description documentno \\ per creare la vista creare vista where docstatus=dr \\copiare produzione
+	-dare la possibilità di aggiungere un prodotto
+	-scanner
+	-crea nuove voci di inventario con figli (consumo)
+
+	lit_mobile_inventoryline_v 	per vedere le sottovoci dei diversi inventari
+	lit_mobile_inventory_v		per vedere i diversi inventari
+
+PAGINA INSERIMENTO PRODOTTO
+	la ricerca viene fatta tramite o inserimento da tastiera col nome del prodotto e da una lista o tramite scansione codice
+	-bisogna fare una vista dove c'è la concatenazione del nome prodotto con il codice prodotto per la ricerca
+	-una volta trovato il prodotto premere e la possibilità di inserirne la quantità
+
+	CHIEDERE A MARCO COME SI INSERISCE UN PRODOTTO NELLA LISTA!!!
+	
+
+consumo csm00 m_inventory carico\scarico spostare in produzione prelievo CANCELLA diventa parte di inventario
+
+trasferimento 
+	-bisogna fare delle insert
+
+PAGINA DETTAGLIO LEAD
+	-Creare nella vista app filter con nome campagna (in un futuro si vedranno solo i propri lead), e altro chiedere a Marco
+	-Lead fornitore
+	-Lead partner
+	-Lead filtro per campagna/categoria
