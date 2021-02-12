@@ -60,6 +60,11 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
     return this.http.get<COre[]>(this.EndPoint+"getConteggioOre_"+id);
   }
 
+  getConteggioOreComplete(){
+    let id = localStorage.getItem('ADuser');
+    return this.http.get<COre[]>(this.EndPoint+"getConteggioOreComplete_"+id)
+  }
+
   getDistinta(id: string){
     return this.http.get<Distinta[]>(this.EndPoint+"getDist_"+id);
   }
@@ -187,6 +192,10 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
 
   postInventoryListProduct(){
     
+  }
+
+  leadSearch(search: string){
+    return this.http.get<LeadDetails[]>(this.EndPoint+"getLeadSearch_%25"+search+"%25");
   }
     
   

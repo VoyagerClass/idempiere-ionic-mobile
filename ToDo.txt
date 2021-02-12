@@ -1,6 +1,6 @@
 inventario if00 m_inventory value name description documentno \\ per creare la vista creare vista where docstatus=dr \\copiare produzione
 	-dare la possibilità di aggiungere un prodotto
-	-scanner
+	-scanner (fatto la ricerca, per ora funziona solo cercando il nome del prodotto... da estendere la vista con appfilter)
 	-crea nuove voci di inventario con figli (consumo)
 
 	lit_mobile_inventoryline_v 	per vedere le sottovoci dei diversi inventari
@@ -21,6 +21,12 @@ trasferimento
 
 PAGINA DETTAGLIO LEAD
 	-Creare nella vista app filter con nome campagna (in un futuro si vedranno solo i propri lead), e altro chiedere a Marco
+		per ora funziona solo per campaign name
 	-Lead fornitore
 	-Lead partner
 	-Lead filtro per campagna/categoria
+
+RIEPILOGO ORE
+	fare due parti, la parte che c'è già... e un calendario che fa la possibilità di vedere tutti i giorni fino al 1970 scorribile
+	dateworkstart per data task completata
+	https://jamboard.google.com/d/14VS4wkY1hYToeVWasGuvqQtIhzY7945k0Y1W1Z2wmsI/viewer?f=0

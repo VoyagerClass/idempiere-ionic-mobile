@@ -14,6 +14,7 @@ import * as _ from 'underscore';
 export class ConteggioOrePage {
 
   list: COre[] = [];
+  visible = false;
 
   constructor(private Api: ApiServiceService, private router: Router, private ModalCtrl: ModalController) { }
 

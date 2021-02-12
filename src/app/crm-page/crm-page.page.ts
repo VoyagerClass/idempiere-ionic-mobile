@@ -88,8 +88,12 @@ export class CrmPagePage implements OnInit{
     }, 2000);
   }
 
-  SearchLead(){
-    
+  SearchLead(ev: any){
+    if(ev.detail.value != ""){
+      this.Api.leadSearch(ev.detail.value).subscribe((data)=>{
+        this.list1 = data;
+      })
+    }
   }
 
   
