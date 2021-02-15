@@ -60,6 +60,11 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
     return this.http.get<COre[]>(this.EndPoint+"getConteggioOre_"+id);
   }
 
+  getOreCompletate(){
+    let id = localStorage.getItem('ADuser');
+    return this.http.get<COre[]>(this.EndPoint+"getOreCompletate_"+id);
+  }
+
   getConteggioOreComplete(){
     let id = localStorage.getItem('ADuser');
     return this.http.get<COre[]>(this.EndPoint+"getConteggioOreComplete_"+id)

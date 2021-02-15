@@ -95,6 +95,10 @@ const routes: Routes = [
   },  {
     path: 'inserimento-prodotto',
     loadChildren: () => import('./info-product/inventario/item-details/inserimento-prodotto/inserimento-prodotto.module').then( m => m.InserimentoProdottoPageModule)
+  },
+  {
+    path: 'ore-completate',
+    loadChildren: () => import('./conteggio-ore/ore-completate/ore-completate.module').then( m => m.OreCompletatePageModule)
   }
 
 
