@@ -30,3 +30,16 @@ RIEPILOGO ORE
 	fare due parti, la parte che c'è già... e un calendario che fa la possibilità di vedere tutti i giorni fino al 1970 scorribile
 	dateworkstart per data task completata
 	https://jamboard.google.com/d/14VS4wkY1hYToeVWasGuvqQtIhzY7945k0Y1W1Z2wmsI/viewer?f=0
+
+
+INSERIMENTO TASK
+	selezione del task fare l'elenco
+	assegnazione a persona default IO
+	Qty quantità ore
+	prodotto step 2
+	info lavoro
+
+	get task, get utenti
+	post task[TAK10]
+
+	vista: name qty data

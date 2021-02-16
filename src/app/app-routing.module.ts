@@ -104,6 +104,10 @@ const routes: Routes = [
   {
     path: 'ore-completate',
     loadChildren: () => import('./conteggio-ore/ore-completate/ore-completate.module').then( m => m.OreCompletatePageModule)
+  },
+  {
+    path: 'attivita',
+    loadChildren: () => import('./conteggio-ore/attivita/attivita.module').then( m => m.AttivitaPageModule)
   }
 
 

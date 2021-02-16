@@ -202,6 +202,10 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
   leadSearch(search: string){
     return this.http.get<LeadDetails[]>(this.EndPoint+"getLeadSearch_%25"+search+"%25");
   }
+
+  getTaskList(){
+    return this.http.get<Task[]>(this.EndPoint+"getTaskList");
+  }
     
   
 }

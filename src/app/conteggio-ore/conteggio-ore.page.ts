@@ -31,9 +31,12 @@ export class ConteggioOrePage {
     })
   }
 
-
   getDetails(task: COre){
     this.router.navigate(['/dettaglio-ore'], {state:{task:task}})
+  }
+
+  Direct(){
+    this.router.navigateByUrl('/attivita');
   }
 
 }

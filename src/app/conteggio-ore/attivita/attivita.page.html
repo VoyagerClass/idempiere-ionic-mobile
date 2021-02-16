@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Inserimento attività</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>  
+    <ion-label>Attività</ion-label>
+    <ion-select  >
+      <ion-select-option *ngFor="let l of list" value={{l.id}}>{{l.Name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-content>
