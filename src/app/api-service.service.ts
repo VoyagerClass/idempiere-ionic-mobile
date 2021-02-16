@@ -1,6 +1,6 @@
 import { InventoryItem, InventoryDetails, ProductList } from './../models/InfoProduct';
 import { DettaglioFatture, ordini } from './../models/OrdinieFatture';
-import { COre } from './../models/ConteggioOre';
+import { COre, SalesRep } from './../models/ConteggioOre';
 import { m_product } from './../models/Magazzino';
 import { DistDetails } from './../models/DistDetails';
 import { OrdCompl, PrelievoCompl, ResResponse } from './../models/OrderComp';
@@ -205,6 +205,10 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
 
   getTaskList(){
     return this.http.get<Task[]>(this.EndPoint+"getTaskList");
+  }
+
+  getSalesRepList(){
+    return this.http.get<SalesRep[]>(this.EndPoint+"getSalesRepList");
   }
     
   

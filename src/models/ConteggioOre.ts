@@ -11,3 +11,8 @@ export class COre{
     Description: string;
     completiondate: string;
 }
+
+export interface SalesRep{
+    id: number;
+    Name: string;
+}
