@@ -1,4 +1,4 @@
-import { ModalController } from '@ionic/angular';
+import { ModalController, MenuController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { COre } from './../../models/ConteggioOre';
 import { ApiServiceService } from './../api-service.service';
@@ -16,11 +16,12 @@ export class ConteggioOrePage {
   list: COre[] = [];
   visible = false;
 
-  constructor(private Api: ApiServiceService, private router: Router, private ModalCtrl: ModalController) { }
+  constructor(private Api: ApiServiceService, private router: Router, private ModalCtrl: ModalController, private menuCtrl: MenuController) { }
 
 
   ionViewDidEnter(){
     this.getTasks();
+    this.menuCtrl.enable (true, 'TaskDetail');
   }
 
   getTasks(){

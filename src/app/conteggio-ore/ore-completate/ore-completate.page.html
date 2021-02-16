@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button menu="menuId"></ion-menu-button>
+      <ion-menu-button menu="TaskDetail"></ion-menu-button>
     </ion-buttons>
     <ion-title>Ore Completate: {{TotOre}}</ion-title>
   </ion-toolbar>
@@ -27,19 +27,19 @@
     <ion-grid fixed>
       <ion-row>
         <ion-col size="2">
-          <ion-button  fill="clear">
+          <ion-button  fill="clear" (click)="changeDay(-1)">
             <ion-icon name="chevron-back-outline"></ion-icon>
           </ion-button>
         </ion-col>
         <ion-col size="2">
-          <ion-button fill="clear">
+          <ion-button fill="clear" (click)="changeDay(1)">
             <ion-icon name="chevron-forward-outline"></ion-icon>
           </ion-button>
         </ion-col>
         <ion-col size="8">
           <ion-item>
             <ion-label>Data</ion-label>
-            <ion-datetime display-format="DD.MM.YYYY" #date (ionChange)="daySelect(date.value)"></ion-datetime>
+            <ion-datetime  display-format="DD.MM.YYYY" #date value={{data}} (ionChange)="daySelect(date.value)"></ion-datetime>
           </ion-item>
         </ion-col>
       </ion-row>
