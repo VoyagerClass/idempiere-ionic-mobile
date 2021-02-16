@@ -1,4 +1,4 @@
-import { InventoryItem, InventoryDetails } from './../../../../models/InfoProduct';
+import {  InventoryDetails } from './../../../../models/InfoProduct';
 import { ApiServiceService } from 'src/app/api-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -34,6 +34,10 @@ export class ItemDetailsPage implements OnInit {
     })
   }
 
+  Direct(item: InventoryDetails){
+    this.router.navigate([('/completa-inventario')], {state: {item: item}});
+  }
+  
   newItem(){
     this.router.navigateByUrl('/inserimento-prodotto');
   }

@@ -9,7 +9,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-card *ngFor="let i of items">
+    <ion-card *ngFor="let i of items" (click)="Direct(i)">
       <ion-card-header>
         <ion-card-subtitle>{{i.Value}}</ion-card-subtitle>
         <ion-card-title>{{i.Name}}</ion-card-title>
