@@ -9,4 +9,5 @@ export class COre{
     taskdetail_description: string;
     IsConfirmed: string;
     Description: string;
+    completiondate: string;
 }
