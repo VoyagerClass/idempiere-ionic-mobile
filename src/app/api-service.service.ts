@@ -1,6 +1,6 @@
 import { InventoryItem, InventoryDetails, ProductList } from './../models/InfoProduct';
 import { DettaglioFatture, ordini } from './../models/OrdinieFatture';
-import { COre, SalesRep } from './../models/ConteggioOre';
+import { COre, SalesRep, Activity, Act } from './../models/ConteggioOre';
 import { m_product } from './../models/Magazzino';
 import { DistDetails } from './../models/DistDetails';
 import { OrdCompl, PrelievoCompl, ResResponse } from './../models/OrderComp';
@@ -204,11 +204,16 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
   }
 
   getTaskList(){
-    return this.http.get<Task[]>(this.EndPoint+"getTaskList");
+    let id = localStorage.getItem('ADuser');
+    return this.http.get<Act[]>(this.EndPoint+"getTaskList_"+id);
   }
 
   getSalesRepList(){
     return this.http.get<SalesRep[]>(this.EndPoint+"getSalesRepList");
+  }
+
+  postActivity(activity: Activity){
+    return this.http.post(this.EndPoint+"postActivity", activity);
   }
     
   

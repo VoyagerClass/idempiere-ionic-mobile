@@ -12,7 +12,21 @@ export class COre{
     completiondate: string;
 }
 
+export class Act{
+    id: number;
+    Name: string;
+}
+
 export interface SalesRep{
     id: number;
     Name: string;
+}
+
+export class Activity{
+    C_ContactActivity_ID: number;
+    SalesRep_ID: number;
+    Name: string;
+    Description: string;
+    DateWorkStart: string;
+    Qty: number;
 }

@@ -1,4 +1,4 @@
-export interface Task{
+export class Task{
     AD_Client_ID: number;
     Description: string;
     Name: string;

@@ -40,6 +40,13 @@ INSERIMENTO TASK
 	info lavoro
 
 	get task, get utenti
-	post task[TAK10]
+	post task[TAK10] 
+	
+		c_contactactivity_id(id padre),
+		salesrep_id,
+		Name(di solito viene ereditato dal padre ma può essere inserito a mano),
+		description(descrizione),
+		dateworkstart(inizio del lavoro che viene preso di default nel momento in cui viene aperta la maschera)
+		qty (durata dell'attività)
 
 	vista: name qty data
