@@ -108,6 +108,10 @@ const routes: Routes = [
   {
     path: 'attivita',
     loadChildren: () => import('./conteggio-ore/attivita/attivita.module').then( m => m.AttivitaPageModule)
+  },
+  {
+    path: 'modifica-core',
+    loadChildren: () => import('./dettaglio-ore/modifica-core/modifica-core.module').then( m => m.ModificaCOrePageModule)
   }
 
 
