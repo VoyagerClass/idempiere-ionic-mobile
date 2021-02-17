@@ -50,6 +50,7 @@ export class AttivitaPage implements OnInit {
     act.Description = desc;
     act.Qty = time;
     act.AD_Org_ID = this.adOrg;
+    console.log(act);
     this.api.postActivity(act).subscribe(_=>{
       this.router.navigateByUrl('/conteggio-ore');
     })

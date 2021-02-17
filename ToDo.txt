@@ -15,6 +15,8 @@ PAGINA INSERIMENTO PRODOTTO
 
 		- inserimento su m_inventoryline
 		- m_inventory_id (id del padre)
+		- m_product_id (codice del prodotto da inserire)
+		- QtyCount (quantità del prodotto trovata)
 	
 
 consumo csm00 m_inventory carico\scarico spostare in produzione prelievo CANCELLA diventa parte di inventario
@@ -53,3 +55,14 @@ INSERIMENTO TASK
 		qty (durata dell'attività)
 
 	vista: name qty data
+
+
+CONTEGGIO ORE
+	- business partner in vista nella card
+	- ora visibile e non tagliata
+
+INSERIMENTO ATTIVITÀ
+	- ordinare in ordine alfabetico le attività e gli assegnati
+	- inserimento business partner nella scheda
+	- fare i menù di scelta più gradi
+		

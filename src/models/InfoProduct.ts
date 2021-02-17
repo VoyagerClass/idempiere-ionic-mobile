@@ -19,4 +19,11 @@ export interface ProductList{
     Description: string;
     Name: string;
     Value: string;
+    id: number;
+}
+
+export class m_inventoryline{
+    M_Inventory_ID: number;
+    M_Product_ID: number;
+    QtyCount: number;
 }

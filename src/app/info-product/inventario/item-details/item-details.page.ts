@@ -39,7 +39,7 @@ export class ItemDetailsPage implements OnInit {
   }
   
   newItem(){
-    this.router.navigateByUrl('/inserimento-prodotto');
+    this.router.navigateByUrl('/inserimento-prodotto/'+this.itemId);
   }
 
 }

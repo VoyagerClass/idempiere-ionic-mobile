@@ -40,8 +40,8 @@
           <ion-input #Qty type="number"></ion-input>
         </ion-item>
       </ion-card-content>
-      <ion-button (click)="insertProduct(Qty.value)" expand="block" fill="clear" shape="round">
-        Click me
+      <ion-button (click)="insertProduct(Qty.value, l.id)" expand="block" fill="clear" shape="round">
+        Aggiungi all'inventario
       </ion-button>
     </ion-card>
   </ion-list>

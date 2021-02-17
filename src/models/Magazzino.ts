@@ -5,3 +5,4 @@ export interface m_product{
     Description: string;
     totqtyonhand: number;
 }
+

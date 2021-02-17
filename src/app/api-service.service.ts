@@ -1,4 +1,4 @@
-import { InventoryItem, InventoryDetails, ProductList } from './../models/InfoProduct';
+import { InventoryItem, InventoryDetails, ProductList, m_inventoryline } from './../models/InfoProduct';
 import { DettaglioFatture, ordini } from './../models/OrdinieFatture';
 import { COre, SalesRep, Activity, Act } from './../models/ConteggioOre';
 import { m_product } from './../models/Magazzino';
@@ -195,8 +195,8 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
     return this.http.get<ProductList[]>(this.EndPoint+"getProdInventario_%25"+search+"%25");
   }
 
-  postInventoryListProduct(){
-    
+  postInventoryListProduct(product: m_inventoryline){
+    return this.http.post(this.EndPoint+"postProdInventario", product);
   }
 
   leadSearch(search: string){
