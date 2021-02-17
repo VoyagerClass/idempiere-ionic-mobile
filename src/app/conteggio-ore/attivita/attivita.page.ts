@@ -26,10 +26,12 @@ export class AttivitaPage implements OnInit {
   list: Act[];
   salesrep: SalesRep[]
   actname= ""
+  adOrg: number;
 
   getList(){
     this.api.getTaskList().subscribe((data)=>{
       this.list = data;
+      console.log(this.list);
     })
   }
 
@@ -47,6 +49,7 @@ export class AttivitaPage implements OnInit {
     act.Name = descname;
     act.Description = desc;
     act.Qty = time;
+    act.AD_Org_ID = this.adOrg;
     this.api.postActivity(act).subscribe(_=>{
       this.router.navigateByUrl('/conteggio-ore');
     })
@@ -55,7 +58,8 @@ export class AttivitaPage implements OnInit {
   setName(id: string){
     let actname: Act[]; 
     actname = _.where(this.list, {id: parseInt(id)})
-    this. actname = actname[0].Name;
+    this.actname = actname[0].Name;
+    this.adOrg = actname[0].AD_Org_ID;
   }
 
 }

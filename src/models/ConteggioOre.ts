@@ -15,6 +15,7 @@ export class COre{
 export class Act{
     id: number;
     Name: string;
+    AD_Org_ID: number;
 }
 
 export interface SalesRep{
@@ -29,4 +30,5 @@ export class Activity{
     Description: string;
     DateWorkStart: string;
     Qty: number;
+    AD_Org_ID: number;
 }

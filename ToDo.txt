@@ -11,7 +11,10 @@ PAGINA INSERIMENTO PRODOTTO
 	-bisogna fare una vista dove c'è la concatenazione del nome prodotto con il codice prodotto per la ricerca
 	-una volta trovato il prodotto premere e la possibilità di inserirne la quantità
 
-	CHIEDERE A MARCO COME SI INSERISCE UN PRODOTTO NELLA LISTA!!!
+	INSERIMENTO PRODOTTO NELLA LISTA
+
+		- inserimento su m_inventoryline
+		- m_inventory_id (id del padre)
 	
 
 consumo csm00 m_inventory carico\scarico spostare in produzione prelievo CANCELLA diventa parte di inventario
