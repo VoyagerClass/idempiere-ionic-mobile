@@ -41,7 +41,7 @@ export class AttivitaPage implements OnInit {
     })
   }
 
-  insertActivity(activity, srep, data, time, descname, desc){
+  insertActivity(activity, srep, data, time, descname, desc, check: boolean){
     let act = new Activity();
     act.C_ContactActivity_ID = activity;
     act.DateWorkStart = data.slice(0,19).replace('T',' ');
@@ -51,7 +51,8 @@ export class AttivitaPage implements OnInit {
     act.Qty = time;
     act.AD_Org_ID = this.adOrg;
     console.log(act);
-    this.api.postActivity(act).subscribe(_=>{
+    this.api.postActivity(act).subscribe((data)=>{
+      console.log(data);
       this.router.navigateByUrl('/conteggio-ore');
     })
   }

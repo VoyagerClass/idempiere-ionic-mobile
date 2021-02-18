@@ -9,6 +9,8 @@ import { COre } from 'src/models/ConteggioOre';
 })
 export class ModificaCOrePage implements OnInit {
 
+  Task: COre = history.state.task;
+
   constructor(private api: ApiServiceService) { }
 
   ngOnInit() {

@@ -19,32 +19,34 @@
     </ion-item>
     <ion-item>
       <ion-label>Data</ion-label>
-      <ion-datetime required #data displayFormat="DD/MM/YYYY HH:mm" pickedFormat="DD MM YYYY HH:mm"
-                    placeholder="Inserisci data" min="2019" max="2040" value={{date}} 
-                    minuteValues="0,15,30,45" hourValues=[8,9,10,11,12,13,14,15,16,17,18]></ion-datetime>
+      <ion-text>
+        <h3>{{date | date : 'dd/MM/yyyy hh:mm'}}</h3>
+      </ion-text>
     </ion-item>
     <ion-item>
       <ion-label>Durata ore:</ion-label>
-      <ion-input type="number" #duration value={{Task.Qty}}></ion-input>
+      <ion-text>
+        <h3>{{Task.Qty}} h</h3>
+      </ion-text>
     </ion-item>
     <ion-item>
       <ion-label>Numero Documento</ion-label>
       <ion-text>{{Task.task_documentno}}</ion-text>
     </ion-item>
     <ion-item>
-      <ion-textarea auto-grow='true' value={{Task.task_description}}></ion-textarea>
+      <ion-textarea disabled auto-grow='true' value={{Task.task_description}}></ion-textarea>
     </ion-item>
     <ion-item>
-      <ion-textarea #description auto-grow='true' value={{Task.taskdetail_description}}></ion-textarea>
+      <ion-textarea disabled  auto-grow='true' value={{Task.taskdetail_description}}></ion-textarea>
     </ion-item>
   </ion-list>
-  <ion-button (click)="taskCompleted(Task.id, duration.value)" expand="block" fill="clear">
+  <ion-button (click)="taskCompleted()" expand="block" fill="clear">
     Completa task
   </ion-button>
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-    <ion-button expand="full" (click)="modifyTask(Task.id, data.value, description.value, duration.value)"> Applica Modifica Conteggio Ore</ion-button>
+    <ion-button expand="full" (click)="modifyTask()"> Modifica attività</ion-button>
   </ion-toolbar>
 </ion-footer>

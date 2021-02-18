@@ -21,16 +21,20 @@ export class DettaglioOrePage implements OnInit {
     this.date = moment(this.Task.DateWorkStart).toISOString(true);
   }
 
-  taskCompleted(id: number, duration: number) {
+  taskCompleted() {
     let task = new COre;
-    task.id = id;
+    task.id = this.Task.id;
     task.IsConfirmed = 'Y';
-    task.Qty = duration;
+    task.Qty = this.Task.Qty;
     console.log(task);
-    this.Api.isCOreComplete(task, id).subscribe((data)=>{
+    this.Api.isCOreComplete(task, this.Task.id).subscribe((data)=>{
       console.log(data);
       this.router.navigateByUrl('/conteggio-ore');
     });
+  }
+
+  modifyTask(){
+    this.router.navigate(['/modifica-core'], {state:{task:this.Task}});
   }
 
 
