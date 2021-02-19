@@ -6,7 +6,7 @@ import { DistDetails } from './../models/DistDetails';
 import { OrdCompl, PrelievoCompl, ResResponse } from './../models/OrderComp';
 import { Distinta } from './../models/Distinta';
 import { MenuItem } from './../models/Menu';
-import { TResponse } from './../models/TokenResponse';
+import { PostResponse, TResponse } from './../models/TokenResponse';
 import { Credentials, Utente } from './../models/Credentials';
 import { Opportunity } from './../models/OpportunityModel';
 import { FornitoriModel } from './../models/FornitoriModel';
@@ -213,7 +213,7 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
   }
 
   postActivity(activity: Activity){
-    return this.http.post(this.EndPoint+"postActivity", activity);
+    return this.http.post<PostResponse>(this.EndPoint+"postActivity", activity);
   }
     
   
