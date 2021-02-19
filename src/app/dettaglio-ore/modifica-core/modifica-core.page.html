@@ -9,16 +9,10 @@
 
 <ion-content>
   <ion-item>  
-    <ion-label position="floating">Attività</ion-label>
-    <ion-select #act (ionChange)="setName(act.value)" >
-      <ion-select-option *ngFor="let l of list" value={{l.id}}>{{l.Name}}</ion-select-option>
-    </ion-select>
-  </ion-item>
-  <ion-item>
-    <ion-label position="stacked">Assegnato a:</ion-label>
-    <ion-select  value={{userid}} #srep> 
-      <ion-select-option *ngFor="let s of salesrep" value={{s.id}}>{{s.Name}}</ion-select-option>
-    </ion-select>
+    <ion-label position="stacked">Attività</ion-label>
+    <ion-text>
+      <h3>{{Task.task_name}}</h3>
+    </ion-text>
   </ion-item>
   <ion-item>
     <ion-label>Giorno e Ora</ion-label>
@@ -28,19 +22,23 @@
   </ion-item>
   <ion-item>
     <ion-label>Durata</ion-label>
-    <ion-input #time type="number" inputmode="numeric" min="0.5" step="0.5" placeholder="h"></ion-input>
+    <ion-input #time type="number" value={{Task.Qty}} inputmode="numeric" min="0.5" step="0.5" placeholder="h"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Attività da svolgere:</ion-label>
-    <ion-textarea value={{actname}} #descname auto-grow='true'></ion-textarea>
+    <ion-textarea value={{Task.taskdetail_name}} #descname auto-grow='true'></ion-textarea>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Descrizione</ion-label>
-    <ion-textarea #desc auto-grow='true'></ion-textarea>
+    <ion-textarea #desc value={{Task.taskdetail_description}} auto-grow='true'></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label>Completa Task</ion-label>
+    <ion-checkbox #complete></ion-checkbox>
   </ion-item>
 </ion-content>
 <ion-footer>
-  <ion-button (click)="insertActivity(act.value, srep.value, data.value, time.value, descname.value, desc.value)" expand="full">
-    Inserisci
+  <ion-button (click)="modifyTask(data.value, time.value, descname.value, desc.value, complete)" expand="full">
+    Completa Modifica Attività
   </ion-button>
 </ion-footer>

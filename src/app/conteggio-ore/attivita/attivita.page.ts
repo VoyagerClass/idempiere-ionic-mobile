@@ -58,7 +58,7 @@ export class AttivitaPage implements OnInit {
       let id = new PostResponse();
       id = data;
       if (check) {
-        let task= new  COre()
+        let task= new COre();
         task.IsConfirmed = 'Y';
         task.id = parseInt(id.record_id);
         console.log(task.id);
