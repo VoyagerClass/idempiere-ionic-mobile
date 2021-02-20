@@ -12,7 +12,8 @@ Base
 [ ] Gestione NFC - Per segnare le ore ?
 [ ] Stampa Diretta 
 [ ] Chat Diretta APP-to-APP 
-[ ] 
+[ ] Evidenziare gli appuntamenti/Visite/Riunione (pubblico? )
+
 
 Sicurezza 
 [ ] (eccezione momentanea) memorizzazione pwd 
@@ -35,7 +36,12 @@ O Inserisci Opportunita
 [ ] Creare sottotab Contactactivity 
 [ ] Salva Lead come contatto Telefono
 [ ] Lead per Agente ( vedo solo i miei o tutti ? o per Area ?) 
-
+PAGINA DETTAGLIO LEAD
+	-Creare nella vista app filter con nome campagna (in un futuro si vedranno solo i propri lead), e altro chiedere a Marco
+		per ora funziona solo per campaign name
+	-Lead fornitore
+	-Lead partner
+	-Lead filtro per campagna/categoria
 
 ## Opportunità (lit...) #######################################################
 
@@ -71,13 +77,16 @@ O Inserisci Opportunita
 2. Fatture di Vendita 
 3. Pagamenti e Incassi 
 
-# ORDINI ###############################################################################################################
+# ORDINI -> Diventa ACQUISTI ########
+[ ]  Solo Ordini di acquisto + Search + Dettaglio + Linee  - solo ordini aperti o ultimi 30 gg
+[ ]  Entrate Merci
+[ ]  Prodotti SottoScorta -> Crea ODA
 
 # MAGAZZINO ##
-
-
-
-inventario if00 m_inventory value name description documentno \\ per creare la vista creare vista where docstatus=dr \\copiare produzione
+- ListaProdotti
+[ ]Lista Prodotti   aggiungere dettagli - Listino Prezzi / Giacenza 
+- Inventario
+[ ] inventario if00 m_inventory value name description documentno \\ per creare la vista creare vista where docstatus=dr \\copiare produzione
 	-dare la possibilità di aggiungere un prodotto
 	-scanner (fatto la ricerca, per ora funziona solo cercando il nome del prodotto... da estendere la vista con appfilter)
 	-crea nuove voci di inventario con figli (consumo)
@@ -85,12 +94,11 @@ inventario if00 m_inventory value name description documentno \\ per creare la v
 	lit_mobile_inventoryline_v 	per vedere le sottovoci dei diversi inventari
 	lit_mobile_inventory_v		per vedere i diversi inventari
 
-PAGINA INSERIMENTO PRODOTTO
+     PAGINA INSERIMENTO PRODOTTO
 	la ricerca viene fatta tramite o inserimento da tastiera col nome del prodotto e da una lista o tramite scansione codice
 	-bisogna fare una vista dove c'è la concatenazione del nome prodotto con il codice prodotto per la ricerca
 	-una volta trovato il prodotto premere e la possibilità di inserirne la quantità
-
-	INSERIMENTO PRODOTTO NELLA LISTA
+     INSERIMENTO PRODOTTO NELLA LISTA
 
 		- inserimento su m_inventoryline
 		- m_inventory_id (id del padre)
@@ -98,23 +106,18 @@ PAGINA INSERIMENTO PRODOTTO
 		- QtyCount (quantità del prodotto trovata)
 	
 
-trasferimento 
-	-bisogna fare delle insert
+- Trasferimento
+  [ ] bisogna fare delle insert
+- Entrata Merci
+[ ] Migliorare dati  Documentno
 
-PAGINA DETTAGLIO LEAD
-	-Creare nella vista app filter con nome campagna (in un futuro si vedranno solo i propri lead), e altro chiedere a Marco
-		per ora funziona solo per campaign name
-	-Lead fornitore
-	-Lead partner
-	-Lead filtro per campagna/categoria
-
-RIEPILOGO ORE
+# ORE ###################################################
+   RIEPILOGO ORE
 	fare due parti, la parte che c'è già... e un calendario che fa la possibilità di vedere tutti i giorni fino al 1970 scorribile
 	dateworkstart per data task completata
 	https://jamboard.google.com/d/14VS4wkY1hYToeVWasGuvqQtIhzY7945k0Y1W1Z2wmsI/viewer?f=0
 
-
-INSERIMENTO TASK
+   INSERIMENTO TASK
 	selezione del task fare l'elenco
 	assegnazione a persona default IO
 	Qty quantità ore
@@ -134,21 +137,21 @@ INSERIMENTO TASK
 	vista: name qty data
 
 
-CONTEGGIO ORE
+  CONTEGGIO ORE
 	- invertire titolo e sottotitolo FATTO
 	- business partner in vista nella card
 	- ora visibile e non tagliata
 
-INSERIMENTO ATTIVITÀ
+  INSERIMENTO ATTIVITÀ
 	- dare la possibilità di completare instant l'attività
-		-invece di farlo instant faccio una pagina di visualizzazione dell'attività che verrà condivisa con il dettaglio attività e da li si modifica o completa
+		-invece di farlo instant faccio una pagina di visualizzazione dell'attività che verrà condivisa con il dettaglio attività e da li si modifica o    completa
 		- mettere una spunta di flag per terminare e completare l'attività inserita
 	- ordinare in ordine alfabetico le attività e gli assegnati
 	- inserimento business partner nella scheda
 	- fare i menù di scelta più gradi
 	- trovare il modo che l'"assegnato a:" venga già completato senza bisogno di clickarlo... è un problema di angular
 
-DETTAGLIO ATTIVITÀ
+  DETTAGLIO ATTIVITÀ
 	- cambiare metodo di modifica, fare come i lead
 	- non si capisce che la pagina è modificabile
 	- dividere la modifica dalla completazione della task
