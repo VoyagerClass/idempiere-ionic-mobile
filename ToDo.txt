@@ -34,6 +34,8 @@ O Inserisci Opportunita
 [ ] Aggiungere possibilità CREA Task da Lead - Esempio creare un contactactivity PhoneCall/b/c/ -DataOraTodo -Risorsa 
 [ ] Creare sottotab Contactactivity 
 [ ] Salva Lead come contatto Telefono
+[ ] Lead per Agente ( vedo solo i miei o tutti ? o per Area ?) 
+
 
 ## Opportunità (lit...) #######################################################
 
@@ -51,16 +53,23 @@ O Inserisci Opportunita
 
 
 ## Clienti#####################################################################
-
 [ ] Rivedere Insieme 
-O GRafici.. [ ] Di cosa ?
+[ ]Scheda Pagamenti in Scadenza (Come Agente )
+[ ] GRafici.. [ ] Di cosa ?
 
 
 # SERVICE ##############################################################################################################
 [ ] Da Rivedere Insieme
 
 # CONTABILITA' #########################################################################################################
+[ ] Scheda Pagamenti in Scadenza 
+[ ] Scheda Prossimi incassi
+[ ] Fatture di Vendite (solo le ultime)
+[ ] Fatture di Acquisto (solo le ultime)
 
+1. Fatture di Acquisto 
+2. Fatture di Vendita 
+3. Pagamenti e Incassi 
 
 # ORDINI ###############################################################################################################
 
