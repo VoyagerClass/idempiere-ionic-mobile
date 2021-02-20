@@ -1,3 +1,51 @@
+App iDempiere Mobile
+
+Base
+[ ] Nome App ?
+[ ] Gestione Immagine App
+
+Sicurezza 
+[ ] (eccezione momentanea) memorizzazione pwd 
+
+# CRM ####### 
+## Lead (lit_bi_lead_v) issalesLead=Y  Sono i Lead Sales 
+O Crea Lead - Scheda Inserimenti
+O Importa Lead da Telefono
+
+- Nuovi
+- Convertiti
+- In Corso
+- Scaduti
+O Modifica Lead
+O Telefona  (e crea task come traccia)
+O Invia Email (e crea task come traccia)
+O Inserisci Opportunita
+
+[ ] Aggiungere possibilità CREA Task da Lead - Esempio creare un contactactivity PhoneCall/b/c/ -DataOraTodo -Risorsa 
+[ ] Creare sottotab Contactactivity 
+[ ] Salva Lead come contatto Telefono
+
+## Opportunità (lit...) 
+[ ] Aggiungere dettaglio informazione - Nuova Scheda come Lead ?
+[ ] Aggiungere opzioni come Lead  : Modifica
+[ ] Aggiungere CREA Task 
+
+## Task (lit...)
+[ ] Rivedere Insieme - ????
+## Appuntamenti 
+[ ] Rivedere Insieme  ???
+
+## Contatti Clienti e Fornitori
+
+## Clienti
+[ ] Rivedere Insieme 
+O GRafici.. [ ] Di cosa ?
+
+
+# SERVICE ###
+
+# 
+
 inventario if00 m_inventory value name description documentno \\ per creare la vista creare vista where docstatus=dr \\copiare produzione
 	-dare la possibilità di aggiungere un prodotto
 	-scanner (fatto la ricerca, per ora funziona solo cercando il nome del prodotto... da estendere la vista con appfilter)
