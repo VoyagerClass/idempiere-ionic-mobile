@@ -1,13 +1,23 @@
 App iDempiere Mobile
 
+pagina documentazione http://localhost:1313/docs/13.plugin/plugin-/5.altro/plugin-app-mobile/
+
 Base
 [ ] Nome App ?
 [ ] Gestione Immagine App
+[ ] Gestione Immagini Menu
+[ ] Voci Menu attivabili da REST -LOGIN
+[ ] Creare PDF JasperRpoert 
+[ ] Gestire Allegati in Invio e Ricezione
+[ ] Gestione NFC - Per segnare le ore ?
+[ ] Stampa Diretta 
+[ ] Chat Diretta APP-to-APP 
+[ ] 
 
 Sicurezza 
 [ ] (eccezione momentanea) memorizzazione pwd 
 
-# CRM ####### 
+# CRM ################################################################################################################### 
 ## Lead (lit_bi_lead_v) issalesLead=Y  Sono i Lead Sales 
 O Crea Lead - Scheda Inserimenti
 O Importa Lead da Telefono
@@ -25,26 +35,38 @@ O Inserisci Opportunita
 [ ] Creare sottotab Contactactivity 
 [ ] Salva Lead come contatto Telefono
 
-## Opportunità (lit...) 
+## Opportunità (lit...) #######################################################
+
 [ ] Aggiungere dettaglio informazione - Nuova Scheda come Lead ?
 [ ] Aggiungere opzioni come Lead  : Modifica
 [ ] Aggiungere CREA Task 
 
-## Task (lit...)
+## Task (lit...)###############################################################
+
 [ ] Rivedere Insieme - ????
 ## Appuntamenti 
 [ ] Rivedere Insieme  ???
 
-## Contatti Clienti e Fornitori
+## Contatti Clienti e Fornitori################################################
 
-## Clienti
+
+## Clienti#####################################################################
+
 [ ] Rivedere Insieme 
 O GRafici.. [ ] Di cosa ?
 
 
-# SERVICE ###
+# SERVICE ##############################################################################################################
+[ ] Da Rivedere Insieme
 
-# 
+# CONTABILITA' #########################################################################################################
+
+
+# ORDINI ###############################################################################################################
+
+# MAGAZZINO ##
+
+
 
 inventario if00 m_inventory value name description documentno \\ per creare la vista creare vista where docstatus=dr \\copiare produzione
 	-dare la possibilità di aggiungere un prodotto
