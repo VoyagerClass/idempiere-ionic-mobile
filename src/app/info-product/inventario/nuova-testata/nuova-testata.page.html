@@ -9,10 +9,30 @@
 
 <ion-content>
   <ion-item>
+    <ion-label position="floating">Nome Inventario</ion-label>
+    <ion-input #name type="text"></ion-input>
+  </ion-item>
+  <ion-item>
     <ion-label position="floating">Organizzazione</ion-label>
-    <ion-select>
+    <ion-select #org (ionChange)="getMagazziniList(org.value)">
       <ion-select-option *ngFor="let o of orgsList" value={{o.id}}>{{o.Name}}</ion-select-option>
     </ion-select>
   </ion-item>
-
+  <ion-item>
+    <ion-label position="floating">Magazzino</ion-label>
+    <ion-select #mag>
+      <ion-select-option *ngFor="let m of magsList" value={{m.id}}>{{m.Name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Inventario</ion-label>
+    <ion-select #doc>
+      <ion-select-option *ngFor="let d of docsList" value={{d.id}}>{{d.PrintName}}</ion-select-option>
+    </ion-select>
+  </ion-item>
 </ion-content>
+<ion-footer>
+  <ion-button (click)="postInv(name.value, org.value, mag.value, doc.value)" expand="full">
+    Inserisci nuovo Inventario
+  </ion-button>
+</ion-footer>

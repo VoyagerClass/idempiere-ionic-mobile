@@ -35,3 +35,21 @@ export interface Orgs{
     Name: string;
     id: number;
 }
+
+export interface Mags{
+    Name: string;
+    id: number;
+}
+
+export interface Docs{
+    PrintName: string;
+    id: number;
+}
+
+export class Inventory {
+    Description: string;
+    C_DocType_ID: number;
+    M_Warehouse_ID: number;
+    AD_Org_ID: string;
+    MovementDate: string;
+}

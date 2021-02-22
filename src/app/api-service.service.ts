@@ -1,4 +1,4 @@
-import { InventoryItem, InventoryDetails, ProductList, m_inventoryline, Orgs } from './../models/InfoProduct';
+import { InventoryItem, InventoryDetails, ProductList, m_inventoryline, Orgs, Mags, Docs, Inventory } from './../models/InfoProduct';
 import { DettaglioFatture, ordini } from './../models/OrdinieFatture';
 import { COre, SalesRep, Activity, Act } from './../models/ConteggioOre';
 import { m_product } from './../models/Magazzino';
@@ -220,5 +220,15 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
     return this.http.get<Orgs[]>(this.EndPoint+"getActiveOrgs");
   }
     
+  getMagazzini(id: number){
+    return this.http.get<Mags[]>(this.EndPoint+"getMagazzini_"+id);
+  }
   
+  getDoc(){
+    return this.http.get<Docs[]>(this.EndPoint+"getDocType");
+  }
+
+  postNewInventory(inv: Inventory){
+    return this.http.post<PostResponse>(this.EndPoint+"postNewInventory", inv)
+  }
 }

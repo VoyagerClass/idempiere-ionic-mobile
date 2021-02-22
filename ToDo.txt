@@ -111,10 +111,9 @@ PAGINA DETTAGLIO LEAD
 
 	INSERIMENTO TESTATA
 
-		- avere una lista di tutte le ad org attive (vista)
 		- ad org
-		- magazzino
-		- C_DocType_ID
+		- magazzino 
+		- C_DocType_ID select * from c_doctype where docbasetype = 'MMI' and ad_client_id= 1000006 and isdefault = 'Y'
 		- Description
 
 - Trasferimento
