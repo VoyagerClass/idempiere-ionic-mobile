@@ -17,6 +17,7 @@ export class InserimentoProdottoPage implements OnInit {
   Search = "";
   list: ProductList[];
   itemId: string;
+  values: string[];
 
   ngOnInit() {
     this.getPageID();
@@ -25,7 +26,9 @@ export class InserimentoProdottoPage implements OnInit {
   getPageID(){
     this.route.paramMap.subscribe(param => {
       const id = param.get('id');
-      this.itemId = id;
+      console.log(id);
+      this.values = id.split('&');
+      console.log(this.values);
     });
   }
 
@@ -48,10 +51,12 @@ export class InserimentoProdottoPage implements OnInit {
     let prodotto = new m_inventoryline;
     prodotto.QtyCount = qty;
     prodotto.M_Product_ID = id;
-    prodotto.M_Inventory_ID = parseInt(this.itemId);
+    prodotto.M_Inventory_ID = parseInt(this.values[0]);
+    prodotto.InventoryType = 'D';
+    prodotto.AD_Org_ID = parseInt(this.values[1]);
     console.log(prodotto);
     this.api.postInventoryListProduct(prodotto).subscribe(_=>{
-      this.router.navigateByUrl('/info-product/inventario/item-details/'+this.itemId);
+      this.router.navigateByUrl('/info-product/inventario/item-details/'+this.values[0]+'&'+this.values[1]);
     })
   }
 

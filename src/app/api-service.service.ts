@@ -1,4 +1,4 @@
-import { InventoryItem, InventoryDetails, ProductList, m_inventoryline } from './../models/InfoProduct';
+import { InventoryItem, InventoryDetails, ProductList, m_inventoryline, Orgs } from './../models/InfoProduct';
 import { DettaglioFatture, ordini } from './../models/OrdinieFatture';
 import { COre, SalesRep, Activity, Act } from './../models/ConteggioOre';
 import { m_product } from './../models/Magazzino';
@@ -214,6 +214,10 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
 
   postActivity(activity: Activity){
     return this.http.post<PostResponse>(this.EndPoint+"postActivity", activity);
+  }
+
+  getOrgs(){
+    return this.http.get<Orgs[]>(this.EndPoint+"getActiveOrgs");
   }
     
   

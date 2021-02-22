@@ -12,12 +12,17 @@
 
 <ion-content>
   <ion-list>
-    <ion-card *ngFor="let l of list" (click)="itemDetail(l.id)">
+    <ion-card *ngFor="let l of list" (click)="itemDetail(l.id, l.AD_Org_ID)">
       <ion-card-header>
         <ion-card-subtitle>{{l.Name}}</ion-card-subtitle>
         <ion-card-title>{{l.Description}}</ion-card-title>
       </ion-card-header>
     </ion-card>
   </ion-list>
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed" (click)="newItem()">
+    <ion-fab-button size="small">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
 

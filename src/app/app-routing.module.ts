@@ -112,6 +112,10 @@ const routes: Routes = [
   {
     path: 'modifica-core',
     loadChildren: () => import('./dettaglio-ore/modifica-core/modifica-core.module').then( m => m.ModificaCOrePageModule)
+  },
+  {
+    path: 'nuova-testata',
+    loadChildren: () => import('./info-product/inventario/nuova-testata/nuova-testata.module').then( m => m.NuovaTestataPageModule)
   }
 
 

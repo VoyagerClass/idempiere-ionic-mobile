@@ -25,14 +25,18 @@ export class InventarioPage implements OnInit {
     })
   }
 
-  itemDetail(id: number){
-    this.router.navigate(['/info-product/inventario/item-details/'+id]);
+  itemDetail(id: number, org: number){
+    this.router.navigate(['/info-product/inventario/item-details/'+id+'&'+org]);
   }
 
   onSearchChange(ev: any){
     this.api.getInventory(ev.detail.value).subscribe((data)=>{
       this.list = data;
     })
+  }
+
+  newItem(){
+    this.router.navigateByUrl('/nuova-testata');
   }
 
 

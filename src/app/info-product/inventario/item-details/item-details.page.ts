@@ -14,6 +14,7 @@ export class ItemDetailsPage implements OnInit {
 
   itemId: string;
   items: InventoryDetails[];
+  values: string[];
 
   ngOnInit() {
     this.getPageID();
@@ -23,7 +24,9 @@ export class ItemDetailsPage implements OnInit {
   getPageID(){
     this.route.paramMap.subscribe(param => {
       const id = param.get('id');
-      this.itemId = id;
+      this.values = id.split('&');
+      this.itemId = this.values[0];
+      console.log(this.values);
     });
   }
 
@@ -39,7 +42,7 @@ export class ItemDetailsPage implements OnInit {
   }
   
   newItem(){
-    this.router.navigateByUrl('/inserimento-prodotto/'+this.itemId);
+    this.router.navigateByUrl('/inserimento-prodotto/'+this.values[0]+'&'+this.values[1]);
   }
 
 }

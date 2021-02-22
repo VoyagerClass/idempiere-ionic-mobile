@@ -104,7 +104,18 @@ PAGINA DETTAGLIO LEAD
 		- m_inventory_id (id del padre)
 		- m_product_id (codice del prodotto da inserire)
 		- QtyCount (quantità del prodotto trovata)
+		- AD_org_ID
+		- InventoryType
 	
+	chiedere a marco per M_locator_id
+
+	INSERIMENTO TESTATA
+
+		- avere una lista di tutte le ad org attive (vista)
+		- ad org
+		- magazzino
+		- C_DocType_ID
+		- Description
 
 - Trasferimento
   [ ] bisogna fare delle insert
