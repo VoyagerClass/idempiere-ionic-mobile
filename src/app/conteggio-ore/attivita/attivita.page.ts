@@ -17,8 +17,8 @@ export class AttivitaPage implements OnInit {
   constructor(private api: ApiServiceService, private router: Router) { }
 
   ngOnInit() {
-    this.getList();
     this.getSalesRep();
+    this.getList();
     this.userid = parseInt(localStorage.getItem('ADuser'));
   }
 

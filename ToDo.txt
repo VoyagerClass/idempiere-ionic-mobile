@@ -109,7 +109,7 @@ PAGINA DETTAGLIO LEAD
 	
 	chiedere a marco per M_locator_id
 
-	INSERIMENTO TESTATA
+	INSERIMENTO TESTATA FATTO
 
 		- ad org
 		- magazzino 
@@ -166,3 +166,24 @@ PAGINA DETTAGLIO LEAD
 	- non si capisce che la pagina è modificabile
 	- dividere la modifica dalla completazione della task
 		
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Viste utilizzate
+
+	lit_contactssc_v
+    lit_m_lead_v
+    lit_m_task_v
+    lit_mobile_c_invoice_v
+    lit_mobile_c_invoiceline_v
+    lit_mobile_c_order_v
+    lit_mobile_c_orderline_v
+    lit_mobile_c_payment_v 
+    lit_mobile_product_v
+    lit_mobile_production_v
+    lit_mobile_productionline_v
+    lit_mobile_resatt_v
+    lit_mobile_task_v
+    lit_mobile_taskdetail_v
+    lit_mobile_inventory_v
+    lit_mobile_inventoryline_v
