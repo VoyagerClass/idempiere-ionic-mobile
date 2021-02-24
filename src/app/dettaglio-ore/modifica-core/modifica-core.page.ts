@@ -21,13 +21,14 @@ export class ModificaCOrePage implements OnInit {
 
   date = moment(this.Task.DateWorkStart).toISOString(true);
 
-  modifyTask(data: string, time: number, descname, desc: string, check: boolean ) {
+  modifyTask(data: string, time: number, descname, desc: string, check: string ) {
     let task = new COre;
     task.id = this.Task.id;
     task.DateWorkStart = data.slice(0, 19).replace('T', ' ');
     task.Description = desc;
     task.Qty = time;
-    if(check){
+    task.IsConfirmed = 'N';
+    if(check == "on"){
       task.IsConfirmed = 'Y';
     }
     console.log(task);

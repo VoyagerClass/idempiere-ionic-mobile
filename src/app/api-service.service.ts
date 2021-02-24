@@ -16,6 +16,7 @@ import { LeadDetails } from './../models/LeadDetails';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { WorkOrder } from 'src/models/WorkOrder';
+import { Locator } from 'protractor';
 
 
 
@@ -230,5 +231,10 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
 
   postNewInventory(inv: Inventory){
     return this.http.post<PostResponse>(this.EndPoint+"postNewInventory", inv)
+  }
+
+  getLocator(id: string){
+    console.log(id);
+    return this.http.get<Locator[]>(this.EndPoint+"getLocatorID_"+id);
   }
 }

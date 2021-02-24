@@ -12,7 +12,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-card *ngFor="let l of list" (click)="itemDetail(l.id, l.AD_Org_ID)">
+    <ion-card *ngFor="let l of list" (click)="itemDetail(l.id, l.AD_Org_ID, l.M_Warehouse_ID)">
       <ion-card-header>
         <ion-card-subtitle>{{l.Name}}</ion-card-subtitle>
         <ion-card-title>{{l.Description}}</ion-card-title>

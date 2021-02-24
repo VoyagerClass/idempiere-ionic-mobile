@@ -44,7 +44,7 @@ export class AttivitaPage implements OnInit {
     })
   }
 
-  insertActivity(activity: number, srep: number, data: string, time: number, descname: string, desc: string, check: boolean) {
+  insertActivity(activity: number, srep: number, data: string, time: number, descname: string, desc: string, check: string) {
     this.act.DateWorkStart = data.slice(0, 19).replace('T', ' ');
     this.act.SalesRep_ID = srep;
     this.act.C_ContactActivity_ID = activity;
@@ -57,7 +57,7 @@ export class AttivitaPage implements OnInit {
       console.log(data);
       let id = new PostResponse();
       id = data;
-      if (check) {
+      if (check == "on") {
         let task= new COre();
         task.IsConfirmed = 'Y';
         task.id = parseInt(id.record_id);

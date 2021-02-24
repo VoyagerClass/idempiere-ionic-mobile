@@ -29,6 +29,7 @@ export class m_inventoryline{
     QtyCount: number;
     InventoryType: string;
     AD_Org_ID: number;
+    M_Locator_ID: number;
 }
 
 export interface Orgs{
@@ -52,4 +53,9 @@ export class Inventory {
     M_Warehouse_ID: number;
     AD_Org_ID: string;
     MovementDate: string;
+}
+
+export interface Locator{
+    Value: string;
+    id: number;
 }

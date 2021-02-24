@@ -25,8 +25,8 @@ export class InventarioPage implements OnInit {
     })
   }
 
-  itemDetail(id: number, org: number){
-    this.router.navigate(['/info-product/inventario/item-details/'+id+'&'+org]);
+  itemDetail(id: number, org: number, wh: number){
+    this.router.navigate(['/info-product/inventario/item-details/'+id+'&'+org+'&'+wh]);
   }
 
   onSearchChange(ev: any){

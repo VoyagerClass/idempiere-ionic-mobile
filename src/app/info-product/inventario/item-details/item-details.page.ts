@@ -42,7 +42,7 @@ export class ItemDetailsPage implements OnInit {
   }
   
   newItem(){
-    this.router.navigateByUrl('/inserimento-prodotto/'+this.values[0]+'&'+this.values[1]);
+    this.router.navigateByUrl('/inserimento-prodotto/'+this.values[0]+'&'+this.values[1]+'&'+this.values[2]);
   }
 
 }

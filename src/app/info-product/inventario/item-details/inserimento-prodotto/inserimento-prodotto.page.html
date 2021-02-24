@@ -36,11 +36,17 @@
       <ion-card-content>
         {{l.Description}}
         <ion-item>
+          <ion-label>Area di Stoccaggio</ion-label>
+          <ion-select #loc>
+            <ion-select-option *ngFor="let lo of locator" value={{lo.id}}>{{lo.Value}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
           <ion-label position="floating">Quantità</ion-label>
           <ion-input #Qty type="number"></ion-input>
         </ion-item>
       </ion-card-content>
-      <ion-button (click)="insertProduct(Qty.value, l.id)" expand="block" fill="clear" shape="round">
+      <ion-button (click)="insertProduct(Qty.value, l.id, loc.value)" expand="block" fill="clear" shape="round">
         Aggiungi all'inventario
       </ion-button>
     </ion-card>
