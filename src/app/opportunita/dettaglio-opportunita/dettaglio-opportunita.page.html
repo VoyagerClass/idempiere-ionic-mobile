@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Dettaglio Opportunita</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Business partner</ion-label>
+    <ion-text>
+      <h3>{{opp.C_BPartner_ID}}</h3>
+    </ion-text>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Opportunità</ion-label>
+    <ion-text>
+      <h3>{{opp.Description}}</h3>
+    </ion-text>
+  </ion-item>
+  <ion-item *ngIf="opp.Comments">
+    <ion-label position="stacked">Commenti</ion-label>
+    <ion-textarea disabled autoGrow="true" value={{opp.Comments}}></ion-textarea>
+  </ion-item>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Attività svolte</ion-label>
+    </ion-list-header>
+    <ion-card *ngFor="let t of task">
+      <ion-card-header>
+        <ion-card-subtitle>{{t.StartDate | date : 'dd/MM/yyyy hh:mm'}}</ion-card-subtitle>
+        <ion-card-title>
+          <span *ngIf="t.ContactActivityType == 'EM'"><ion-icon name="mail-sharp"></ion-icon></span>
+          <span *ngIf="t.ContactActivityType == 'PC'"><ion-icon name="call-sharp"></ion-icon></span>
+          <span *ngIf="t.ContactActivityType == 'ME'"><ion-icon name="people-outline"></ion-icon></span>
+          {{t.Description}}
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-button (click)="newTask(opp.C_BPartner_ID, opp.id)" expand="full">
+    Inserisci Attività
+  </ion-button>
+</ion-footer>

@@ -10,4 +10,6 @@ export class LogAgente{
     Name: string;
     AD_Client_ID: number;
     ContactActivityType: string;
+    IsComplete: string;
+    LIT_isMobileLog: string;
 }

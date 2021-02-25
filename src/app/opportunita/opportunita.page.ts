@@ -1,6 +1,7 @@
 import { Opportunity } from './../../models/OpportunityModel';
 import { ApiServiceService } from './../api-service.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-opportunita',
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OpportunitaPage implements OnInit {
 
-  constructor(private Api: ApiServiceService) { }
+  constructor(private Api: ApiServiceService, private router: Router) { }
 
   ngOnInit() {
     this.queryBuild();
@@ -21,11 +22,15 @@ export class OpportunitaPage implements OnInit {
   queryBuild = () => {
     this.list = [];
     this.list1 = [];
-    this.Api.getOpp().subscribe((data) => { 
+    this.Api.getOpp("").subscribe((data) => { 
       this.list = data;
       this.list1 = data;
       console.log(this.list);
     });
+  }
+
+  oppDetails(id: number){
+    this.router.navigateByUrl('/dettaglio-opportunita/'+id)
   }
 
 }

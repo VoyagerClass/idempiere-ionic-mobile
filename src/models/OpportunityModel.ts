@@ -9,4 +9,16 @@ export class Opportunity{
     C_Currency_ID: number;
     OpportunityAmt: string;
     Probability: string;
+    id: number;
+}
+
+export class OppTasks{
+    Description: string;
+    StartDate: string;
+    ContactActivityType: string;
+    C_BPartner_ID: string;
+    SalesRep_ID: string;
+    IsComplete: string;
+    C_Opportunity_ID: string;
+    C_Activity_ID: number;
 }

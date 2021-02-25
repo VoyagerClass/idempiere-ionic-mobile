@@ -7,16 +7,19 @@ Base
 [ ] Gestione Immagine App
 [ ] Gestione Immagini Menu
 [ ] Voci Menu attivabili da REST -LOGIN
-[ ] Creare PDF JasperRpoert 
+	- Marco creare campo (lit_mobile_role_v)
+[ ] Creare PDF JasperReport 
 [ ] Gestire Allegati in Invio e Ricezione
 [ ] Gestione NFC - Per segnare le ore ?
+	- controllare plugin NFC
 [ ] Stampa Diretta 
-[ ] Chat Diretta APP-to-APP 
+[ ] gestione bacheca APP-to-APP (bacheca) **
+	- scrivere da telefono sull bacheca degli altri?
 [ ] Evidenziare gli appuntamenti/Visite/Riunione (pubblico? )
 
 
 Sicurezza 
-[ ] (eccezione momentanea) memorizzazione pwd 
+[x] (eccezione momentanea) memorizzazione pwd 
 
 # CRM ################################################################################################################### 
 ## Lead (lit_bi_lead_v) issalesLead=Y  Sono i Lead Sales 
@@ -33,9 +36,13 @@ O Invia Email (e crea task come traccia)
 O Inserisci Opportunita
 
 [ ] Aggiungere possibilità CREA Task da Lead - Esempio creare un contactactivity PhoneCall/b/c/ -DataOraTodo -Risorsa 
+[ ] mettere visualizzazione ultima attività completata e ultima attività assegnata(non completata) **
 [ ] Creare sottotab Contactactivity 
 [ ] Salva Lead come contatto Telefono
 [ ] Lead per Agente ( vedo solo i miei o tutti ? o per Area ?) 
+		- fare come per l'assegnazione dell'attività per gruppo con coalesce dove gli utenti sono dentro permessi area etc?
+
+
 PAGINA DETTAGLIO LEAD
 	-Creare nella vista app filter con nome campagna (in un futuro si vedranno solo i propri lead), e altro chiedere a Marco
 		per ora funziona solo per campaign name
@@ -47,20 +54,24 @@ PAGINA DETTAGLIO LEAD
 
 [ ] Aggiungere dettaglio informazione - Nuova Scheda come Lead ?
 [ ] Aggiungere opzioni come Lead  : Modifica
-[ ] Aggiungere CREA Task 
+[ ] Aggiungere CREA Task (sotto attività delle Opportunità)
 
-## Task (lit...)###############################################################
+## Bacheca (lit...)###############################################################
 
 [ ] Rivedere Insieme - ????
+[ ] Aggiungere campo isInTransit serve per organizzare tutti i task assegnati dall'ufficio verso l'app.
+		get sulla c_contactactivity dove isInTransit = true e iscomplete = false
+
 ## Appuntamenti 
 [ ] Rivedere Insieme  ???
+[ ] Creare evento su google calendar
 
 ## Contatti Clienti e Fornitori################################################
 
 
 ## Clienti#####################################################################
 [ ] Rivedere Insieme 
-[ ]Scheda Pagamenti in Scadenza (Come Agente )
+[ ] Scheda Pagamenti in Scadenza (Come Agente )
 [ ] GRafici.. [ ] Di cosa ?
 
 
@@ -153,7 +164,7 @@ PAGINA DETTAGLIO LEAD
 	- ora visibile e non tagliata
 
   INSERIMENTO ATTIVITÀ
-	- dare la possibilità di completare instant l'attività
+	- dare la possibilità di completare instant l'attività FATTO
 		-invece di farlo instant faccio una pagina di visualizzazione dell'attività che verrà condivisa con il dettaglio attività e da li si modifica o    completa
 		- mettere una spunta di flag per terminare e completare l'attività inserita
 	- ordinare in ordine alfabetico le attività e gli assegnati
@@ -162,9 +173,9 @@ PAGINA DETTAGLIO LEAD
 	- trovare il modo che l'"assegnato a:" venga già completato senza bisogno di clickarlo... è un problema di angular
 
   DETTAGLIO ATTIVITÀ
-	- cambiare metodo di modifica, fare come i lead
+	- cambiare metodo di modifica, fare come i lead FATTO
 	- non si capisce che la pagina è modificabile
-	- dividere la modifica dalla completazione della task
+	- dividere la modifica dalla completazione della task FATTO
 		
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nuova Task</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Tipo di contatto</ion-label>
+    <ion-select #contact>
+      <ion-select-option value="EM">Email</ion-select-option>
+      <ion-select-option value="PC">Telefono</ion-select-option>
+      <ion-select-option value="ME">Incontro</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Descrizione</ion-label>
+    <ion-textarea #desc></ion-textarea>
+  </ion-item>
+</ion-content>
+<ion-footer>
+  <ion-button (click)="postOppTask(contact.value, desc.value)" expand="full">
+    Inserisci Attività
+  </ion-button>
+</ion-footer>

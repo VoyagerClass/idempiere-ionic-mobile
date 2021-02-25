@@ -44,17 +44,19 @@ export class LoginPagePage implements OnInit {
   uName = localStorage.getItem('username');
   ip = localStorage.getItem('TargetIP');
   visible = false;
+  pass = localStorage.getItem('pass');
 
-  Login(password: string, rme: boolean){
+  Login(rme: boolean){
     this.ipConfig();
     this.cred.username = this.uName;
     //this.cred.password = bcrypt.hashSync(password, salt);
-    this.cred.password = password;
+    this.cred.password = this.pass;
     console.log(this.cred);
     this.auth.logMeIn(this.cred).subscribe(async res => {
       if (res){
         if(rme){
           localStorage.setItem('username', this.uName);
+          localStorage.setItem('pass', this.pass);
         }
         this.router.navigate(['']);
       }else{

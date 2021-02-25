@@ -116,7 +116,17 @@ const routes: Routes = [
   {
     path: 'nuova-testata',
     loadChildren: () => import('./info-product/inventario/nuova-testata/nuova-testata.module').then( m => m.NuovaTestataPageModule)
+  },
+  {
+    path: 'dettaglio-opportunita/:id',
+    loadChildren: () => import('./opportunita/dettaglio-opportunita/dettaglio-opportunita.module').then( m => m.DettaglioOpportunitaPageModule)
+  },
+  {
+    path: 'nuova-opp-task/:id',
+    loadChildren: () => import('./opportunita/nuova-opp-task/nuova-opp-task.module').then( m => m.NuovaOppTaskPageModule)
   }
+
+
 
 
 

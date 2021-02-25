@@ -8,7 +8,7 @@ import { Distinta } from './../models/Distinta';
 import { MenuItem } from './../models/Menu';
 import { PostResponse, TResponse } from './../models/TokenResponse';
 import { Credentials, Utente } from './../models/Credentials';
-import { Opportunity } from './../models/OpportunityModel';
+import { Opportunity, OppTasks } from './../models/OpportunityModel';
 import { FornitoriModel } from './../models/FornitoriModel';
 import { Task } from './../models/TaskLog';
 import { LogAgente } from './../models/LogModel';
@@ -52,8 +52,16 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
     return this.http.get<FornitoriModel[]>(this.EndPoint+"getSuppliers");
   }
 
-  getOpp(){
-    return this.http.get<Opportunity[]>(this.EndPoint+"getOpportunity");
+  getOpp(id: string){
+    return this.http.get<Opportunity[]>(this.EndPoint+"getOpportunity_"+id);
+  }
+
+  getOppTasks(id: number){
+    return this.http.get<OppTasks[]>(this.EndPoint+"getOpportunityTasks_"+id);
+  }
+
+  postOppTasks(opp: OppTasks){
+    return this.http.post(this.EndPoint+"postOpportunityTasks", opp);
   }
 
   getConteggioOre(){
@@ -126,6 +134,8 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
     log.C_Activity_ID = 1000010;
     log.Name = "-";
     log.ContactActivityType = act;
+    log.IsComplete = 'Y';
+    log.LIT_isMobileLog = 'Y';
     console.log(log);
     this.http.post(this.EndPoint+"postTask", log).subscribe((data)=>{
       console.log(data);
