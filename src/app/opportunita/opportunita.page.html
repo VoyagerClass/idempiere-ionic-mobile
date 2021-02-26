@@ -11,6 +11,7 @@
   <ion-list>
     <ion-card *ngFor="let l of list" (click)="oppDetails(l.id)">
       <ion-card-header>
+        <ion-card-subtitle>{{l.Name}}</ion-card-subtitle>
         <ion-card-title>{{l.Description}}</ion-card-title>
       </ion-card-header>
       <ion-card-content>

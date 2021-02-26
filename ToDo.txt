@@ -10,6 +10,7 @@ Base
 	- Marco creare campo (lit_mobile_role_v)
 [ ] Creare PDF JasperReport 
 [ ] Gestire Allegati in Invio e Ricezione
+	https://github.com/apache/cordova-plugin-file-transfer
 [ ] Gestione NFC - Per segnare le ore ?
 	- controllare plugin NFC
 [ ] Stampa Diretta 
@@ -52,9 +53,9 @@ PAGINA DETTAGLIO LEAD
 
 ## Opportunità (lit...) #######################################################
 
-[ ] Aggiungere dettaglio informazione - Nuova Scheda come Lead ?
+[x] Aggiungere dettaglio informazione - Nuova Scheda come Lead ?
 [ ] Aggiungere opzioni come Lead  : Modifica
-[ ] Aggiungere CREA Task (sotto attività delle Opportunità)
+[x] Aggiungere CREA Task (sotto attività delle Opportunità)
 
 ## Bacheca (lit...)###############################################################
 
@@ -124,13 +125,14 @@ PAGINA DETTAGLIO LEAD
 
 		- ad org
 		- magazzino 
-		- C_DocType_ID select * from c_doctype where docbasetype = 'MMI' and ad_client_id= 1000006 and isdefault = 'Y'
+		- C_DocType_ID 
+			select * from c_doctype where docbasetype = 'MMI' and ad_client_id= 1000006 and isdefault = 'Y'
 		- Description
 
 - Trasferimento
   [ ] bisogna fare delle insert
 - Entrata Merci
-[ ] Migliorare dati  Documentno
+  [ ] Migliorare dati  Documentno
 
 # ORE ###################################################
    RIEPILOGO ORE

@@ -39,7 +39,7 @@ export class CrmPagePage implements OnInit{
               private contacts: Contacts,) { }
 
   ngOnInit(): void {
-    this.queryBuild();
+    this.getList();
     document.addEventListener("deviceready", onDeviceReady, false);
     function onDeviceReady() {
       console.log((navigator as any).contacts);
@@ -47,7 +47,7 @@ export class CrmPagePage implements OnInit{
     this.menuCtrl.enable (true, 'CRMmenu');
   }
 
-  queryBuild(){
+  getList(){
     this.list = [];
     this.list1 = [];
     this.Api.getData('').subscribe((data) => { 
@@ -81,7 +81,7 @@ export class CrmPagePage implements OnInit{
   }
 
   doRefresh(event) {
-    this.queryBuild();
+    this.getList();
     setTimeout(() => {
       console.log('Async operation has ended');
       event.target.complete();

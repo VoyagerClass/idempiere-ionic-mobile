@@ -1,8 +1,7 @@
 import { LeadDetails } from './../../models/LeadDetails';
 import { ActivatedRoute } from '@angular/router';
-import { QueryModel } from './../../models/querymodel';
 import { ApiServiceService } from './../api-service.service';
-import { Component, OnInit, Query } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ToastController, NavController } from '@ionic/angular';
 import { Validators, FormBuilder, FormGroup, FormControl, FormsModule } from '@angular/forms';
 

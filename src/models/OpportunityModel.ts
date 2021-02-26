@@ -10,6 +10,7 @@ export class Opportunity{
     OpportunityAmt: string;
     Probability: string;
     id: number;
+    Name: string;
 }
 
 export class OppTasks{
@@ -21,4 +22,6 @@ export class OppTasks{
     IsComplete: string;
     C_Opportunity_ID: string;
     C_Activity_ID: number;
+    Name: string;
+    contact_description: string;
 }

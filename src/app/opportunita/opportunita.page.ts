@@ -8,18 +8,18 @@ import { Router } from '@angular/router';
   templateUrl: './opportunita.page.html',
   styleUrls: ['./opportunita.page.scss'],
 })
-export class OpportunitaPage implements OnInit {
+export class OpportunitaPage {
 
   constructor(private Api: ApiServiceService, private router: Router) { }
 
-  ngOnInit() {
-    this.queryBuild();
+  ionViewDidEnter() {
+    this.getList();
   }
 
   list: Opportunity[] = [];
   list1: Opportunity[] = [];
 
-  queryBuild = () => {
+  getList(){
     this.list = [];
     this.list1 = [];
     this.Api.getOpp("").subscribe((data) => { 

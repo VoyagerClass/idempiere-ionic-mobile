@@ -16,14 +16,14 @@ export class TaskPage implements OnInit {
               private ModalCtrl: ModalController) { }
 
   ngOnInit() {
-    this.queryBuild();
+    this.getList();
   }
 
   list: Task[] = [];
   list1: Task[] = [];
   task: Task;
 
-  queryBuild = () => {
+  getList(){
     this.list = [];
     this.Api.getTask().subscribe((data)=>{
       this.list = data;
@@ -46,7 +46,7 @@ export class TaskPage implements OnInit {
     })
 
     modal.onDidDismiss().then(_=> {
-      this.queryBuild();
+      this.getList();
     })
 
     await modal.present();

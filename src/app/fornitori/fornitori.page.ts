@@ -22,10 +22,10 @@ export class FornitoriPage implements OnInit {
   supplier: FornitoriModel;
 
   ngOnInit() {
-    this.queryBuild();
+    this.getList();
   }
 
-  queryBuild = () => {
+  getList(){
     this.list = [];
     this.Api.getSuppliers().subscribe((data) => { 
       this.list = data;

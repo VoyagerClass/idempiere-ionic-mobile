@@ -8,11 +8,11 @@ import { Opportunity, OppTasks } from 'src/models/OpportunityModel';
   templateUrl: './dettaglio-opportunita.page.html',
   styleUrls: ['./dettaglio-opportunita.page.scss'],
 })
-export class DettaglioOpportunitaPage implements OnInit {
+export class DettaglioOpportunitaPage {
 
   constructor(private api: ApiServiceService, private route: ActivatedRoute, private router: Router) { }
 
-  ngOnInit() {
+  ionViewDidEnter() {
     this.getID();
   }
 
