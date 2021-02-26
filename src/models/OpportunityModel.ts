@@ -11,6 +11,7 @@ export class Opportunity{
     Probability: string;
     id: number;
     Name: string;
+    AD_Org_ID: string;
 }
 
 export class OppTasks{
@@ -24,4 +25,5 @@ export class OppTasks{
     C_Activity_ID: number;
     Name: string;
     contact_description: string;
+    AD_Org_ID: string;
 }

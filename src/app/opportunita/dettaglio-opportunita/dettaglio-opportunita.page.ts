@@ -40,8 +40,8 @@ export class DettaglioOpportunitaPage {
     })
   }
 
-  newTask(bpid: number, id: number){
-    this.router.navigateByUrl('/nuova-opp-task/'+bpid+'&'+id);
+  newTask(bpid: number, id: number, org: string){
+    this.router.navigateByUrl('/nuova-opp-task/'+bpid+'&'+id+'&'+org);
   }
 
 }

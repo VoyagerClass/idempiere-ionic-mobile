@@ -38,9 +38,25 @@
   </ion-refresher>
 
   <ion-list>
-    <ion-item  *ngFor="let s of list1" button (click)="leadDet(s.id)" detail="true">
-       <ion-label>{{s.lead_name}}</ion-label>
-    </ion-item>
+    <ion-card *ngFor="let s of list1" button (click)="leadDet(s.id)" detail="true">
+      <ion-card-header>
+        <ion-card-title>{{s.lead_name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="6">
+              <span><ion-icon style="color: green;" name="checkbox-outline"></ion-icon></span>
+              <span>{{s.lastcompletestartdate | date : 'dd/MM/yyyy hh:mm'}}</span>
+            </ion-col>
+            <ion-col size="6">
+              <span><ion-icon style="color: rgb(3, 109, 230);" name="square-outline"></ion-icon></span>
+              <span>{{s.laststartdate | date : 'dd/MM/yyyy hh:mm'}}</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
   </ion-list>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">

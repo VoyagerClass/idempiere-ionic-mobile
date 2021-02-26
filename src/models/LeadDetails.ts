@@ -15,4 +15,6 @@ export class LeadDetails {
     leadstatus_value: string;
     leadstatus_name: string;
     SalesRep_Name: string;
+    lastcompletestartdate: string;
+​​​    laststartdate: string;
 }

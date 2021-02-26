@@ -34,6 +34,7 @@ export class NuovaOppTaskPage implements OnInit {
     OppTask.C_Opportunity_ID = this.ids[1];
     OppTask.ContactActivityType = contact;
     OppTask.C_Activity_ID= 1000012;
+    OppTask.AD_Org_ID = this.ids[2];
     OppTask.Description = desc;
     OppTask.SalesRep_ID = localStorage.getItem('ADuser');
     OppTask.StartDate = moment().toISOString(true).slice(0,19).replace('T', ' ');
