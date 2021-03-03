@@ -12,6 +12,7 @@ export class Opportunity{
     id: number;
     Name: string;
     AD_Org_ID: string;
+    C_Opportunity_ID: number;
 }
 
 export class OppTasks{

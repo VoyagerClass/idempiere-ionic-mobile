@@ -124,7 +124,12 @@ const routes: Routes = [
   {
     path: 'nuova-opp-task/:id',
     loadChildren: () => import('./opportunita/nuova-opp-task/nuova-opp-task.module').then( m => m.NuovaOppTaskPageModule)
+  },
+  {
+    path: 'modifica-opportunita/:id',
+    loadChildren: () => import('./opportunita/modifica-opportunita/modifica-opportunita.module').then( m => m.ModificaOpportunitaPageModule)
   }
+
 
 
 

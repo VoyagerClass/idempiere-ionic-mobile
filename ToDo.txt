@@ -37,7 +37,7 @@ O Invia Email (e crea task come traccia)
 O Inserisci Opportunita
 
 [ ] Aggiungere possibilità CREA Task da Lead - Esempio creare un contactactivity PhoneCall/b/c/ -DataOraTodo -Risorsa 
-[ ] mettere visualizzazione ultima attività completata e ultima attività assegnata(non completata) **
+[x] mettere visualizzazione ultima attività completata e ultima attività assegnata(non completata) **
 [ ] Creare sottotab Contactactivity 
 [ ] Salva Lead come contatto Telefono
 [ ] Lead per Agente ( vedo solo i miei o tutti ? o per Area ?) 
@@ -200,3 +200,5 @@ Viste utilizzate
     lit_mobile_taskdetail_v
     lit_mobile_inventory_v
     lit_mobile_inventoryline_v
+
+

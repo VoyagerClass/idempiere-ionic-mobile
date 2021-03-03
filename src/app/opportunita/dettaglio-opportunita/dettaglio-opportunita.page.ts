@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ActionSheetController } from '@ionic/angular';
 import { ApiServiceService } from 'src/app/api-service.service';
 import { Opportunity, OppTasks } from 'src/models/OpportunityModel';
 
@@ -10,7 +11,7 @@ import { Opportunity, OppTasks } from 'src/models/OpportunityModel';
 })
 export class DettaglioOpportunitaPage {
 
-  constructor(private api: ApiServiceService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private api: ApiServiceService, private route: ActivatedRoute, private router: Router, public actionSheetController: ActionSheetController) { }
 
   ionViewDidEnter() {
     this.getID();
@@ -42,6 +43,27 @@ export class DettaglioOpportunitaPage {
 
   newTask(bpid: number, id: number, org: string){
     this.router.navigateByUrl('/nuova-opp-task/'+bpid+'&'+id+'&'+org);
+  }
+
+  async opzioniOpportunita(bpid: number, id: number, org: string, bpname: string) {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'Opzioni',
+      cssClass: '',
+      buttons: [{
+        text: 'Inserisci Attività',
+        icon: 'clipboard-outline',
+        handler: () => {
+          this.router.navigateByUrl('/nuova-opp-task/'+bpid+'&'+id+'&'+org);
+        }
+      }, {
+        text: 'Modifica Opportunità',
+        icon: 'pencil-outline',
+        handler: () => {
+          this.router.navigateByUrl('/modifica-opportunita/'+id+'&'+bpname)
+        }
+      }]
+    });
+    await actionSheet.present();
   }
 
 }

@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Modifica Opportunità</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+      <ion-label>Stato Vendita</ion-label>
+      <ion-select value={{opp.C_SalesStage_ID}} placeholder="Seleziona Stato Vendita" #salestatus>
+        <ion-select-option value="1000000">Da iniziare</ion-select-option>
+        <ion-select-option value="1000007">Da contattare</ion-select-option>
+        <ion-select-option value="1000006">Preparazione offerta</ion-select-option>
+        <ion-select-option value="1000004">Consegna offerta</ion-select-option>
+        <ion-select-option value="1000003">Da ricontattare</ion-select-option>
+        <ion-select-option value="1000002">In attesa di risposta</ion-select-option>
+        <ion-select-option value="1000005">Fare ODV</ion-select-option>
+        <ion-select-option value="1000009">Venduto</ion-select-option>
+        <ion-select-option value="1000010">Annullato</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Nome Lead</ion-label>
+      <ion-text>
+        {{bpname}}
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Descrizione Opportunità</ion-label>
+      <br>
+      <ion-textarea value={{opp.Description}} #desc style="height: 150px;" required></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>Data di Chiusura</ion-label>
+      <ion-datetime required value={{opp.ExpectedCloseDate}} #data displayFormat="DD MM YYYY" placeholder="Inserisci data" min="2019" max="2040"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Importo Atteso €</ion-label>
+      <ion-input type="number" value={{opp.OpportunityAmt}} #oppAmm></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Probabilità</ion-label>
+      <ion-range min="0" max="100" step="5" snaps="true" color="secondary" value={{opp.Probability}} pin="true" #prob></ion-range>
+    </ion-item> 
+</ion-content>
+
+<ion-footer>
+  <ion-button expand="full" type="submit" (click)="editOpp(desc.value, salestatus.value, data.value, oppAmm.value, prob.value)" >Modifica Opportunità</ion-button>
+</ion-footer>

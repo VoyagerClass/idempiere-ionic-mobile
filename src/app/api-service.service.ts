@@ -247,4 +247,12 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
     console.log(id);
     return this.http.get<Locator[]>(this.EndPoint+"getLocatorID_"+id);
   }
+
+  getModificaOpp(id: string){
+    return this.http.get<Opportunity>(this.EndPoint+"getModificaOpp_"+id);
+  }
+
+  putModificaOpp(opp: Opportunity){
+    return this.http.put(this.EndPoint+"putModificaOpp", opp);
+  }
 }
