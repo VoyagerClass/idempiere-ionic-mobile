@@ -255,4 +255,8 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
   putModificaOpp(opp: Opportunity){
     return this.http.put(this.EndPoint+"putModificaOpp", opp);
   }
+
+  postAssegnazioneTask(task: Task){
+    return this.http.post(this.EndPoint+"postAssegnazioneTask", task);
+  }
 }

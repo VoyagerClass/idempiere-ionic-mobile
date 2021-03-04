@@ -14,8 +14,8 @@ Base
 [ ] Gestione NFC - Per segnare le ore ?
 	- controllare plugin NFC
 [ ] Stampa Diretta 
-[ ] gestione bacheca APP-to-APP (bacheca) **
-	- scrivere da telefono sull bacheca degli altri?
+[x] gestione bacheca APP-to-APP (bacheca) **
+	- scrivere da telefono sull bacheca degli altri? fare solita assegnazione a gruppo o persona?
 [ ] Evidenziare gli appuntamenti/Visite/Riunione (pubblico? )
 
 

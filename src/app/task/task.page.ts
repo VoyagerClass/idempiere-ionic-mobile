@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ModalComponent } from './modal/modal.component';
 import { Task } from './../../models/TaskLog';
 import { ApiServiceService } from './../api-service.service';
@@ -10,12 +11,13 @@ import * as _ from 'underscore';
   templateUrl: './task.page.html',
   styleUrls: ['./task.page.scss'],
 })
-export class TaskPage implements OnInit {
+export class TaskPage {
 
   constructor(private Api: ApiServiceService,
-              private ModalCtrl: ModalController) { }
+              private ModalCtrl: ModalController,
+              private router: Router) { }
 
-  ngOnInit() {
+  ionViewDidEnter() {
     this.getList();
   }
 
@@ -30,6 +32,10 @@ export class TaskPage implements OnInit {
       this.list1 = _.sortBy(this.list, x => x.Priority)
       console.log(this.list1);
     });
+  }
+
+  newTask(){
+    this.router.navigateByUrl('/nuova-task');
   }
 
   openModal(tsk: Task) {

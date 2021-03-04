@@ -18,7 +18,7 @@ export class Act{
     AD_Org_ID: number;
 }
 
-export interface SalesRep{
+export class SalesRep{
     id: number;
     Name: string;
 }

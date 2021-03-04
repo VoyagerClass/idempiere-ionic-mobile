@@ -12,4 +12,12 @@ export class Task{
     activity_ad_user_id: number;
     userfrom_name: string;
     userto_name: string;
+    SalesRep_ID: number;
+    Comments: string;
+    StartDate: string;
+    IsInTransit: string;
+    IsMobileEnabled: string;
+    ContactActivityType: string;
+    C_Activity_ID: string;
+    IsComplete: string;
 }

@@ -26,7 +26,7 @@ export class AttivitaPage implements OnInit {
 
   userid: number;
   list: Act[];
-  salesrep: SalesRep[]
+  salesrep: SalesRep[] = [];
   actname = ""
   adOrg: number;
   act = new Activity();
