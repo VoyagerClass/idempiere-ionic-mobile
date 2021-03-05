@@ -75,7 +75,9 @@ export class AttivitaPage implements OnInit {
         task.id = parseInt(id.record_id);
         task.S_Resource_ID = this.ResID;
         console.log(task.id);
-        this.api.isCOreComplete(task, parseInt(id.record_id))
+        this.api.isCOreComplete(task, parseInt(id.record_id)).subscribe((data)=>{
+          console.log(data);
+        })
       }
       this.router.navigateByUrl('/conteggio-ore');
     })

@@ -20,16 +20,17 @@ export class ModificaCOrePage implements OnInit {
   }
 
   date = moment(this.Task.DateWorkStart).toISOString(true);
+  complete = false;
 
-  modifyTask(data: string, time: number, descname, desc: string, check: string ) {
+  modifyTask(data: string, time: number, desc: string) {
     let task = new COre;
     task.id = this.Task.id;
-    task.DateWorkStart = data.slice(0, 19).replace('T', ' ');
+    task.AssignDateFrom = data.slice(0, 19).replace('T', ' ');
     task.Description = desc;
     task.Qty = time;
-    task.IsConfirmed = 'N';
-    if(check == "on"){
-      task.IsConfirmed = 'Y';
+    task.Percent = '0';
+    if(this.complete){
+      task.Percent = '100';
     }
     console.log(task);
     this.api.putCOre(task, this.Task.id).subscribe((data)=>{

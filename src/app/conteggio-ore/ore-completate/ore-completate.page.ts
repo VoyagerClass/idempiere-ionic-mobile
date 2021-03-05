@@ -29,6 +29,7 @@ export class OreCompletatePage implements OnInit {
 
   getList(){
     this.api.getOreCompletate().subscribe((data)=>{
+      console.log(data);
       this.list = data;
       this.daySelect(this.data);
     }) 

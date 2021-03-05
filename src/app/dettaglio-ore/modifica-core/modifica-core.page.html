@@ -34,11 +34,11 @@
   </ion-item>
   <ion-item>
     <ion-label>Completa Task</ion-label>
-    <ion-checkbox #complete></ion-checkbox>
+    <ion-checkbox (ionChange)="complete = !complete"></ion-checkbox>
   </ion-item>
 </ion-content>
 <ion-footer>
-  <ion-button (click)="modifyTask(data.value, time.value, descname.value, desc.value, complete)" expand="full">
+  <ion-button (click)="modifyTask(data.value, time.value, desc.value)" expand="full">
     Completa Modifica Attività
   </ion-button>
 </ion-footer>

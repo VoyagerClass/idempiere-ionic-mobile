@@ -12,6 +12,7 @@ export class COre{
     completiondate: string;
     Percent: string;
     S_Resource_ID: number;
+    AssignDateFrom: string;
 }
 
 export class Act{
