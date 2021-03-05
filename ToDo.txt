@@ -54,7 +54,7 @@ PAGINA DETTAGLIO LEAD
 ## Opportunità (lit...) #######################################################
 
 [x] Aggiungere dettaglio informazione - Nuova Scheda come Lead ?
-[ ] Aggiungere opzioni come Lead  : Modifica
+[x] Aggiungere opzioni come Lead  : Modifica
 [x] Aggiungere CREA Task (sotto attività delle Opportunità)
 
 ## Bacheca (lit...)###############################################################
@@ -98,7 +98,7 @@ PAGINA DETTAGLIO LEAD
 - ListaProdotti
 [ ]Lista Prodotti   aggiungere dettagli - Listino Prezzi / Giacenza 
 - Inventario
-[ ] inventario if00 m_inventory value name description documentno \\ per creare la vista creare vista where docstatus=dr \\copiare produzione
+[x] inventario if00 m_inventory value name description documentno \\ per creare la vista creare vista where docstatus=dr \\copiare produzione
 	-dare la possibilità di aggiungere un prodotto
 	-scanner (fatto la ricerca, per ora funziona solo cercando il nome del prodotto... da estendere la vista con appfilter)
 	-crea nuove voci di inventario con figli (consumo)
@@ -178,6 +178,8 @@ PAGINA DETTAGLIO LEAD
 	- cambiare metodo di modifica, fare come i lead FATTO
 	- non si capisce che la pagina è modificabile
 	- dividere la modifica dalla completazione della task FATTO
+
+	modificare la vista lit_mobile_taskdetail_v siccome ora non si usa più LIT_Hour bisogna modificarla per S_ResourceAssignment
 		
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------

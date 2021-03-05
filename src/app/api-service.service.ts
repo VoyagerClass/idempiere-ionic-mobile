@@ -259,4 +259,8 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
   postAssegnazioneTask(task: Task){
     return this.http.post(this.EndPoint+"postAssegnazioneTask", task);
   }
+
+  getResourceID(id: number){
+    return this.http.get(this.EndPoint+"getResourceID_"+id);
+  }
 }

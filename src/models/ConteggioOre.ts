@@ -10,6 +10,8 @@ export class COre{
     IsConfirmed: string;
     Description: string;
     completiondate: string;
+    Percent: string;
+    S_Resource_ID: number;
 }
 
 export class Act{
@@ -26,9 +28,11 @@ export class SalesRep{
 export class Activity{
     C_ContactActivity_ID: number;
     SalesRep_ID: number;
+    S_Resource_ID: number;
     Name: string;
     Description: string;
     DateWorkStart: string;
+    AssignDateFrom: string;
     Qty: number;
     AD_Org_ID: number;
 }

@@ -20,6 +20,7 @@ export class AttivitaPage implements OnInit {
     this.getSalesRep();
     this.getList();
     this.userid = parseInt(localStorage.getItem('ADuser'));
+    this.getID(this.userid);
   }
 
   date = moment().toISOString(true).slice(0, 19).replace('T', ' ');
@@ -30,6 +31,8 @@ export class AttivitaPage implements OnInit {
   actname = ""
   adOrg: number;
   act = new Activity();
+  ResID: number;
+  complete = false;
 
   getList() {
     this.api.getTaskList().subscribe((data) => {
@@ -38,15 +41,24 @@ export class AttivitaPage implements OnInit {
     })
   }
 
+
   getSalesRep() {
     this.api.getSalesRepList().subscribe((data) => {
       this.salesrep = data;
     })
   }
 
-  insertActivity(activity: number, srep: number, data: string, time: number, descname: string, desc: string, check: string) {
-    this.act.DateWorkStart = data.slice(0, 19).replace('T', ' ');
-    this.act.SalesRep_ID = srep;
+  getID(srep){
+    this.api.getResourceID(srep).subscribe((data)=>{
+      this.ResID = data[0].id;
+      console.log(this.ResID);
+      
+   })
+  }
+
+  insertActivity(activity: number, srep: number, data: string, time: number, descname: string, desc: string) {
+    this.act.S_Resource_ID = this.ResID;
+    this.act.AssignDateFrom = data.slice(0, 19).replace('T', ' ');
     this.act.C_ContactActivity_ID = activity;
     this.act.Name = descname;
     this.act.Description = desc;
@@ -57,15 +69,15 @@ export class AttivitaPage implements OnInit {
       console.log(data);
       let id = new PostResponse();
       id = data;
-      if (check == "on") {
+      if (this.complete) {
         let task= new COre();
-        task.IsConfirmed = 'Y';
+        task.Percent = '100';
         task.id = parseInt(id.record_id);
+        task.S_Resource_ID = this.ResID;
         console.log(task.id);
-        this.api.isCOreComplete(task, parseInt(id.record_id)).subscribe(_ => {
-          this.router.navigateByUrl('/conteggio-ore');
-        })
+        this.api.isCOreComplete(task, parseInt(id.record_id))
       }
+      this.router.navigateByUrl('/conteggio-ore');
     })
   }
 

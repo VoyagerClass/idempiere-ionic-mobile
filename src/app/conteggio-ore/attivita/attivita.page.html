@@ -16,7 +16,7 @@
   </ion-item>
   <ion-item>
     <ion-label position="stacked">Assegnato a:</ion-label>
-    <ion-select  value={{userid}} #srep> 
+    <ion-select (ionChange)="getID(srep.value)"  value={{userid}} #srep> 
       <ion-select-option *ngFor="let s of salesrep" value={{s.id}}>{{s.Name}}</ion-select-option>
     </ion-select>
   </ion-item>
@@ -40,11 +40,11 @@
   </ion-item>
   <ion-item>
     <ion-label>Completata</ion-label>
-    <ion-checkbox #check></ion-checkbox>
+    <ion-checkbox (ionChange)="complete = !complete"></ion-checkbox>
   </ion-item>
 </ion-content>
 <ion-footer>
-  <ion-button (click)="insertActivity(act.value, srep.value, data.value, time.value, descname.value, desc.value, check.value)" expand="full">
+  <ion-button (click)="insertActivity(act.value, srep.value, data.value, time.value, descname.value, desc.value)" expand="full">
     Inserisci
   </ion-button>
 </ion-footer>
