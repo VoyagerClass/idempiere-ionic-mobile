@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { SalesRep, BPartner } from './../../../models/ConteggioOre';
 import { ApiServiceService } from 'src/app/api-service.service';
 import { Component, OnInit } from '@angular/core';
@@ -13,14 +13,27 @@ import * as moment from 'moment'
 })
 export class NuovaTaskPage implements OnInit {
 
-  constructor(private api: ApiServiceService, private router: Router) { }
+  constructor(private api: ApiServiceService, private router: Router, private route: ActivatedRoute) { }
 
   salesrep: SalesRep[];
   bps: BPartner[];
+  bpid: number;
+  bpname: string
 
   ngOnInit() {
     this.getSalesRep();
     this.getPartners();
+    this.getID();
+  }
+
+  getID(){
+    this.route.paramMap.subscribe(param => {
+      const id = param.get('id');
+      let data = id.split('&')
+        this.bpid = parseInt(data[0]);
+        this.bpname = data[1];
+        console.log(id);
+    });
   }
 
   getPartners(){

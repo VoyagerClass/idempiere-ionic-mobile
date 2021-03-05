@@ -60,7 +60,7 @@ PAGINA DETTAGLIO LEAD
 ## Bacheca (lit...)###############################################################
 
 [ ] Rivedere Insieme - ????
-[ ] Aggiungere campo isInTransit serve per organizzare tutti i task assegnati dall'ufficio verso l'app.
+[x] Aggiungere campo isInTransit serve per organizzare tutti i task assegnati dall'ufficio verso l'app.
 		get sulla c_contactactivity dove isInTransit = true e iscomplete = false
 
 ## Appuntamenti 

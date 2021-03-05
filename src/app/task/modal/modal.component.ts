@@ -37,7 +37,8 @@ export class ModalComponent implements OnInit {
   taskCompleted(){
     let completed = {
       id : this.task.id,
-      IsComplete : 'Y'
+      IsComplete : 'Y',
+      IsInTransit : 'N' 
     }
     this.Api.isTaskComplete(completed).subscribe(_=> {
       this.closeModal();

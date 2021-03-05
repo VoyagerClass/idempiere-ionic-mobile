@@ -62,7 +62,8 @@ export class LeadDetailsPage implements OnInit {
         handler: () => {
           this.router.navigate(['/lead-form/'+ this.idLead]);
         }
-      }, {
+      }, 
+      {
         text: 'Telefona',
         icon: 'call-outline',
         handler: () => {
@@ -70,7 +71,15 @@ export class LeadDetailsPage implements OnInit {
           .then(res => this.insertLog(this.lead.id , 'Call', 'PC'))
           .catch(err => console.log('Error launching dialer', err));
         }
-      }, {
+      }, 
+      {
+        text: 'Crea Task',
+        icon: 'clipboard-outline',
+        handler: () => {
+          this.router.navigateByUrl('/nuova-task/'+this.idLead+"&"+this.lead.lead_name);
+        }
+      },
+      {
         text: 'Invia E-mail',
         icon: 'mail-outline',
         handler: () => {
@@ -88,7 +97,8 @@ export class LeadDetailsPage implements OnInit {
 
           this.router.navigate(['/descrizione/'+this.lead.id], {state: {lead: this.lead}});
         }
-      }, {
+      }, 
+      {
         text: 'Annulla',
         icon: 'close',
         role: 'cancel',

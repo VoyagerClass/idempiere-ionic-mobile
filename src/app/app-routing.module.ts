@@ -130,7 +130,7 @@ const routes: Routes = [
     loadChildren: () => import('./opportunita/modifica-opportunita/modifica-opportunita.module').then( m => m.ModificaOpportunitaPageModule)
   },
   {
-    path: 'nuova-task',
+    path: 'nuova-task/:id',
     loadChildren: () => import('./task/nuova-task/nuova-task.module').then( m => m.NuovaTaskPageModule)
   }
 

@@ -35,7 +35,7 @@ export class TaskPage {
   }
 
   newTask(){
-    this.router.navigateByUrl('/nuova-task');
+    this.router.navigateByUrl('/nuova-task/');
   }
 
   openModal(tsk: Task) {

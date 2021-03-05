@@ -14,7 +14,8 @@
   </ion-item>
   <ion-item>
     <ion-label position="floating">Business Partner</ion-label>
-    <ion-select #bp>
+    <ion-select value={{bpid}} #bp>
+        <ion-select-option value={{bpid}}>{{bpname}}</ion-select-option>
       <ion-select-option *ngFor="let b of bps" value={{b.id}}>{{b.Name}}</ion-select-option>
     </ion-select>
   </ion-item>
@@ -34,7 +35,7 @@
   </ion-item>
 </ion-content>
 <ion-footer>
-  <ion-button (click)="createTask(name.value, bp.value, srep.value,desc.value, com.value)" expand="full">
+  <ion-button (click)="createTask(name.value, bp.value, srep.value, desc.value, com.value)" expand="full">
     Inserisci Task
   </ion-button>
 </ion-footer>
