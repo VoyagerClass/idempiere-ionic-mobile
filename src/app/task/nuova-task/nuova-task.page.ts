@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { SalesRep } from './../../../models/ConteggioOre';
+import { SalesRep, BPartner } from './../../../models/ConteggioOre';
 import { ApiServiceService } from 'src/app/api-service.service';
 import { Component, OnInit } from '@angular/core';
 import { Task } from 'src/models/TaskLog';
@@ -16,9 +16,18 @@ export class NuovaTaskPage implements OnInit {
   constructor(private api: ApiServiceService, private router: Router) { }
 
   salesrep: SalesRep[];
+  bps: BPartner[];
 
   ngOnInit() {
     this.getSalesRep();
+    this.getPartners();
+  }
+
+  getPartners(){
+    this.api.getBPartner().subscribe((data)=>{
+      console.log(data);
+      this.bps = data;
+    })
   }
 
   getSalesRep() {
@@ -31,7 +40,7 @@ export class NuovaTaskPage implements OnInit {
   createTask(name:string, bp:number, srep:number, desc:string, com:string){
     let task = new Task;
     task.Name = name;
-    task.AD_User_ID = 1000271;
+    task.AD_User_ID = bp;
     task.SalesRep_ID = srep;
     task.Description = desc;
     task.Comments = com;

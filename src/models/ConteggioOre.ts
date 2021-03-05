@@ -37,3 +37,9 @@ export class Activity{
     Qty: number;
     AD_Org_ID: number;
 }
+
+export interface BPartner{
+    id: number;
+    Value: string;
+    Name: string;
+}

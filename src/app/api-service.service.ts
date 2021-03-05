@@ -1,6 +1,6 @@
 import { InventoryItem, InventoryDetails, ProductList, m_inventoryline, Orgs, Mags, Docs, Inventory } from './../models/InfoProduct';
 import { DettaglioFatture, ordini } from './../models/OrdinieFatture';
-import { COre, SalesRep, Activity, Act } from './../models/ConteggioOre';
+import { COre, SalesRep, Activity, Act, BPartner } from './../models/ConteggioOre';
 import { m_product } from './../models/Magazzino';
 import { DistDetails } from './../models/DistDetails';
 import { OrdCompl, PrelievoCompl, ResResponse } from './../models/OrderComp';
@@ -262,5 +262,9 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
 
   getResourceID(id: number){
     return this.http.get(this.EndPoint+"getResourceID_"+id);
+  }
+
+  getBPartner(){
+    return this.http.get<BPartner[]>(this.EndPoint+"getBPartner");
   }
 }

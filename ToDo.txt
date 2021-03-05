@@ -121,12 +121,11 @@ PAGINA DETTAGLIO LEAD
 	
 	chiedere a marco per M_locator_id
 
-	INSERIMENTO TESTATA FATTO
+	[x] INSERIMENTO TESTATA
 
 		- ad org
 		- magazzino 
 		- C_DocType_ID 
-			select * from c_doctype where docbasetype = 'MMI' and ad_client_id= 1000006 and isdefault = 'Y'
 		- Description
 
 - Trasferimento
@@ -174,12 +173,16 @@ PAGINA DETTAGLIO LEAD
 	- fare i menù di scelta più gradi
 	- trovare il modo che l'"assegnato a:" venga già completato senza bisogno di clickarlo... è un problema di angular
 
+	[ ] modifica della vista lit_mobile_activity_v per filtrare solo le attività assegnate a persona o gruppo
+			 
+
+
   DETTAGLIO ATTIVITÀ
 	- cambiare metodo di modifica, fare come i lead FATTO
 	- non si capisce che la pagina è modificabile
 	- dividere la modifica dalla completazione della task FATTO
 
-	modificare la vista lit_mobile_taskdetail_v siccome ora non si usa più LIT_Hour bisogna modificarla per S_ResourceAssignment
+	[x]	modificare la vista lit_mobile_taskdetail_v siccome ora non si usa più LIT_Hour bisogna modificarla per S_ResourceAssignment
 		
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
