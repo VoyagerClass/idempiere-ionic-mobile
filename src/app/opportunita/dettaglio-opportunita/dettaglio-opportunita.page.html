@@ -30,7 +30,7 @@
     </ion-list-header>
     <ion-card *ngFor="let t of task">
       <ion-card-header>
-        <ion-card-subtitle>{{t.StartDate | date : 'dd/MM/yyyy hh:mm'}}</ion-card-subtitle>
+        <ion-card-subtitle>{{t.StartDate | date : 'dd/MM/yyyy H:mm'}}</ion-card-subtitle>
         <ion-card-title>
           <span *ngIf="t.ContactActivityType == 'EM'"><ion-icon name="mail-sharp"></ion-icon></span>
           <span *ngIf="t.ContactActivityType == 'PC'"><ion-icon name="call-sharp"></ion-icon></span>

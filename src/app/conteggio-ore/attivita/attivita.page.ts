@@ -30,6 +30,7 @@ export class AttivitaPage implements OnInit {
   salesrep: SalesRep[] = [];
   actname = ""
   adOrg: number;
+  bpid: number;
   act = new Activity();
   ResID: number;
   complete = false;
@@ -63,6 +64,7 @@ export class AttivitaPage implements OnInit {
     this.act.Name = descname;
     this.act.Description = desc;
     this.act.Qty = time;
+    this.act.C_BPartner_ID = this.bpid;
     this.act.AD_Org_ID = this.adOrg;
     console.log(this.act);
     this.api.postActivity(this.act).subscribe((data) => {
@@ -88,6 +90,8 @@ export class AttivitaPage implements OnInit {
     actname = _.where(this.list, { id: parseInt(id) })
     this.actname = actname[0].Name;
     this.adOrg = actname[0].AD_Org_ID;
+    this.bpid = actname[0].C_BPartner_ID;
+    console.log(actname);
   }
 
 }

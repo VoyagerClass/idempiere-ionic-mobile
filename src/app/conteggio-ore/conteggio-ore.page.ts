@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { COre } from './../../models/ConteggioOre';
 import { ApiServiceService } from './../api-service.service';
 import { Component } from '@angular/core';
+import { trigger, transition, animate, style } from '@angular/animations'
 
 import * as _ from 'underscore';
 
@@ -10,10 +11,23 @@ import * as _ from 'underscore';
   selector: 'app-conteggio-ore',
   templateUrl: './conteggio-ore.page.html',
   styleUrls: ['./conteggio-ore.page.scss'],
+  animations: [
+    trigger('slideInOut', [
+      transition(':enter', [
+        style({transform: 'translateX(-100%)'}),
+        animate('200ms ease-in', style({transform: 'translateX(0%)'}))
+      ]),
+      transition(':leave', [
+        animate('200ms ease-in', style({transform: 'translateX(-100%)'}))
+      ])
+    ])
+  ]
 })
 export class ConteggioOrePage {
 
+
   list: COre[] = [];
+  list1: COre[] = [];
   visible = false;
 
   constructor(private Api: ApiServiceService, private router: Router, private ModalCtrl: ModalController, private menuCtrl: MenuController) { }
@@ -27,6 +41,7 @@ export class ConteggioOrePage {
   getTasks(){
     this.Api.getConteggioOre().subscribe((data)=>{
       this.list = _.sortBy(data,x => x.DateWorkStart);
+      this.list1 = this.list;
       console.log(this.list);
     })
   }
@@ -37,6 +52,17 @@ export class ConteggioOrePage {
 
   Direct(){
     this.router.navigateByUrl('/attivita');
+  }
+
+  SearchAct(ev: any){
+    const regexp = new RegExp(ev.detail.value, 'i');
+    if(ev.detail.value == ""){
+      this.list1 = this.list;
+    }else{
+      this.list1 = this.list.filter(x => regexp.test(x.BPName))
+      console.log(ev.detail.value);
+      console.log(this.list1);
+    }
   }
 
 }

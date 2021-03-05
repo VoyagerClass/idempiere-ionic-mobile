@@ -1,4 +1,5 @@
 export class COre{
+    BPName: string;
     id: number;
     DateWorkStart: string;
     Qty: number;
@@ -16,6 +17,7 @@ export class COre{
 }
 
 export class Act{
+    C_BPartner_ID: number;
     id: number;
     Name: string;
     AD_Org_ID: number;
@@ -36,6 +38,7 @@ export class Activity{
     AssignDateFrom: string;
     Qty: number;
     AD_Org_ID: number;
+    C_BPartner_ID: number;
 }
 
 export interface BPartner{

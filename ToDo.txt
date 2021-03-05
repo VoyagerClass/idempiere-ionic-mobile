@@ -123,7 +123,6 @@ PAGINA DETTAGLIO LEAD
 		- AD_org_ID
 		- InventoryType
 	
-	chiedere a marco per M_locator_id
 
 	[x] INSERIMENTO TESTATA
 
@@ -162,20 +161,21 @@ PAGINA DETTAGLIO LEAD
 
 	vista: name qty data
 
-	[ ]Creare filtro in conteggio ore per filtrare il nome del lead
+	
 
 
   CONTEGGIO ORE
 	[x] invertire titolo e sottotitolo
-	[ ] business partner in vista nella card
-	[ ] ora visibile e non tagliata
+	[x] business partner in vista nella card
+	[x] ora visibile e non tagliata
+	[x] Creare filtro in conteggio ore per filtrare il nome del lead
 
   INSERIMENTO ATTIVITÀ
 	[x] dare la possibilità di completare instant l'attività
 		-invece di farlo instant faccio una pagina di visualizzazione dell'attività che verrà condivisa con il dettaglio attività e da li si modifica o    completa
 		- mettere una spunta di flag per terminare e completare l'attività inserita
 	[ ] ordinare in ordine alfabetico le attività e gli assegnati
-	[ ] inserimento business partner nella scheda
+	[x] inserimento business partner nella scheda
 	[ ] fare i menù di scelta più gradi
 	[ ] trovare il modo che l'"assegnato a:" venga già completato senza bisogno di clickarlo... è un problema di angular
 
