@@ -16,7 +16,7 @@
       <ion-item>
         <ion-label>{{task.activity_description}}</ion-label>
       </ion-item>
-      <ion-button disabled={{Bflag}} (click)="goToLead(task.AD_User_ID)" expand="block" fill="clear">
+      <ion-button disabled={{Bflag}} (click)="goToLead(task.activity_ad_user_id)" expand="block" fill="clear">
         {{task.userto_name}}
       </ion-button>
       <ion-button (click)="taskCompleted()" expand="block" fill="clear" shape="round" text="green">

@@ -36,12 +36,15 @@ O Telefona  (e crea task come traccia)
 O Invia Email (e crea task come traccia)
 O Inserisci Opportunita
 
-[ ] Aggiungere possibilità CREA Task da Lead - Esempio creare un contactactivity PhoneCall/b/c/ -DataOraTodo -Risorsa 
+[x] Aggiungere possibilità CREA Task da Lead - Esempio creare un contactactivity PhoneCall/b/c/ -DataOraTodo -Risorsa 
 [x] mettere visualizzazione ultima attività completata e ultima attività assegnata(non completata) **
 [ ] Creare sottotab Contactactivity 
 [ ] Salva Lead come contatto Telefono
 [ ] Lead per Agente ( vedo solo i miei o tutti ? o per Area ?) 
 		- fare come per l'assegnazione dell'attività per gruppo con coalesce dove gli utenti sono dentro permessi area etc?
+
+# LEAD PARTNER
+	-identica al CRM
 
 
 PAGINA DETTAGLIO LEAD
@@ -89,7 +92,8 @@ PAGINA DETTAGLIO LEAD
 2. Fatture di Vendita 
 3. Pagamenti e Incassi 
 
-# ORDINI -> Diventa ACQUISTI ########
+# ORDINI -> Diventa ACQUISTI ######## come CRM
+[ ]	 Lead fornitori isleadvendor = Y
 [ ]  Solo Ordini di acquisto + Search + Dettaglio + Linee  - solo ordini aperti o ultimi 30 gg
 [ ]  Entrate Merci
 [ ]  Prodotti SottoScorta -> Crea ODA
@@ -99,8 +103,8 @@ PAGINA DETTAGLIO LEAD
 [ ]Lista Prodotti   aggiungere dettagli - Listino Prezzi / Giacenza 
 - Inventario
 [x] inventario if00 m_inventory value name description documentno \\ per creare la vista creare vista where docstatus=dr \\copiare produzione
-	-dare la possibilità di aggiungere un prodotto
-	-scanner (fatto la ricerca, per ora funziona solo cercando il nome del prodotto... da estendere la vista con appfilter)
+[x] dare la possibilità di aggiungere un prodotto
+[ ]scanner (fatto la ricerca, per ora funziona solo cercando il nome del prodotto... da estendere la vista con appfilter)
 	-crea nuove voci di inventario con figli (consumo)
 
 	lit_mobile_inventoryline_v 	per vedere le sottovoci dei diversi inventari
@@ -158,29 +162,32 @@ PAGINA DETTAGLIO LEAD
 
 	vista: name qty data
 
+	[ ]Creare filtro in conteggio ore per filtrare il nome del lead
+
 
   CONTEGGIO ORE
-	- invertire titolo e sottotitolo FATTO
-	- business partner in vista nella card
-	- ora visibile e non tagliata
+	[x] invertire titolo e sottotitolo
+	[ ] business partner in vista nella card
+	[ ] ora visibile e non tagliata
 
   INSERIMENTO ATTIVITÀ
-	- dare la possibilità di completare instant l'attività FATTO
+	[x] dare la possibilità di completare instant l'attività
 		-invece di farlo instant faccio una pagina di visualizzazione dell'attività che verrà condivisa con il dettaglio attività e da li si modifica o    completa
 		- mettere una spunta di flag per terminare e completare l'attività inserita
-	- ordinare in ordine alfabetico le attività e gli assegnati
-	- inserimento business partner nella scheda
-	- fare i menù di scelta più gradi
-	- trovare il modo che l'"assegnato a:" venga già completato senza bisogno di clickarlo... è un problema di angular
+	[ ] ordinare in ordine alfabetico le attività e gli assegnati
+	[ ] inserimento business partner nella scheda
+	[ ] fare i menù di scelta più gradi
+	[ ] trovare il modo che l'"assegnato a:" venga già completato senza bisogno di clickarlo... è un problema di angular
 
 	[ ] modifica della vista lit_mobile_activity_v per filtrare solo le attività assegnate a persona o gruppo
 			 
 
 
   DETTAGLIO ATTIVITÀ
-	- cambiare metodo di modifica, fare come i lead FATTO
+	[x] cambiare metodo di modifica, fare come i lead 
 	- non si capisce che la pagina è modificabile
-	- dividere la modifica dalla completazione della task FATTO
+	[x] dividere la modifica dalla completazione della task 
+	[ ] mettere in visualizzazione il giorno della settimana a cui corrisponde il numero del giorno
 
 	[x]	modificare la vista lit_mobile_taskdetail_v siccome ora non si usa più LIT_Hour bisogna modificarla per S_ResourceAssignment
 		

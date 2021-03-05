@@ -24,8 +24,7 @@ export class DettaglioOrePage implements OnInit {
   taskCompleted() {
     let task = new COre;
     task.id = this.Task.id;
-    task.IsConfirmed = 'Y';
-    task.Qty = this.Task.Qty;
+    task.Percent = '100';
     console.log(task);
     this.Api.isCOreComplete(task, this.Task.id).subscribe((data)=>{
       console.log(data);
