@@ -17,7 +17,7 @@ Base
 [x] gestione bacheca APP-to-APP (bacheca) **
 	- scrivere da telefono sull bacheca degli altri? fare solita assegnazione a gruppo o persona?
 [ ] Evidenziare gli appuntamenti/Visite/Riunione (pubblico? )
-
+[ ] Gestione Attività Offline - Test :  Inserimento riga con 4 campi ID-TASK  ( Padre )  DATO1(testo)  DATO2(datanow) DATO3(SI/NO)  DATO4 (ID) 
 
 Sicurezza 
 [x] (eccezione momentanea) memorizzazione pwd 
