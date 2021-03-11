@@ -54,10 +54,10 @@
       </ion-footer>
     </ion-menu>
 
-    <ion-menu side="start" menuId="Contabilita" contentId="main">
+    <ion-menu side="start" menuId="Acquisti" contentId="main">
       <ion-header>
         <ion-toolbar color="primary">
-          <ion-title>Contabilità</ion-title>
+          <ion-title>Acquisti</ion-title>
           <ion-buttons slot="start">
             <ion-menu-button></ion-menu-button>
           </ion-buttons>
@@ -65,9 +65,33 @@
       </ion-header>
       <ion-content>
         <ion-list>
-          <ion-item (click)="Direct('/contabilita/acquisti')" detail>Acquisti</ion-item>
-          <ion-item (click)="Direct('/contabilita/vendita')" detail>Vendite</ion-item>
-          <ion-item (click)="Direct('/contabilita/pagamentieacquisti')" detail>Pagamenti e Acquisti</ion-item>
+          <ion-item (click)="Direct('')" detail>Entrate Merci</ion-item>
+          <ion-item (click)="Direct('')" detail>Prodotti Sottoscorta</ion-item>
+        </ion-list>
+      </ion-content>
+      <ion-footer>
+        <ion-toolbar>
+          <ion-button (click)="Direct('')" expand="full">
+            Menù Principale
+          </ion-button>
+        </ion-toolbar>
+      </ion-footer>
+    </ion-menu>
+
+    <ion-menu side="start" menuId="Contabilita" contentId="main">
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Acquisti</ion-title>
+          <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-item (click)="Direct('/contabilita/acquisti')" detail>Fatture di Acquisto</ion-item>
+          <ion-item (click)="Direct('/contabilita/vendita')" detail>Fatture di Vendita</ion-item>
+          <ion-item (click)="Direct('/contabilita/pagamentieacquisti')" detail>Pagamenti e Incassi</ion-item>
         </ion-list>
       </ion-content>
       <ion-footer>

@@ -83,9 +83,9 @@ PAGINA DETTAGLIO LEAD
 [ ] Da Rivedere Insieme
 
 # CONTABILITA' #########################################################################################################
-[ ] Scheda Pagamenti in Scadenza 
-[ ] Scheda Prossimi incassi
-[ ] Fatture di Vendite (solo le ultime)
+[ ] Scheda Pagamenti in Scadenza (cosa definisce in scadenza? manca un settimana?)
+[ ] Scheda Prossimi incassi (prossimi come è definito?)
+[ ] Fatture di Vendite (solo le ultime) - ultimi 30 giorni?
 [ ] Fatture di Acquisto (solo le ultime)
 
 1. Fatture di Acquisto 

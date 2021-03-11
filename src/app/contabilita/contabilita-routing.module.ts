@@ -9,10 +9,6 @@ const routes: Routes = [
     component: ContabilitaPage
   },
   {
-    path: 'acquisti',
-    loadChildren: () => import('./acquisti/acquisti.module').then( m => m.AcquistiPageModule)
-  },
-  {
     path: 'vendita',
     loadChildren: () => import('./vendita/vendita.module').then( m => m.VenditaPageModule)
   },
@@ -27,6 +23,10 @@ const routes: Routes = [
   {
     path: 'dettaglio/:id',
     loadChildren: () => import('./dettaglio/dettaglio.module').then( m => m.DettaglioPageModule)
+  },
+  {
+    path: 'acquisti',
+    loadChildren: () => import('./acquisti/acquisti.module').then( m => m.AcquistiPageModule)
   }
 
 
