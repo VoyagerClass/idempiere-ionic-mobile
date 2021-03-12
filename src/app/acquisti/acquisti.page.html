@@ -1,9 +1,33 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>acquisti</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="Acquisti"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Acquisti</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar inputmode="text" type="text" (ionChange)="SearchVendor($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-list>
+    <ion-card *ngFor="let l of list" (click)="vendorDetails(l.id)">
+      <ion-card-header>
+        <ion-card-subtitle>{{l.client_name}}</ion-card-subtitle>
+        <ion-card-title>{{l.lead_name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p *ngIf="l.lastcompletestartdate != null">
+          <span><ion-icon style="color: green;" name="checkbox-outline"></ion-icon></span>
+          <span>{{l.lastcompletestartdate | date : 'dd/MM/yyyy H:mm'}}</span>
+        </p>
+        <p *ngIf="l.laststartdate != null">
+          <span><ion-icon style="color: rgb(3, 109, 230);" name="square-outline"></ion-icon></span>
+          <span>{{l.laststartdate | date : 'dd/MM/yyyy H:mm'}}</span>
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 
 </ion-content>

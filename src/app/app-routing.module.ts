@@ -132,9 +132,14 @@ const routes: Routes = [
   {
     path: 'nuova-task/:id',
     loadChildren: () => import('./task/nuova-task/nuova-task.module').then( m => m.NuovaTaskPageModule)
-  },  {
+  },
+  {
     path: 'acquisti',
     loadChildren: () => import('./acquisti/acquisti.module').then( m => m.AcquistiPageModule)
+  },
+  {
+    path: 'acquisti/:id',
+    loadChildren: () => import('./acquisti/vendor-details/vendor-details.module').then( m => m.VendorDetailsPageModule)
   }
 
 

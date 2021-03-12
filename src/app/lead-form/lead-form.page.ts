@@ -20,6 +20,7 @@ export class LeadFormPage implements OnInit {
 
     lead= new LeadDetails;
     title: string;
+    button = "";
   
   ngOnInit() {
     this.route.paramMap.subscribe(param => {
@@ -29,16 +30,31 @@ export class LeadFormPage implements OnInit {
         this.Api.getData("_"+id).subscribe((data) => { 
           this.lead = data[0];
           this.lead.Name = this.lead.lead_name;
+          this.button = "Modifica";
+          console.log(this.lead);
          });
-        console.log(this.lead);
       }else{
         this.title = "Inserimento";
         this.lead.Name = "";
         this.lead.EMail = "";
         this.lead.Phone = "";
+        this.button = "Inserisci"
       }
     });
     
+  }
+
+  insertLead(name: string, phone: string, email: string, leads: string){
+    let lead = new LeadDetails();
+    lead.Name = name;
+    lead.Phone = phone;
+    lead.EMail = email;
+    lead.leadstatus_value = leads;
+    if(this.title == 'Modifica'){
+      lead.id = this.lead.id;
+      lead.AD_User_ID = this.lead.id;
+    }
+    console.log(lead);
   }
 
 

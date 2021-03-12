@@ -1,3 +1,4 @@
+import { Vendor } from './../models/Acquisti';
 import { InventoryItem, InventoryDetails, ProductList, m_inventoryline, Orgs, Mags, Docs, Inventory } from './../models/InfoProduct';
 import { DettaglioFatture, ordini } from './../models/OrdinieFatture';
 import { COre, SalesRep, Activity, Act, BPartner } from './../models/ConteggioOre';
@@ -266,5 +267,13 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
 
   getBPartner(){
     return this.http.get<BPartner[]>(this.EndPoint+"getBPartner");
+  }
+
+  getVendorsList(search: string){
+    return this.http.get<Vendor[]>(this.EndPoint+"getVendorsList_%25"+search+"%25");
+  }
+
+  getVendor(id: string){
+    return this.http.get<Vendor>(this.EndPoint+"getVendor_"+id);
   }
 }

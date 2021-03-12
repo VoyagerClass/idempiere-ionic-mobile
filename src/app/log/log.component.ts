@@ -20,10 +20,15 @@ export class LogComponent implements OnInit {
 
   ngOnInit() {
     this.Api.getLogs("_"+this.id).subscribe((data) => {
-      this.logs = data;
-      this.logs1 = _.sortBy(this.logs, x => -x.StartDate)
+      this.logs = _.sortBy(data, x => -x.StartDate);
+      this.logs1 = this.logs;
       console.log(data);
     });
+  }
+
+  changeList(ev: any){
+    console.log(ev.detail.value);
+    this.logs1 = _.where(this.logs, {IsComplete: 'false'});
   }
 
 }

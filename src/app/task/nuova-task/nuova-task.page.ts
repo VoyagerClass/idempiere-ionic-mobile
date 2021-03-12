@@ -19,6 +19,8 @@ export class NuovaTaskPage implements OnInit {
   bps: BPartner[];
   bpid: number;
   bpname: string
+  salesrepID = localStorage.getItem('ADuser');
+  time = moment().toISOString(true).slice(0,19).replace('T', ' ');
 
   ngOnInit() {
     this.getSalesRep();
@@ -50,17 +52,17 @@ export class NuovaTaskPage implements OnInit {
     })
   }
 
-  createTask(name:string, bp:number, srep:number, desc:string, com:string){
+  createTask(name:string, bp:number, srep:number, desc:string, com:string, tsk: string, data: string){
     let task = new Task;
     task.Name = name;
     task.AD_User_ID = bp;
     task.SalesRep_ID = srep;
     task.Description = desc;
     task.Comments = com;
-    task.StartDate = moment().toISOString(true).slice(0,19).replace('T', ' ');
+    task.StartDate = data.slice(0,19).replace('T', ' ');
     task.IsInTransit = 'Y';
     task.IsMobileEnabled = 'Y';
-    task.ContactActivityType = 'TA';
+    task.ContactActivityType = tsk;
     task.LIT_AD_UserFrom_ID = parseInt(localStorage.getItem('ADuser'));
     task.IsComplete = 'N';
     console.log(task);

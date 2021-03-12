@@ -10,62 +10,60 @@
 
 
 <ion-content>
-  <form (ngSubmit)="addLead(Leads.value)"> 
-    <ion-item>
-      <ion-label position="floating">Nome Lead<ion-text color="danger">*</ion-text></ion-label>
-      <ion-input required="true" [(ngModel)]="lead.Name" name="name" clearOnEdit="true"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Telefono</ion-label>
-      <ion-input type="tel" inputmode="numeric" [(ngModel)]="lead.Phone" name="phone" clearOnEdit="true"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">E-mail</ion-label>
-      <ion-input type="email" inputmode="email" [(ngModel)]="lead.EMail" name="email" clearOnEdit="true"></ion-input>
-    </ion-item>
-    <ion-list *ngIf="title == 'Inserimento'">
-      <ion-radio-group name="LeadOrigin">
-        <ion-list-header>
-          <ion-label>Provenienza Lead <ion-text color="danger">*</ion-text></ion-label>
-        </ion-list-header>
-        <ion-item>
-          <ion-label>Web</ion-label>
-          <ion-radio slot="start" value="Web"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>Telefono</ion-label>
-          <ion-radio slot="start" value="Phone"></ion-radio>
-        </ion-item>
-      </ion-radio-group>
-    </ion-list>
-    <ion-list>
-      <ion-radio-group name="LeadType" #Leads>
-        <ion-list-header>
-          <ion-label>Stato del Lead<ion-text color="danger">*</ion-text></ion-label>
-        </ion-list-header>
-        <ion-item>
-          <ion-label>Nuovo</ion-label>
-          <ion-radio slot="start" value="N"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>Scaduto</ion-label>
-          <ion-radio slot="start" value="E"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>Convertito</ion-label>
-          <ion-radio slot="start" value="C"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>In Corso</ion-label>
-          <ion-radio slot="start" value="W"></ion-radio>
-        </ion-item>
-      </ion-radio-group>
-    </ion-list>
-    <ion-footer>
-      <ion-toolbar>
-        <ion-button expand="block" type="submit">Applica</ion-button>
-      </ion-toolbar>
-    </ion-footer>
-  </form>
+  <ion-item>
+    <ion-label position="floating">Nome Lead<ion-text color="danger">*</ion-text></ion-label>
+    <ion-input #name required="true" value={{lead.Name}} name="name" clearOnEdit="true"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Telefono</ion-label>
+    <ion-input #phone type="tel" inputmode="numeric" value={{lead.Phone}} name="phone" clearOnEdit="true"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">E-mail</ion-label>
+    <ion-input #email type="email" inputmode="email" value={{lead.EMail}} name="email" clearOnEdit="true"></ion-input>
+  </ion-item>
+  <ion-list *ngIf="title == 'Inserimento'">
+    <ion-radio-group name="LeadOrigin" #prov>
+      <ion-list-header>
+        <ion-label>Provenienza Lead <ion-text color="danger">*</ion-text></ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Web</ion-label>
+        <ion-radio slot="start" value="Web"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Telefono</ion-label>
+        <ion-radio slot="start" value="Phone"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+  <ion-list>
+    <ion-radio-group value={{lead.leadstatus_value}} name="LeadType" #leads>
+      <ion-list-header>
+        <ion-label>Stato del Lead<ion-text color="danger">*</ion-text></ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Nuovo</ion-label>
+        <ion-radio slot="start" value="N"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Scaduto</ion-label>
+        <ion-radio slot="start" value="E"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Convertito</ion-label>
+        <ion-radio slot="start" value="C"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>In Corso</ion-label>
+        <ion-radio slot="start" value="W"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
   
 </ion-content>
+<ion-footer>
+  <ion-button (click)="insertLead(name.value, phone.value, email.value, leads.value)" expand="full">
+    {{button}} Lead
+  </ion-button>
+</ion-footer>
