@@ -75,7 +75,6 @@ export class CrmPagePage implements OnInit{
     })
   }
 
-
   segmentChanged(ev: any) {
    this.list1=_.where(this.list, {leadstatus_value: ev.detail.value});
   }

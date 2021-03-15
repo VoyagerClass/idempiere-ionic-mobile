@@ -1,8 +1,9 @@
+import { Contacts, ContactField, ContactName } from '@ionic-native/contacts/ngx';
 import { LeadDetails } from './../../models/LeadDetails';
 import { ApiServiceService } from './../api-service.service';
 import { Component, OnInit, Output } from '@angular/core';
 import {ActivatedRoute} from '@angular/router'
-import { ActionSheetController,  AlertController } from '@ionic/angular';
+import { ActionSheetController, AlertController, ToastController } from '@ionic/angular';
 import {Router} from  '@angular/router'
 
 import { CallNumber } from '@ionic-native/call-number/ngx';
@@ -26,7 +27,9 @@ export class LeadDetailsPage implements OnInit {
               public actionSheetController: ActionSheetController, 
               private router: Router,
               public callnumber: CallNumber,
-              public alertcontrol: AlertController) { }
+              public alertcontrol: AlertController,
+              private contacts: Contacts,
+              private toastController: ToastController) { }
 
   ngOnInit() {
 
@@ -39,6 +42,11 @@ export class LeadDetailsPage implements OnInit {
           // alert('Service is not available') unless isAvailable;
       }
     );
+
+    document.addEventListener("deviceready", onDeviceReady, false);
+    function onDeviceReady() {
+      console.log((navigator as any).contacts);
+    }
 
     this.route.paramMap.subscribe(param => {
       const id = param.get('id');
@@ -90,7 +98,15 @@ export class LeadDetailsPage implements OnInit {
           cordova.plugins.email.open(mail);
           this.insertLog(this.lead.id,'Email', 'EM');
         }
-      }, {
+      },
+      {
+        text: 'Salva su dispositivo',
+        icon: 'save-outline',
+        handler: () => {
+         this.saveContact();
+        }
+      },  
+      {
         text: 'Inserisci Opportunità',
         icon: 'cash-outline',
         handler: () => {
@@ -139,6 +155,28 @@ export class LeadDetailsPage implements OnInit {
   insertLog(idc: string, evento: string, act: string){
     const id = parseInt(idc);
     this.Api.addLog(id, evento, act);
+  }
+
+  saveContact(){
+    var contact = this.contacts.create();
+    contact.displayName = this.lead.lead_name;
+    contact.nickname = this.lead.lead_name;
+    contact.emails = [new ContactField('email', this.lead.EMail)];
+    contact.phoneNumbers = [new ContactField('phone', this.lead.Phone)];
+
+    var name = new ContactName();
+    name.givenName = this.lead.lead_name;
+    name.familyName = "";
+    contact.name = name;
+    contact.save().then(this.SuccessToast);
+  }
+
+  async SuccessToast() {
+    const toast = await this.toastController.create({
+      message: 'Contatto salvato nel telefono.',
+      duration: 1000
+    });
+    toast.present();
   }
 
   

@@ -51,7 +51,7 @@ O Inserisci Opportunita
 [x] Aggiungere possibilità CREA Task da Lead - Esempio creare un contactactivity PhoneCall/b/c/ -DataOraTodo -Risorsa 
 [x] mettere visualizzazione ultima attività completata e ultima attività assegnata(non completata) **
 [x] Creare sottotab Contactactivity 
-[ ] Salva Lead come contatto Telefono
+[x] Salva Lead come contatto Telefono
 [ ] Lead per Agente ( vedo solo i miei o tutti ? o per Area ?) 
 		- fare come per l'assegnazione dell'attività per gruppo con coalesce dove gli utenti sono dentro permessi area etc?
 
