@@ -3,11 +3,21 @@ App iDempiere Mobile
 pagina documentazione http://localhost:1313/docs/13.plugin/plugin-/5.altro/plugin-app-mobile/
 
 Base
-[ ] Nome App ?
-[ ] Gestione Immagine App
+[X] Nome App "iDempiere"
+[..] Gestione Immagine App  Logo iDempiere
 [ ] Gestione Immagini Menu
 [ ] Voci Menu attivabili da REST -LOGIN
-	- Marco creare campo (lit_mobile_role_v) **
+	- Marco creare campo lit_mobile_role (lit_m_userrole_v) **
+	da 1 a 20   -   Pulsanti APP 
+	1 -CRM
+	2 - Service
+	3- Contabilità 
+	4 - ACquisti
+	5 - Magazzino
+	6 - Produzione
+	7 - Ore
+	21 : Accesso Ore di altri utenti  (ADmin Rile.vamento ore)
+	22 : ...  
 
 [ ] Stampa Diretta 
 [ ]  Get PDF Generato (JasperReport )
