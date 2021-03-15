@@ -12,4 +12,14 @@ export class LogAgente{
     ContactActivityType: string;
     IsComplete: string;
     LIT_isMobileLog: string;
+    id: number;
+}
+
+export interface LogList{
+    ContactActivityType: string;
+    IsComplete: boolean;
+    IsInTransit: boolean;
+    LIT_isMobileLog: boolean;
+    StartDate: string;
+    id: number;
 }

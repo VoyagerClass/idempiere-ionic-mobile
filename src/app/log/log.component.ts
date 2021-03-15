@@ -1,4 +1,4 @@
-import { LogAgente } from './../../models/LogModel';
+import { LogAgente, LogList } from './../../models/LogModel';
 import { ApiServiceService } from './../api-service.service';
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -15,20 +15,20 @@ export class LogComponent implements OnInit {
 
   @Input() id: string;
 
-  logs: LogAgente [] = [];
-  logs1: LogAgente[] = [];
+  logs: LogList [] = [];
+  logs1: LogList[] = [];
 
   ngOnInit() {
     this.Api.getLogs("_"+this.id).subscribe((data) => {
       this.logs = _.sortBy(data, x => -x.StartDate);
-      this.logs1 = this.logs;
+      this.logs1 = _.where(this.logs, {IsComplete: false});
       console.log(data);
     });
   }
 
   changeList(ev: any){
     console.log(ev.detail.value);
-    this.logs1 = _.where(this.logs, {IsComplete: 'false'});
+    this.logs1 = _.where(this.logs, {IsComplete: ev.detail.value ==='true'});
   }
 
 }

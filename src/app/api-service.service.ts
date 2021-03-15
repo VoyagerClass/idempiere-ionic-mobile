@@ -12,7 +12,7 @@ import { Credentials, Utente } from './../models/Credentials';
 import { Opportunity, OppTasks } from './../models/OpportunityModel';
 import { FornitoriModel } from './../models/FornitoriModel';
 import { Task } from './../models/TaskLog';
-import { LogAgente } from './../models/LogModel';
+import { LogAgente, LogList } from './../models/LogModel';
 import { LeadDetails } from './../models/LeadDetails';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -159,7 +159,7 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
   }
 
   getLogs(id: string){
-    return this.http.get<LogAgente[]>(this.EndPoint+"getLogs"+id);
+    return this.http.get<LogList[]>(this.EndPoint+"getLogs"+id);
   }
 
   isTaskComplete(task){

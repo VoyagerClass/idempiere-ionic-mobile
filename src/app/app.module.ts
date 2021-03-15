@@ -1,10 +1,12 @@
+import { AuthService } from './services/auth.service';
+import { AuthInterceptor } from './services/auth.interceptor';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { LogComponent } from './log/log.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy} from '@angular/router';
+import { Router, RouteReuseStrategy} from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { IonicStorageModule, Storage } from '@ionic/storage'
@@ -53,6 +55,14 @@ export function tokenGetter() {
     ],
     
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useFactory: function(auth: AuthService) {
+        return new AuthInterceptor(auth);
+      },
+      multi: true,
+      deps: [AuthService]
+   },
     StatusBar,
     SplashScreen,
     CallNumber,

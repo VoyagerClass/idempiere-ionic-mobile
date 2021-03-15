@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { COre } from './../../models/ConteggioOre';
 import { ApiServiceService } from './../api-service.service';
 import { Component } from '@angular/core';
-import { trigger, transition, animate, style } from '@angular/animations'
 
 import * as _ from 'underscore';
 
@@ -11,17 +10,6 @@ import * as _ from 'underscore';
   selector: 'app-conteggio-ore',
   templateUrl: './conteggio-ore.page.html',
   styleUrls: ['./conteggio-ore.page.scss'],
-  animations: [
-    trigger('slideInOut', [
-      transition(':enter', [
-        style({transform: 'translateX(-100%)'}),
-        animate('200ms ease-in', style({transform: 'translateX(0%)'}))
-      ]),
-      transition(':leave', [
-        animate('200ms ease-in', style({transform: 'translateX(-100%)'}))
-      ])
-    ])
-  ]
 })
 export class ConteggioOrePage {
 

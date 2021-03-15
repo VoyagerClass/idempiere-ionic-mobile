@@ -4,13 +4,8 @@
       <ion-menu-button menu="TaskDetail"></ion-menu-button>
     </ion-buttons>
     <ion-title>Task Scheduling</ion-title>
-    <ion-buttons slot="end">
-      <ion-button shape="round" (click)="visible = !visible">
-        <ion-icon name="search-outline"></ion-icon> 
-      </ion-button>  
-    </ion-buttons>
   </ion-toolbar>
-  <ion-toolbar *ngIf="visible" [@slideInOut]>
+  <ion-toolbar>
     <ion-toolbar>
       <ion-searchbar inputmode="text" type="text" (ionChange)="SearchAct($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
     </ion-toolbar>
