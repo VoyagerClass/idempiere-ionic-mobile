@@ -59,7 +59,6 @@ export class LoginPagePage implements OnInit {
           localStorage.setItem('pass', this.pass);
         }
         this.roleConfing();
-        this.router.navigate(['']);
       }else{
         const alert = await this.alertCtrl.create({
           header: 'Login Fallito',
@@ -75,6 +74,7 @@ export class LoginPagePage implements OnInit {
     this.Api.getRoles().subscribe((data)=>{
       console.log(data);
       localStorage.setItem('role', data[0].lit_mobile_role);
+      this.router.navigate(['']);
     })
   }
 
