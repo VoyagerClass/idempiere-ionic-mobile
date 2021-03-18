@@ -5,6 +5,14 @@
     </ion-buttons>
     <ion-title>Ore Completate: {{TotOre}}</ion-title>
   </ion-toolbar>
+  <ion-toolbar *ngIf="admin == '1'">
+    <ion-item>
+      <ion-label position="floating">Utente</ion-label>
+      <ion-select #srep (ionChange)="getList(srep.value)">
+        <ion-select-option *ngFor="let s of SalesReps" value={{s.id}}>{{s.Name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>

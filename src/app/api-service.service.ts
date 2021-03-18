@@ -30,6 +30,9 @@ export class ApiServiceService {
 
 IP = localStorage.getItem('TargetIP'); 
 EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
+UserRole: string[] = [];
+
+  
 
   setIP(){
     this.IP = localStorage.getItem('TargetIP'); 
@@ -38,6 +41,12 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
 
   getMenu(){
     return this.http.get<MenuItem>(this.EndPoint+"getMenu");
+  }
+
+  getRoles(){
+    let id = localStorage.getItem("ADuser");
+    console.log("test");
+    return this.http.get(this.EndPoint+"getUserRoles_"+id);
   }
 
   getData(id: string){
@@ -70,8 +79,7 @@ EndPoint = "http://"+this.IP+"/services/api/idempierepara/web/search/";
     return this.http.get<COre[]>(this.EndPoint+"getConteggioOre_"+id);
   }
 
-  getOreCompletate(){
-    let id = localStorage.getItem('ADuser');
+  getOreCompletate(id: string){
     return this.http.get<COre[]>(this.EndPoint+"getOreCompletate_"+id);
   }
 
