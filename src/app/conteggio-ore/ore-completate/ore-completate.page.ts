@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiServiceService } from 'src/app/api-service.service';
-import { COre } from 'src/models/ConteggioOre';
+import { COre, SalesRep } from 'src/models/ConteggioOre';
 
 import * as _ from 'underscore'
 import * as moment from 'moment';
@@ -15,20 +15,30 @@ export class OreCompletatePage implements OnInit {
   constructor(private api: ApiServiceService) { }
 
   ngOnInit() {
-    this.getList();
+    this.getList(localStorage.getItem('ADuser'));
     this.data = moment(this.date).toISOString(true);
+    this.repList();
+    this.admin = localStorage.getItem('role').slice(20,21);
   }
 
 
   TotOre: number;
   date = new Date();
   data: string;
+  admin: string; 
+  SalesReps: SalesRep[];
 
   list: COre[]
   list1: COre[];
 
-  getList(){
-    this.api.getOreCompletate().subscribe((data)=>{
+  repList(){
+    this.api.getSalesRepList().subscribe((data)=>{
+      this.SalesReps = data;
+    })
+  }
+
+  getList(id: string){
+    this.api.getOreCompletate(id).subscribe((data)=>{
       console.log(data);
       this.list = data;
       this.daySelect(this.data);

@@ -58,7 +58,7 @@ export class LoginPagePage implements OnInit {
           localStorage.setItem('username', this.uName);
           localStorage.setItem('pass', this.pass);
         }
-        this.router.navigate(['']);
+        this.roleConfing();
       }else{
         const alert = await this.alertCtrl.create({
           header: 'Login Fallito',
@@ -67,6 +67,14 @@ export class LoginPagePage implements OnInit {
         });
         await alert.present();
       }
+    })
+  }
+
+  roleConfing(){
+    this.Api.getRoles().subscribe((data)=>{
+      console.log(data);
+      localStorage.setItem('role', data[0].lit_mobile_role);
+      this.router.navigate(['']);
     })
   }
 

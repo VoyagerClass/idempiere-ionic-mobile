@@ -20,7 +20,10 @@ export class LandingPagePage {
     this.menuCtrl.enable (false, 'CRMmenu');
     this.menuCtrl.enable (false, 'InfoProduct');
     this.menuCtrl.enable (false, 'Contabilita');
+    this.access = localStorage.getItem('role').split('',21);
   }
+
+  access: string[] = [];
 
   goTo(link: string){
     this.router.navigateByUrl(link);
