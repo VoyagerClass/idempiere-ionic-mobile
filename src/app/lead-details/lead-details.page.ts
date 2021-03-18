@@ -157,13 +157,13 @@ export class LeadDetailsPage implements OnInit {
     this.Api.addLog(id, evento, act);
   }
 
+
   saveContact(){
     var contact = this.contacts.create();
     contact.displayName = this.lead.lead_name;
     contact.nickname = this.lead.lead_name;
     contact.emails = [new ContactField('email', this.lead.EMail)];
     contact.phoneNumbers = [new ContactField('phone', this.lead.Phone)];
-
     var name = new ContactName();
     name.givenName = this.lead.lead_name;
     name.familyName = "";
@@ -171,6 +171,7 @@ export class LeadDetailsPage implements OnInit {
     contact.save().then(this.SuccessToast);
   }
 
+  
   async SuccessToast() {
     const toast = await this.toastController.create({
       message: 'Contatto salvato nel telefono.',
@@ -178,9 +179,5 @@ export class LeadDetailsPage implements OnInit {
     });
     toast.present();
   }
-
-  
-
-
 
 }
