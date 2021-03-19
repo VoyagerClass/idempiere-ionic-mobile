@@ -54,10 +54,10 @@ export class NuovaTaskPage implements OnInit {
 
   createTask(name:string, bp:number, srep:number, desc:string, com:string, tsk: string, data: string){
     let task = new Task;
-    task.Name = name;
+    task.Name = (name != "")?name: "-"; 
     task.AD_User_ID = bp;
     task.SalesRep_ID = srep;
-    task.Description = desc;
+    task.Description = (desc != "")?desc: "-";
     task.Comments = com;
     task.StartDate = data.slice(0,19).replace('T', ' ');
     task.IsInTransit = 'Y';

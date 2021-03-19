@@ -6,7 +6,7 @@ Base
 [X] Nome App "iDempiere"
 [..] Gestione Immagine App  Logo iDempiere
 [ ] Gestione Immagini Menu
-[ ] Voci Menu attivabili da REST -LOGIN
+[x] Voci Menu attivabili da REST -LOGIN
 	- Marco creare campo lit_mobile_role (lit_m_userrole_v) **
 	da 1 a 20   -   Pulsanti APP 
 	1 -CRM

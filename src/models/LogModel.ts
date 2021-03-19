@@ -22,4 +22,5 @@ export interface LogList{
     LIT_isMobileLog: boolean;
     StartDate: string;
     id: number;
+    Name: string;
 }

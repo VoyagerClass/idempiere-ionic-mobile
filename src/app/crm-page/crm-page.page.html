@@ -10,11 +10,9 @@
       </ion-button>  
     </ion-buttons>
   </ion-toolbar>
-  <ion-toolbar *ngIf="visible" [@slideInOut] >
-    <ion-searchbar inputmode="text" type="text" (ionChange)="SearchLead($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
-  </ion-toolbar>
-  <ion-toolbar *ngIf="!visible" [@slideInOut] >
-    <ion-segment value='N' (ionChange)="segmentChanged($event)">
+  <ion-toolbar  >
+    <ion-searchbar *ngIf="visible" [@slideOutIn] inputmode="text" type="text" (ionChange)="SearchLead($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
+    <ion-segment *ngIf="!visible" [@slideInOut] value='N' (ionChange)="segmentChanged($event)">
       <ion-segment-button value="N">
         <ion-label>Nuovi</ion-label>
       </ion-segment-button>

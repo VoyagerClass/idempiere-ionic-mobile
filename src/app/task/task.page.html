@@ -9,9 +9,9 @@
 
 <ion-content>
   <ion-list>
-    <ion-card *ngFor="let l of list1" (click)="openModal(l)">
+    <ion-card *ngFor="let l of list1" (click)="showTask(l.id)">
       <ion-card-header>
-        <ion-card-subtitle>{{l.userfrom_name}}</ion-card-subtitle>
+        <ion-card-subtitle>Da: {{l.userfrom_name}}</ion-card-subtitle>
         <ion-card-title>{{l.activity_name}}</ion-card-title>
       </ion-card-header>
     </ion-card>

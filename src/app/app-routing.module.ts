@@ -140,7 +140,12 @@ const routes: Routes = [
   {
     path: 'acquisti/:id',
     loadChildren: () => import('./acquisti/vendor-details/vendor-details.module').then( m => m.VendorDetailsPageModule)
+  },
+  {
+    path: 'dettaglio-task/:id',
+    loadChildren: () => import('./task/dettaglio-task/dettaglio-task.module').then( m => m.DettaglioTaskPageModule)
   }
+
 
 
 

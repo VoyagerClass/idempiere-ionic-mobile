@@ -58,6 +58,10 @@ UserRole: string[] = [];
     return this.http.get<Task[]>(this.EndPoint+"getTask_"+id);
   }
 
+  getTaskDetails(id: string){
+    return this.http.get<Task>(this.EndPoint+"getTaskDetails_"+id);
+  }
+
   getSuppliers(){
     return this.http.get<FornitoriModel[]>(this.EndPoint+"getSuppliers");
   }

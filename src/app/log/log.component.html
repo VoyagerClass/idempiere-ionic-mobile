@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-segment (ionChange)="changeList($event)">
+    <ion-segment value=false (ionChange)="changeList($event)">
       <ion-segment-button value=false>
         <ion-label>To DO</ion-label>
       </ion-segment-button>
@@ -13,13 +13,16 @@
 <ion-content>
     <ion-list>
       <ion-item *ngFor="let l of logs1">
-        <ion-label>
+        <ion-text style="width: 10%;">
           <ion-icon *ngIf="l.ContactActivityType == 'PC'" name="call-outline"></ion-icon>
           <ion-icon *ngIf="l.ContactActivityType == 'EM'" name="mail-outline"></ion-icon>
           <ion-icon *ngIf="l.ContactActivityType == 'ME'" name="people-outline"></ion-icon>
           <ion-icon *ngIf="l.ContactActivityType == 'TA'" name="clipboard-outline"></ion-icon>
-        </ion-label>
-        <ion-text>
+        </ion-text>
+        <ion-text style="margin-left: 0px; width: 45%;">
+          {{l.Name}}
+        </ion-text>
+        <ion-text style="width: 45%;">
           {{l.StartDate | date : 'dd/MM/yyyy H:mm'}}
         </ion-text>
       </ion-item>

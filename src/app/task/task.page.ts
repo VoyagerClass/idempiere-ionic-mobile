@@ -43,6 +43,10 @@ export class TaskPage {
     this.showModal();
   }
 
+  showTask(id: string){
+    this.router.navigateByUrl('/dettaglio-task/'+id);
+  }
+
   async showModal() {
     const modal = await this.ModalCtrl.create({
       component: ModalComponent,
