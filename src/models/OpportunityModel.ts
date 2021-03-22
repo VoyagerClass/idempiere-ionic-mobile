@@ -27,4 +27,5 @@ export class OppTasks{
     Name: string;
     contact_description: string;
     AD_Org_ID: string;
+    Comments: string;
 }

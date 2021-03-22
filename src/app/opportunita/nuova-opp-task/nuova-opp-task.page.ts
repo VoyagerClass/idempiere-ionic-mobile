@@ -30,17 +30,18 @@ export class NuovaOppTaskPage implements OnInit {
     });
   }
 
-  postOppTask(contact: string, desc: string){
+  postOppTask(contact: string, data: string, desc: string, comments: string, complete: boolean){
     let OppTask = new OppTasks();
     OppTask.C_BPartner_ID = this.ids[0];
     OppTask.C_Opportunity_ID = this.ids[1];
     OppTask.ContactActivityType = contact;
     OppTask.C_Activity_ID= 1000012;
     OppTask.AD_Org_ID = this.ids[2];
-    OppTask.Description = desc;
+    OppTask.Description = (desc != "")?desc: "-";
+    OppTask.Comments = (comments != "")?comments: "-";
     OppTask.SalesRep_ID = localStorage.getItem('ADuser');
-    OppTask.StartDate = moment().toISOString(true).slice(0,19).replace('T', ' ');
-    OppTask.IsComplete = 'Y';
+    OppTask.StartDate = data.slice(0,19).replace('T', ' ');
+    OppTask.IsComplete = (complete)?"Y": "N";
     console.log(OppTask);
     this.api.postOppTasks(OppTask).subscribe((data)=>{
       console.log(data);

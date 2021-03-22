@@ -3,35 +3,11 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Nuova Task</ion-title>
+    <ion-title>Opportunità</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <ion-label position="floating">Tipo di contatto</ion-label>
-    <ion-select #contact>
-      <ion-select-option value="EM">Email</ion-select-option>
-      <ion-select-option value="PC">Telefono</ion-select-option>
-      <ion-select-option value="ME">Incontro</ion-select-option>
-    </ion-select>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Descrizione</ion-label>
-    <ion-textarea #desc></ion-textarea>
-  </ion-item>
-</ion-content>
-<ion-footer>
-  <ion-button (click)="postOppTask(contact.value, desc.value)" expand="full">
-    Inserisci Attività
-  </ion-button>
-</ion-footer>
-
-<ion-content>
-  <ion-item>
-    <ion-label position="floating">Nome Task</ion-label>
-    <ion-input #name type="text" autofocus="true"></ion-input>
-  </ion-item>
   <ion-item>
     <ion-label position="floating">Tipo di task</ion-label>
     <ion-select value="EM" #tsk>
@@ -51,9 +27,13 @@
     <ion-label position="floating">Commenti</ion-label>
     <ion-textarea #com ></ion-textarea>
   </ion-item>
+  <ion-item>
+    <ion-label>Attività completata</ion-label>
+    <ion-checkbox #complete></ion-checkbox>
+  </ion-item>
 </ion-content>
 <ion-footer>
-  <ion-button (click)="createTask(name.value, bp.value, srep.value, desc.value, com.value, tsk.value, data.value)" expand="full">
+  <ion-button (click)="postOppTask(tsk.value, data.value, desc.value, com.value, complete.checked)" expand="full">
     Inserisci Task
   </ion-button>
 </ion-footer>
