@@ -16,9 +16,11 @@ export class NuovaOppTaskPage implements OnInit {
 
   ngOnInit() {
     this.getID();
+    this.time = moment().toISOString(true).slice(0,19).replace('T', ' ');
   }
 
   ids: string[];
+  time = "";
 
   getID(){
     this.route.paramMap.subscribe(param => {

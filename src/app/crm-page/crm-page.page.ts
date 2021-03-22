@@ -18,19 +18,19 @@ import { trigger, transition, animate, style } from '@angular/animations'
     trigger('slideInOut', [
       transition(':enter', [
         style({transform: 'translateX(-100%)'}),
-        animate('200ms ease-in', style({transform: 'translateX(0%)'}))
+        animate('100ms ease-in', style({transform: 'translateX(0%)'}))
       ]),
       transition(':leave', [
-        animate('200ms ease-in', style({transform: 'translateX(-100%)'}))
+        animate('100ms ease-in', style({transform: 'translateX(-100%)'}))
       ])
     ]),
     trigger('slideOutIn', [
       transition(':enter', [
-        style({transform: 'translateX(105%)'}),
-        animate('200ms ease-in', style({transform: 'translateX(0%)'}))
+        style({transform: 'translateX(100%)'}),
+        animate('100ms ease-in', style({transform: 'translateX(0%)'}))
       ]),
       transition(':leave', [
-        animate('200ms ease-in', style({transform: 'translateX(105%)'}))
+        animate('100ms ease-in', style({transform: 'translateX(100%)'}))
       ])
     ])
   ]

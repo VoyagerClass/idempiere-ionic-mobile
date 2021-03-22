@@ -26,3 +26,34 @@
     Inserisci Attività
   </ion-button>
 </ion-footer>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Nome Task</ion-label>
+    <ion-input #name type="text" autofocus="true"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Tipo di task</ion-label>
+    <ion-select value="EM" #tsk>
+      <ion-select-option value="EM">E-mail</ion-select-option>
+      <ion-select-option value="PC">Telefonata</ion-select-option>
+      <ion-select-option value="ME">Incontro</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-datetime required #data displayFormat="DD/MM/YYYY H:mm" pickedFormat="DD MM YYYY HH:mm"
+                    placeholder="Inserisci data" min="2019" max="2040" value={{time}} 
+                    minuteValues="0,15,30,45" hourValues=[8,9,10,11,12,13,14,15,16,17,18]></ion-datetime>
+  <ion-item>
+    <ion-label position="floating">Descrizione</ion-label>
+    <ion-textarea #desc ></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Commenti</ion-label>
+    <ion-textarea #com ></ion-textarea>
+  </ion-item>
+</ion-content>
+<ion-footer>
+  <ion-button (click)="createTask(name.value, bp.value, srep.value, desc.value, com.value, tsk.value, data.value)" expand="full">
+    Inserisci Task
+  </ion-button>
+</ion-footer>

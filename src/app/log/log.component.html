@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-segment value=false (ionChange)="changeList($event)">
+    <ion-segment #list value=false (ionChange)="changeList($event)">
       <ion-segment-button value=false>
         <ion-label>To DO</ion-label>
       </ion-segment-button>
@@ -12,7 +12,7 @@
 </ion-header>
 <ion-content>
     <ion-list>
-      <ion-item *ngFor="let l of logs1">
+      <ion-item *ngFor="let l of logs1" (click)="taskDetail(list.value, l.id)">
         <ion-text style="width: 10%;">
           <ion-icon *ngIf="l.ContactActivityType == 'PC'" name="call-outline"></ion-icon>
           <ion-icon *ngIf="l.ContactActivityType == 'EM'" name="mail-outline"></ion-icon>
