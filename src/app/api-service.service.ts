@@ -131,6 +131,7 @@ UserRole: string[] = [];
   importLead(lead: LeadDetails){
     lead.IsSalesLead = 'Y';
     lead.LeadStatus = 'N';
+    lead.SalesRep_ID = parseInt(localStorage.getItem('ADuser'));
     return this.http.post(this.EndPoint+"postLead", lead).subscribe((data)=>{
       console.log(data);
     });
@@ -164,6 +165,8 @@ UserRole: string[] = [];
         console.log(data);
       });
     } else {
+      lead.SalesRep_ID = parseInt(localStorage.getItem('ADuser'));
+      console.log(lead);
       this.http.post(this.EndPoint+"postLead", lead).subscribe((data) =>{
         console.log(data);
       });

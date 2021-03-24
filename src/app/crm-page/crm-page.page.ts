@@ -41,6 +41,7 @@ export class CrmPagePage implements OnInit{
   list: LeadDetails[] = [];
   list1: LeadDetails[] = [];
   visible = false;
+  user: number;
 
   constructor(private Api: ApiServiceService, 
               private menuCtrl: MenuController, 
@@ -54,15 +55,19 @@ export class CrmPagePage implements OnInit{
       console.log((navigator as any).contacts);
     }
     this.menuCtrl.enable (true, 'CRMmenu');
+    this.user = parseInt(localStorage.getItem('ADuser'));
   }
 
   getList(){
     this.list = [];
     this.list1 = [];
     this.Api.getData('').subscribe((data) => { 
-      this.list = data;
-      this.list1 = _.where(data, {leadstatus_value: 'N'});
+      this.list = _.filter(data, function(lead){
+        return lead.SalesRep_ID == 0 || lead.SalesRep_ID == parseInt(localStorage.getItem('ADuser'));
+      })
+      this.list1 = _.where(this.list, {leadstatus_value: 'N'});
       console.log(this.list);
+      console.log(data);
     });
   }
 
@@ -99,7 +104,9 @@ export class CrmPagePage implements OnInit{
   SearchLead(ev: any){
     if(ev.detail.value != ""){
       this.Api.leadSearch(ev.detail.value).subscribe((data)=>{
-        this.list1 = data;
+        this.list1 = _.filter(data, function(lead){
+          return lead.SalesRep_ID == 0 || lead.SalesRep_ID == parseInt(localStorage.getItem('ADuser'));
+        });
       })
     }
   }

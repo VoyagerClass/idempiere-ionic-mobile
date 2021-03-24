@@ -9,15 +9,15 @@ Base
 [x] Voci Menu attivabili da REST -LOGIN
 	- Marco creare campo lit_mobile_role (lit_m_userrole_v) **
 	da 1 a 20   -   Pulsanti APP 
-	1 -CRM
+	1 - CRM
 	2 - Service
-	3- Contabilità 
+	3 - Contabilità 
 	4 - ACquisti
 	5 - Magazzino
 	6 - Produzione
 	7 - Ore
-	21 : Accesso Ore di altri utenti  (ADmin Rile.vamento ore)
-	22 : ...  
+   21 - Accesso Ore di altri utenti  (ADmin Rile.vamento ore)
+   22 - ...  
 
 [ ] Stampa Diretta 
 [ ]  Get PDF Generato (JasperReport )
@@ -187,7 +187,7 @@ PAGINA DETTAGLIO LEAD
 	[x] dare la possibilità di completare instant l'attività
 		-invece di farlo instant faccio una pagina di visualizzazione dell'attività che verrà condivisa con il dettaglio attività e da li si modifica o    completa
 		- mettere una spunta di flag per terminare e completare l'attività inserita
-	[ ] ordinare in ordine alfabetico le attività e gli assegnati
+	[x] ordinare in ordine alfabetico le attività e gli assegnati
 	[x] inserimento business partner nella scheda
 	[ ] fare i menù di scelta più gradi
 	[ ] trovare il modo che l'"assegnato a:" venga già completato senza bisogno di clickarlo... è un problema di angular

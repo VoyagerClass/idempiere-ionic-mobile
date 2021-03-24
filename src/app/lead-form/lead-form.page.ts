@@ -49,12 +49,15 @@ export class LeadFormPage implements OnInit {
     lead.Name = name;
     lead.Phone = phone;
     lead.EMail = email;
-    lead.leadstatus_value = leads;
+    lead.LeadStatus = leads;
     if(this.title == 'Modifica'){
       lead.id = this.lead.id;
       lead.AD_User_ID = this.lead.id;
     }
     console.log(lead);
+    this.Api.modifyLead(lead);
+    this.ToastAccept();
+    this.navCtrl.back();
   }
 
 
