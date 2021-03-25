@@ -52,7 +52,7 @@ O Inserisci Opportunita
 [x] mettere visualizzazione ultima attività completata e ultima attività assegnata(non completata) **
 [x] Creare sottotab Contactactivity 
 [x] Salva Lead come contatto Telefono
-[ ] Lead per Agente ( vedo solo i miei o tutti ? o per Area ?) 
+[x] Lead per Agente ( vedo solo i miei o tutti ? o per Area ?) 
 		- fare come per l'assegnazione dell'attività per gruppo con coalesce dove gli utenti sono dentro permessi area etc?
 
 # LEAD PARTNER

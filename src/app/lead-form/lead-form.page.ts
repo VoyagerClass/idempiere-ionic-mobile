@@ -1,3 +1,4 @@
+import { SalesRep } from 'src/models/ConteggioOre';
 import { LeadDetails } from './../../models/LeadDetails';
 import { ActivatedRoute } from '@angular/router';
 import { ApiServiceService } from './../api-service.service';
@@ -18,9 +19,11 @@ export class LeadFormPage implements OnInit {
               private route: ActivatedRoute,
               private navCtrl: NavController) { }
 
-    lead= new LeadDetails;
+    lead = new LeadDetails;
     title: string;
+    salesrep: SalesRep[] = [];
     button = "";
+    repID = localStorage.getItem('ADuser');
   
   ngOnInit() {
     this.route.paramMap.subscribe(param => {
@@ -41,7 +44,15 @@ export class LeadFormPage implements OnInit {
         this.button = "Inserisci"
       }
     });
+    this.getAgent();
     
+  }
+
+  getAgent(){
+    this.Api.getSalesRepList().subscribe((data)=>{
+      this.salesrep = data;
+      console.log(data);
+    })
   }
 
   insertLead(name: string, phone: string, email: string, leads: string){
