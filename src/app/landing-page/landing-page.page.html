@@ -44,4 +44,9 @@
         <h2>Conteggio Ore</h2>
       </ion-text>
     </ion-button>
+    <ion-button *ngIf="access[7] == '1'" class="tastone" (click)="goTo('/manutenzione-offline')">
+      <ion-text class="ion-text-wrap">
+        <h5>Manutenzione</h5>
+      </ion-text>
+    </ion-button>
 </ion-content>

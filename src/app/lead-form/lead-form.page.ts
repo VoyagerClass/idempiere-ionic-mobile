@@ -23,7 +23,6 @@ export class LeadFormPage implements OnInit {
     title: string;
     salesrep: SalesRep[] = [];
     button = "";
-    repID = localStorage.getItem('ADuser');
   
   ngOnInit() {
     this.route.paramMap.subscribe(param => {
@@ -55,13 +54,14 @@ export class LeadFormPage implements OnInit {
     })
   }
 
-  insertLead(name: string, phone: string, email: string, leads: string){
+  insertLead(name: string, phone: string, email: string, leads: string, repID: number){
     let lead = new LeadDetails();
     lead.Name = name;
     lead.Phone = phone;
     lead.EMail = email;
     lead.LeadStatus = leads;
     if(this.title == 'Modifica'){
+      lead.SalesRep_ID = repID;
       lead.id = this.lead.id;
       lead.AD_User_ID = this.lead.id;
     }

@@ -203,6 +203,14 @@ PAGINA DETTAGLIO LEAD
 	[ ] mettere in visualizzazione il giorno della settimana a cui corrisponde il numero del giorno
 
 	[x]	modificare la vista lit_mobile_taskdetail_v siccome ora non si usa più LIT_Hour bisogna modificarla per S_ResourceAssignment
+
+
+	######### PARTE OFFLINE
+
+		- fare setup di ionic storage con sqlite drivers ( https://github.com/ionic-team/ionic-storage  https://github.com/thgreasi/localForage-cordovaSQLiteDriver )
+			-- trovare il modo di modificare lo storage in Offline  https://www.youtube.com/watch?v=fZ4giHzXfSg
+		- creare un array con oggetti di modifica per iDempiere
+		- fare un forEach sull'array e fare chiamata put su iDempiere
 		
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------

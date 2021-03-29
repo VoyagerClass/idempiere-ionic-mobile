@@ -144,7 +144,11 @@ const routes: Routes = [
   {
     path: 'dettaglio-task/:id',
     loadChildren: () => import('./task/dettaglio-task/dettaglio-task.module').then( m => m.DettaglioTaskPageModule)
+  },  {
+    path: 'manutenzione-offline',
+    loadChildren: () => import('./manutenzione-offline/manutenzione-offline.module').then( m => m.ManutenzioneOfflinePageModule)
   }
+
 
 
 

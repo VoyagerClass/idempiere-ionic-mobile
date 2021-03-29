@@ -20,10 +20,9 @@
     <ion-label position="floating">E-mail</ion-label>
     <ion-input #email type="email" inputmode="email" value={{lead.EMail}} name="email" clearOnEdit="true"></ion-input>
   </ion-item>
-    <ion-item *ngIf="title != 'Inserimento'">
-      <ion-label>Agente</ion-label>
-      <ion-select [ngModel]="repID">
-        <ion-select-option value={{repID}}>{{lead.SalesRep_Name}}</ion-select-option>
+    <ion-item>
+      <ion-label position="stacked">Agente</ion-label>
+      <ion-select #rep value={{lead.SalesRep_ID}}>
         <ion-select-option *ngFor=" let s of salesrep" value={{s.id}}>{{s.Name}}</ion-select-option>
       </ion-select>
     </ion-item>
@@ -68,7 +67,7 @@
   
 </ion-content>
 <ion-footer>
-  <ion-button (click)="insertLead(name.value, phone.value, email.value, leads.value)" expand="full">
+  <ion-button (click)="insertLead(name.value, phone.value, email.value, leads.value, rep.value)" expand="full">
     {{button}} Lead
   </ion-button>
 </ion-footer>
