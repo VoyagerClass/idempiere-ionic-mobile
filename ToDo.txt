@@ -1,4 +1,4 @@
-App iDempiere Mobile
+App iDempiere Mobile sdakjfasofj
 
 pagina documentazione http://localhost:1313/docs/13.plugin/plugin-/5.altro/plugin-app-mobile/
 
